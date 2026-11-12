@@ -1,0 +1,183 @@
+{
+  "catalog_id": "scholarly_indexes_and_open_apis",
+  "title": "Scholarly Discovery Indexes, Citation Graphs & Integrity APIs",
+  "description": "Programmatic, open scholarly metadata graphs and scientific-integrity databases designed for Agentic AI to locate peer-reviewed literature, trace citation consensus, and screen out retracted research.",
+  "version": "1.0.0",
+  "sources": [
+    {
+      "id": "openalex",
+      "name": "OpenAlex",
+      "url": "https://openalex.org",
+      "api_endpoint": "https://api.openalex.org",
+      "category": "scholarly_index_and_api",
+      "peer_review_status": "mixed_indexed",
+      "evidence_tier": "peer_reviewed_primary_literature",
+      "domains": [
+        "geopolitics_diplomacy",
+        "conflict_defense_security",
+        "economics_markets_trade",
+        "technology_cyber_ai",
+        "science_medicine_public_health",
+        "climate_energy_environment",
+        "law_governance_human_rights",
+        "society_demographics_labor"
+      ],
+      "disciplines": [
+        "All STEM disciplines",
+        "Economics & Social Sciences",
+        "Law & Humanities",
+        "Medicine & Public Health"
+      ],
+      "access_model": "open_api_available",
+      "governance_and_funding": "Operated by OurResearch (501(c)(3) non-profit) under CC0 public-domain metadata dedication; funded by Arcadia and philanthropic open-science grants.",
+      "concept_use_cases": [
+        "Finding foundational highly-cited review articles and canonical definitions for esoteric concepts across 250M+ scholarly works",
+        "Filtering works by `is_oa`, `type:review`, `is_retracted:false`, publication year, and hierarchical topic concepts via REST API"
+      ],
+      "known_limitations_and_biases": [
+        "Indexes both peer-reviewed journals and preprint servers—agents must explicitly filter `primary_location.source.type` and `is_retracted` fields",
+        "Raw citation counts favor older papers over recent paradigm shifts; balance seminal works with recent systematic reviews"
+      ],
+      "citation_and_hygiene_rules": "Always filter `is_retracted:false`, inspect venue peer-review status, and prefer systematic reviews or multi-group replications when explaining settled concepts."
+    },
+    {
+      "id": "semantic_scholar",
+      "name": "Semantic Scholar (Ai2)",
+      "url": "https://www.semanticscholar.org",
+      "api_endpoint": "https://api.semanticscholar.org/graph/v1",
+      "category": "scholarly_index_and_api",
+      "peer_review_status": "mixed_indexed",
+      "evidence_tier": "peer_reviewed_primary_literature",
+      "domains": [
+        "technology_cyber_ai",
+        "science_medicine_public_health",
+        "climate_energy_environment",
+        "economics_markets_trade",
+        "society_demographics_labor"
+      ],
+      "disciplines": [
+        "Computer Science & AI",
+        "Biomedicine & Neuroscience",
+        "Environmental Science",
+        "Economics & Computational Social Science"
+      ],
+      "access_model": "open_api_available",
+      "governance_and_funding": "Non-profit initiative of the Allen Institute for Artificial Intelligence (Ai2).",
+      "concept_use_cases": [
+        "Distinguishing 'influential citations' (papers extending or testing a method) from superficial background mentions",
+        "Tracing whether later papers replicated, extended, or refuted a prominent technical claim"
+      ],
+      "known_limitations_and_biases": [
+        "Strongest full-text semantic parsing in CS and biomedicine; humanities and non-English legal monographs have sparser graph coverage"
+      ],
+      "citation_and_hygiene_rules": "Inspect citing-paper intent (supporting vs. contrasting) rather than citing a paper's abstract in isolation."
+    },
+    {
+      "id": "crossref",
+      "name": "Crossref Metadata & Retraction Registry",
+      "url": "https://www.crossref.org",
+      "api_endpoint": "https://api.crossref.org/works",
+      "category": "scholarly_index_and_api",
+      "peer_review_status": "mixed_indexed",
+      "evidence_tier": "peer_reviewed_primary_literature",
+      "domains": [
+        "science_medicine_public_health",
+        "technology_cyber_ai",
+        "climate_energy_environment",
+        "economics_markets_trade",
+        "law_governance_human_rights",
+        "society_demographics_labor"
+      ],
+      "disciplines": ["Cross-disciplinary DOI Registry", "Funder & Clinical Trial Linking"],
+      "access_model": "open_api_available",
+      "governance_and_funding": "Not-for-profit membership association of academic publishers governing global scholarly DOI infrastructure.",
+      "concept_use_cases": [
+        "Verifying exact bibliographic existence of DOIs (preventing LLM hallucinated citations)",
+        "Checking Crossmark `update-to` metadata for corrections, expressions of concern, and retractions, plus funder disclosures"
+      ],
+      "known_limitations_and_biases": [
+        "Metadata completeness (abstracts, funder IDs) depends on member publisher deposit quality"
+      ],
+      "citation_and_hygiene_rules": "Never present a scholarly citation whose DOI or bibliographic record has not been verified against Crossref, OpenAlex, or PubMed."
+    },
+    {
+      "id": "pubmed_pmc",
+      "name": "PubMed / MEDLINE & PubMed Central (NLM)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov",
+      "api_endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils",
+      "category": "scholarly_index_and_api",
+      "peer_review_status": "peer_reviewed",
+      "evidence_tier": "peer_reviewed_primary_literature",
+      "domains": ["science_medicine_public_health", "climate_energy_environment", "society_demographics_labor"],
+      "disciplines": [
+        "Epidemiology & Virology",
+        "Clinical Medicine & Pharmacology",
+        "Toxicology & Environmental Health",
+        "Molecular Biology & Genetics"
+      ],
+      "access_model": "open_api_available",
+      "governance_and_funding": "Maintained by the U.S. National Center for Biotechnology Information (NCBI) at the National Library of Medicine (NIH).",
+      "concept_use_cases": [
+        "Explaining biological mechanisms, pathogen transmission dynamics, toxicology thresholds, and clinical trial designs",
+        "Filtering specifically for `Publication Type: Meta-Analysis`, `Systematic Review`, or `Randomized Controlled Trial` via MeSH vocabulary"
+      ],
+      "known_limitations_and_biases": [
+        "PubMed Central (PMC) recently began indexing selected NIH-funded preprints alongside MEDLINE journals—agents must check the `Preprint` tag explicitly",
+        "Single observational nutrition/epidemiology studies suffer high confounding; prioritize RCTs and systematic reviews"
+      ],
+      "citation_and_hygiene_rules": "Stratify biomedical evidence strictly: Systematic Review/Meta-Analysis > RCT > Cohort Study > Case Series > Animal/In-Vitro Study (never extrapolate mouse/in-vitro findings as proven human clinical outcomes)."
+    },
+    {
+      "id": "doaj_core",
+      "name": "Directory of Open Access Journals (DOAJ) & CORE",
+      "url": "https://doaj.org",
+      "api_endpoint": "https://doaj.org/api",
+      "category": "scholarly_index_and_api",
+      "peer_review_status": "peer_reviewed",
+      "evidence_tier": "peer_reviewed_primary_literature",
+      "domains": [
+        "geopolitics_diplomacy",
+        "society_demographics_labor",
+        "law_governance_human_rights",
+        "climate_energy_environment",
+        "science_medicine_public_health"
+      ],
+      "disciplines": ["Global Open-Access Peer-Reviewed Journals", "Multilingual Area Studies"],
+      "access_model": "open_api_available",
+      "governance_and_funding": "Independent non-profit community-curated whitelist (Infrastructure Services for Open Access CIC) vetting open-access journals against predatory publishing practices.",
+      "concept_use_cases": [
+        "Retrieving full-text, legally open-access peer-reviewed scholarship, including Global South and non-Anglophone regional journals",
+        "Screening unfamiliar open-access journals to filter out predatory 'pay-to-publish' venues lacking real peer review"
+      ],
+      "known_limitations_and_biases": [
+        "Excludes subscription/hybrid legacy journals unless mirrored in institutional green-OA repositories (via CORE)"
+      ],
+      "citation_and_hygiene_rules": "When encountering an unfamiliar open-access journal, verify DOAJ indexing to guard against predatory or paper-mill venues."
+    },
+    {
+      "id": "retraction_watch",
+      "name": "Retraction Watch & Crossref Retraction Database",
+      "url": "https://retractionwatch.com",
+      "api_endpoint": "https://api.crossref.org/works?filter=update-type:retraction",
+      "category": "scholarly_index_and_api",
+      "peer_review_status": "institutional_editorial_review",
+      "evidence_tier": "technical_standard_and_reference",
+      "domains": [
+        "science_medicine_public_health",
+        "technology_cyber_ai",
+        "economics_markets_trade",
+        "society_demographics_labor"
+      ],
+      "disciplines": ["Research Integrity", "Meta-Science", "Forensic Peer Review"],
+      "access_model": "open_api_available",
+      "governance_and_funding": "Produced by The Center for Scientific Integrity (501(c)(3) non-profit); full database integrated openly into Crossref in 2023.",
+      "concept_use_cases": [
+        "Mandatory epistemic hygiene check ensuring viral or controversial academic papers cited in news media have not been retracted, fabricated, or flagged with Expressions of Concern"
+      ],
+      "known_limitations_and_biases": [
+        "Fraudulent or flawed papers can take months or years to be formally retracted; absence of retraction does not guarantee validity (check PubPeer/post-publication critique for contested high-profile claims)"
+      ],
+      "citation_and_hygiene_rules": "Run retraction checks via Crossref/OpenAlex on any single-study academic claim driving major public controversy."
+    }
+  ]
+}

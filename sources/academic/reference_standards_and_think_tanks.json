@@ -1,0 +1,201 @@
+{
+  "catalog_id": "reference_standards_and_think_tanks",
+  "title": "Living Encyclopedias, Systematic Reviews, Technical Standards & Research Institutes",
+  "description": "High-authority reference syntheses, formal engineering/cryptographic standards bodies, and empirical policy research institutes used to anchor esoteric concepts in established consensus.",
+  "version": "1.0.0",
+  "sources": [
+    {
+      "id": "stanford_encyclopedia",
+      "name": "Stanford Encyclopedia of Philosophy (SEP)",
+      "url": "https://plato.stanford.edu",
+      "category": "encyclopedic_and_synthesis",
+      "peer_review_status": "peer_reviewed",
+      "evidence_tier": "technical_standard_and_reference",
+      "domains": [
+        "law_governance_human_rights",
+        "technology_cyber_ai",
+        "geopolitics_diplomacy",
+        "science_medicine_public_health",
+        "society_demographics_labor"
+      ],
+      "disciplines": [
+        "Logic & Formal Epistemology",
+        "International Law & Sovereignty Theory",
+        "Philosophy of Science, Probability & Causation",
+        "Ethics of War, Privacy & AI"
+      ],
+      "access_model": "open_access",
+      "governance_and_funding": "Metaphysics Research Lab at Stanford University; endowed by university libraries worldwide and public humanities grants.",
+      "concept_use_cases": [
+        "Authoritative, peer-reviewed conceptual definitions of sovereignty, deterrence, Bayesian inference, causal reasoning, constitutionalism, war ethics, and scientific realism"
+      ],
+      "known_limitations_and_biases": [
+        "Conceptual/theoretical focus rather than empirical current-data tracking"
+      ],
+      "citation_and_hygiene_rules": "Cite specific SEP archive editions when defining foundational theoretical concepts, and pair with empirical domain data."
+    },
+    {
+      "id": "cochrane_library",
+      "name": "Cochrane Library of Systematic Reviews",
+      "url": "https://www.cochranelibrary.com",
+      "category": "encyclopedic_and_synthesis",
+      "peer_review_status": "peer_reviewed",
+      "evidence_tier": "meta_analysis_and_systematic_review",
+      "domains": ["science_medicine_public_health"],
+      "disciplines": ["Evidence-Based Medicine", "Clinical Epidemiology", "Biostatistics & GRADE Methodology"],
+      "access_model": "freemium_metered",
+      "governance_and_funding": "Independent non-profit global network (Cochrane Collaboration) barring commercial pharmaceutical/device industry sponsorship of reviews.",
+      "concept_use_cases": [
+        "Gold-standard meta-analytic synthesis of medical interventions, diagnostic accuracy, and public-health measures using GRADE certainty ratings",
+        "Plain-language summaries explicitly quantifying confidence intervals, risk of bias in underlying trials, and heterogeneity"
+      ],
+      "known_limitations_and_biases": [
+        "Strict focus on Randomized Controlled Trials (RCTs) can yield 'insufficient RCT evidence' findings for population-level or mechanistic interventions where RCTs are logistically difficult—distinguish 'absence of high-grade RCT proof' from 'proven ineffective'"
+      ],
+      "citation_and_hygiene_rules": "Always report Cochrane's GRADE certainty level (High, Moderate, Low, Very Low) alongside effect sizes, never headlines alone."
+    },
+    {
+      "id": "our_world_in_data",
+      "name": "Our World in Data (OWID)",
+      "url": "https://ourworldindata.org",
+      "category": "encyclopedic_and_synthesis",
+      "peer_review_status": "institutional_editorial_review",
+      "evidence_tier": "technical_standard_and_reference",
+      "domains": [
+        "society_demographics_labor",
+        "climate_energy_environment",
+        "science_medicine_public_health",
+        "economics_markets_trade"
+      ],
+      "disciplines": ["Demography", "Energy & Emissions Accounting", "Global Health", "Long-Run Economic History"],
+      "access_model": "open_api_available",
+      "governance_and_funding": "Collaboration between University of Oxford researchers and Global Change Data Lab (UK non-profit); fully open-source code and data pipelines on GitHub.",
+      "concept_use_cases": [
+        "Contextualizing daily news shocks against multi-decade structural baselines (e.g., LCOE solar/battery learning curves, fertility transitions, global poverty thresholds, consumption- vs. production-based CO2 accounting)"
+      ],
+      "known_limitations_and_biases": [
+        "Secondary harmonizer of UN, World Bank, IEA, and academic datasets—underlying country-level measurement gaps propagate into harmonized series"
+      ],
+      "citation_and_hygiene_rules": "Inspect OWID's 'Sources and Processing' tab to cite both OWID and the original upstream statistical producer."
+    },
+    {
+      "id": "ipcc_assessments",
+      "name": "IPCC Assessment & Special Reports",
+      "url": "https://www.ipcc.ch",
+      "category": "encyclopedic_and_synthesis",
+      "peer_review_status": "consensus_standard",
+      "evidence_tier": "meta_analysis_and_systematic_review",
+      "domains": ["climate_energy_environment", "economics_markets_trade", "science_medicine_public_health"],
+      "disciplines": ["Atmospheric & Ocean Physics", "Paleoclimatology", "Climate Impacts & Adaptation", "Energy Systems Modeling"],
+      "access_model": "open_access",
+      "governance_and_funding": "Intergovernmental Panel on Climate Change (WMO & UNEP); thousands of volunteer scientists synthesize tens of thousands of peer-reviewed papers through multi-round open expert review.",
+      "concept_use_cases": [
+        "Explaining radiative forcing, equilibrium climate sensitivity, SSP emissions scenarios, tipping-point thresholds, and calibrated scientific confidence/likelihood language"
+      ],
+      "known_limitations_and_biases": [
+        "Multi-year assessment cycles mean literature cutoffs lag the newest 1–3 years of observations; Summary for Policymakers (SPM) undergoes line-by-line government approval, whereas underlying Working Group Technical Chapters are purely scientist-authored"
+      ],
+      "citation_and_hygiene_rules": "Prefer citing the underlying Working Group Technical Chapters with exact IPCC calibrated uncertainty tags (e.g., 'very likely', 'medium confidence'), supplemented by recent peer-reviewed updates."
+    },
+    {
+      "id": "nist_ietf_ieee",
+      "name": "NIST Technical Publications, IETF RFCs & IEEE Standards",
+      "url": "https://csrc.nist.gov",
+      "category": "technical_standard_and_regulatory",
+      "peer_review_status": "consensus_standard",
+      "evidence_tier": "technical_standard_and_reference",
+      "domains": ["technology_cyber_ai", "conflict_defense_security", "climate_energy_environment"],
+      "disciplines": [
+        "Cryptography & Post-Quantum Security",
+        "Internet Protocols (BGP, DNSSEC, TLS) — https://www.rfc-editor.org",
+        "Power Grid & Semiconductor Engineering — https://ieeexplore.ieee.org",
+        "AI Risk Management Frameworks"
+      ],
+      "access_model": "open_access",
+      "governance_and_funding": "U.S. National Institute of Standards and Technology, Internet Engineering Task Force (open rough-consensus engineering body), and Institute of Electrical and Electronics Engineers.",
+      "concept_use_cases": [
+        "Explaining exact technical mechanisms behind current-event outages or vulnerabilities (e.g., BGP route hijacking, TLS certificate revocation, post-quantum lattice cryptography, grid frequency inertia)"
+      ],
+      "known_limitations_and_biases": [
+        "Protocol specifications define normative behavior ('how systems SHOULD behave'), which often diverges from legacy real-world enterprise deployments"
+      ],
+      "citation_and_hygiene_rules": "Cite exact RFC numbers or NIST Special Publication (SP/FIPS) identifiers, and distinguish protocol design flaws from operator misconfigurations."
+    },
+    {
+      "id": "bis_central_bank_research",
+      "name": "Bank for International Settlements (BIS) Research",
+      "url": "https://www.bis.org/research/index.htm",
+      "category": "technical_standard_and_regulatory",
+      "peer_review_status": "institutional_editorial_review",
+      "evidence_tier": "working_paper_and_policy_analysis",
+      "domains": ["economics_markets_trade", "technology_cyber_ai"],
+      "disciplines": [
+        "International Monetary Plumbing & Eurodollar Markets",
+        "Repo, FX Swaps & Non-Bank Financial Intermediation (NBFI)",
+        "Basel III Banking Supervision & Sovereign Risk",
+        "Payment Systems & CBDC Architecture"
+      ],
+      "access_model": "open_access",
+      "governance_and_funding": "Owned by 63 member central banks worldwide ('the central banks' bank'), headquartered in Basel, Switzerland.",
+      "concept_use_cases": [
+        "Explaining esoteric financial-plumbing crises that generalist media oversimplify: FX swap basis blowouts, repo liquidity spirals, duration mismatch, shadow banking leverage, and cross-border capital flows"
+      ],
+      "known_limitations_and_biases": [
+        "Central-bank macroprudential orthodoxy focusing on financial stability and inflation anchoring"
+      ],
+      "citation_and_hygiene_rules": "Use BIS Quarterly Reviews and Working Papers to explain balance-sheet mechanics, paired with academic NBER/RePEc critiques."
+    },
+    {
+      "id": "sipri_iiss",
+      "name": "SIPRI (Stockholm International Peace Research Institute) & IISS",
+      "url": "https://www.sipri.org",
+      "category": "policy_institute_and_think_tank",
+      "peer_review_status": "institutional_editorial_review",
+      "evidence_tier": "technical_standard_and_reference",
+      "domains": ["conflict_defense_security", "geopolitics_diplomacy", "economics_markets_trade"],
+      "disciplines": [
+        "Arms Transfers & Defense Economics",
+        "Nuclear Arsenal & Non-Proliferation Accounting",
+        "Conventional Force Balance (IISS Military Balance)"
+      ],
+      "access_model": "open_access",
+      "governance_and_funding": "SIPRI is an independent international institute established by the Swedish Parliament with core public grant funding; IISS (https://www.iiss.org) is a UK-headquartered international security research institute.",
+      "concept_use_cases": [
+        "Providing standardized Trend-Indicator Values (TIV) for global arms transfers, nuclear warhead inventories, defense-industrial capacity, and military expenditure shares of GDP"
+      ],
+      "known_limitations_and_biases": [
+        "SIPRI Arms Transfers TIV measures volume of military capability transferred, NOT financial contract price—media frequently misquote TIV as dollar sales; IISS receives conference/corporate/government funding disclosed in annual accounts"
+      ],
+      "citation_and_hygiene_rules": "Never conflate SIPRI TIV capability units with nominal market dollars; cross-check active combat attrition against open-source visual loss trackers."
+    },
+    {
+      "id": "cfr_chatham_carnegie",
+      "name": "Chatham House, Carnegie Endowment & Council on Foreign Relations",
+      "url": "https://www.chathamhouse.org",
+      "category": "policy_institute_and_think_tank",
+      "peer_review_status": "institutional_editorial_review",
+      "evidence_tier": "working_paper_and_policy_analysis",
+      "domains": [
+        "geopolitics_diplomacy",
+        "conflict_defense_security",
+        "economics_markets_trade",
+        "climate_energy_environment",
+        "technology_cyber_ai"
+      ],
+      "disciplines": [
+        "International Relations & Area Studies",
+        "Sanctions, Trade & Resource Governance",
+        "Comparative Diplomacy & Regional Security"
+      ],
+      "access_model": "open_access",
+      "governance_and_funding": "Independent non-partisan policy research institutes: Royal Institute of International Affairs / Chatham House (UK), Carnegie Endowment for International Peace (global centers, https://carnegieendowment.org), and CFR (US, https://www.cfr.org).",
+      "concept_use_cases": [
+        "Structured backgrounders explaining treaty architectures, alliance commitments, historical border disputes, sanctions regimes, and regional political-economy dynamics"
+      ],
+      "known_limitations_and_biases": [
+        "Think-tank briefs are NOT double-blind peer-reviewed academic journal articles, and largely reflect Western/trans-Atlantic policy ecosystems alongside donor/corporate membership funding"
+      ],
+      "citation_and_hygiene_rules": "Use think-tank backgrounders for institutional synthesis, always disclose the institute's vantage point, and pair with peer-reviewed area-studies scholarship (via OpenAlex/DOAJ) and regional voices."
+    }
+  ]
+}

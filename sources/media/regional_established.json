@@ -1,0 +1,313 @@
+{
+  "catalog_id": "regional_established",
+  "title": "Credible Established Regional Newspapers & Agencies",
+  "description": "Editorially credible regional media institutions providing essential local context, domestic statutory knowledge, and ground-level reporting across world regions.",
+  "version": "1.0.0",
+  "sources": [
+    {
+      "id": "le_monde",
+      "name": "Le Monde",
+      "url": "https://www.lemonde.fr/en",
+      "tier": "tier_2_regional_record",
+      "domains": [
+        "geopolitics_diplomacy",
+        "society_demographics_labor",
+        "law_governance_human_rights",
+        "conflict_defense_security"
+      ],
+      "regions": ["europe", "sub_saharan_africa", "middle_east_north_africa"],
+      "languages": ["fr", "en"],
+      "access_model": "freemium_metered",
+      "ownership_and_funding": "Groupe Le Monde with an Editorial Independence Pool giving journalists' association veto power over editor-in-chief appointments.",
+      "editorial_standards": "Newspaper of record in France; runs Les Décodeurs verification and data-journalism unit.",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "Deep European Union institutional, Sahel/West African, and Mediterranean reporting",
+        "Available in full English edition (Le Monde in English) alongside French original"
+      ],
+      "known_limitations_and_biases": [
+        "Center-left Parisian institutional sensibility on domestic socioeconomic debates"
+      ],
+      "corroboration_pairing_rule": "Pair Sahel/African coverage with independent African regional outlets (Daily Maverick, local press) and AFP/Reuters."
+    },
+    {
+      "id": "der_spiegel",
+      "name": "Der Spiegel (Spiegel International)",
+      "url": "https://www.spiegel.de/international",
+      "tier": "tier_2_regional_record",
+      "domains": [
+        "geopolitics_diplomacy",
+        "economics_markets_trade",
+        "conflict_defense_security",
+        "technology_cyber_ai"
+      ],
+      "regions": ["europe"],
+      "languages": ["de", "en"],
+      "access_model": "freemium_metered",
+      "ownership_and_funding": "50.5% employee-owned (Spiegel-Mitarbeiter KG) alongside Gruner + Jahr and Rudolf Augstein heirs.",
+      "editorial_standards": "Maintains one of the world's largest dedicated magazine Documentation & Fact-Checking departments, overhauled and hardened after 2018 internal reforms.",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "Investigative reporting on European defense, German industrial/energy policy, EU governance, and Russian/hybrid intelligence operations",
+        "Frequent cross-border investigative collaborations with Bellingcat, ICIJ, and Lighthouse Reports"
+      ],
+      "known_limitations_and_biases": [
+        "German federal and central-European analytical vantage point"
+      ],
+      "corroboration_pairing_rule": "Cross-check EU policy scoops with official European Commission/ECB documents and Financial Times or Le Monde."
+    },
+    {
+      "id": "el_pais",
+      "name": "El País",
+      "url": "https://english.elpais.com",
+      "tier": "tier_2_regional_record",
+      "domains": [
+        "geopolitics_diplomacy",
+        "society_demographics_labor",
+        "law_governance_human_rights",
+        "climate_energy_environment"
+      ],
+      "regions": ["europe", "latin_america_caribbean"],
+      "languages": ["es", "en", "pt"],
+      "access_model": "freemium_metered",
+      "ownership_and_funding": "Published by PRISA Group (Spain); governed by an Editorial Statute safeguarding newsroom standards.",
+      "editorial_standards": "Dedicated Latin America newsrooms (Mexico, Colombia, Chile, Argentina) and data-journalism verification desk.",
+      "baseline_admiralty_reliability": "B",
+      "strengths": [
+        "Comprehensive Spanish- and English-language reporting across Latin America, Iberia, migration corridors, and democratic institutions"
+      ],
+      "known_limitations_and_biases": [
+        "Center-left social-democratic editorial page; triangulate polarized domestic Latin American elections with local newspapers of differing editorial leans"
+      ],
+      "corroboration_pairing_rule": "Pair Latin American coverage with local domestic outlets (e.g., Folha de S.Paulo) and AP/AFP."
+    },
+    {
+      "id": "the_hindu",
+      "name": "The Hindu",
+      "url": "https://www.thehindu.com",
+      "tier": "tier_2_regional_record",
+      "domains": [
+        "geopolitics_diplomacy",
+        "law_governance_human_rights",
+        "economics_markets_trade",
+        "science_medicine_public_health",
+        "society_demographics_labor"
+      ],
+      "regions": ["south_central_asia"],
+      "languages": ["en", "ta"],
+      "access_model": "freemium_metered",
+      "ownership_and_funding": "Published by The Hindu Group (THG Publishing Pvt Ltd), Chennai; maintains an independent Readers' Editor (ombudsman).",
+      "editorial_standards": "Long-standing newspaper of record for Indian constitutional law, Supreme Court of India jurisprudence, parliamentary committees, and public policy.",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "Detailed statutory, constitutional, fiscal, and science/public-health reporting across India and South Asia",
+        "Strong data-journalism team analyzing Indian census, NSSO, and RBI releases"
+      ],
+      "known_limitations_and_biases": [
+        "Constitutional-secular, left-of-center editorial stance—separate straight parliamentary/judicial reporting from Opinion/Lead columns"
+      ],
+      "corroboration_pairing_rule": "Cross-check with primary Government of India / RBI / Supreme Court notifications and Reuters or Nikkei Asia."
+    },
+    {
+      "id": "straits_times",
+      "name": "The Straits Times",
+      "url": "https://www.straitstimes.com",
+      "tier": "tier_2_regional_record",
+      "domains": [
+        "geopolitics_diplomacy",
+        "economics_markets_trade",
+        "technology_cyber_ai",
+        "climate_energy_environment"
+      ],
+      "regions": ["east_asia_pacific"],
+      "languages": ["en"],
+      "access_model": "freemium_metered",
+      "ownership_and_funding": "Operated by SPH Media Trust (public-interest media trust in Singapore receiving government capability funding alongside commercial revenue).",
+      "editorial_standards": "Accurate, sober diplomatic and trade reporting across ASEAN capitals, Maritime Southeast Asia, and US-China regional competition.",
+      "baseline_admiralty_reliability": "B",
+      "strengths": [
+        "High-density ASEAN summitry, Malacca Strait maritime trade, and Southeast Asian macroeconomic coverage"
+      ],
+      "known_limitations_and_biases": [
+        "Domestic Singaporean political reporting operates within Singapore's statutory media regulation environment—exercise caution on domestic opposition coverage while valuing regional ASEAN beat strength"
+      ],
+      "corroboration_pairing_rule": "Pair domestic Singapore political claims with international wires (Reuters, FT); pair ASEAN trade coverage with Nikkei Asia."
+    },
+    {
+      "id": "yonhap_korea",
+      "name": "Yonhap News Agency",
+      "url": "https://en.yna.co.kr",
+      "tier": "tier_2_regional_record",
+      "domains": [
+        "geopolitics_diplomacy",
+        "conflict_defense_security",
+        "economics_markets_trade",
+        "technology_cyber_ai"
+      ],
+      "regions": ["east_asia_pacific"],
+      "languages": ["ko", "en", "ja", "zh"],
+      "access_model": "open_access",
+      "ownership_and_funding": "South Korea's flagship news wire, majority-held by the Yonhap News Agency News Communication Promotion Association (public-interest statutory body).",
+      "editorial_standards": "Rapid factual wire verification of South Korean ministries, Bank of Korea, KRX corporate disclosures, and Joint Chiefs of Staff missile/DPRK alerts.",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "Fastest verified primary wire for Korean Peninsula security incidents, semiconductor/battery industrial policy (Samsung, SK Hynix), and ROK diplomacy"
+      ],
+      "known_limitations_and_biases": [
+        "Anonymous intelligence stories regarding internal North Korean elite purges have historically carried high uncertainty across all ROK media—always rate unverified DPRK human-intel rumors as '4' or '6' until confirmed"
+      ],
+      "corroboration_pairing_rule": "Treat ROK Joint Chiefs telemetry/missile alerts as high-credibility official data, but require multi-source confirmation before accepting anonymous DPRK palace rumors."
+    },
+    {
+      "id": "kyodo_news",
+      "name": "Kyodo News",
+      "url": "https://english.kyodonews.net",
+      "tier": "tier_2_regional_record",
+      "domains": [
+        "geopolitics_diplomacy",
+        "economics_markets_trade",
+        "conflict_defense_security",
+        "climate_energy_environment"
+      ],
+      "regions": ["east_asia_pacific"],
+      "languages": ["ja", "en", "zh"],
+      "access_model": "freemium_metered",
+      "ownership_and_funding": "Non-profit cooperative news agency owned by Japanese newspapers and NHK; accepts no government subsidies.",
+      "editorial_standards": "Strict cooperative wire neutrality and multi-reporter Japanese ministry/prefectural press-club verification.",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "Reliable baseline factual reporting on Japanese cabinet policy, Bank of Japan, nuclear/seismic safety, and Indo-Pacific maritime security"
+      ],
+      "known_limitations_and_biases": [
+        "Japanese kisha-club (press club) access conventions can make official ministry briefings cautious in tone"
+      ],
+      "corroboration_pairing_rule": "Pair with Nikkei Asia, Reuters, and primary Japanese ministry / JMA / BoJ releases."
+    },
+    {
+      "id": "al_monitor",
+      "name": "Al-Monitor",
+      "url": "https://www.al-monitor.com",
+      "tier": "tier_2_regional_record",
+      "domains": [
+        "geopolitics_diplomacy",
+        "conflict_defense_security",
+        "economics_markets_trade",
+        "society_demographics_labor"
+      ],
+      "regions": ["middle_east_north_africa"],
+      "languages": ["en"],
+      "access_model": "freemium_metered",
+      "ownership_and_funding": "Independent Washington-based media company founded to feature correspondents reporting directly from across the Middle East and North Africa.",
+      "editorial_standards": "Relies on veteran local correspondents in Turkey, Lebanon, Israel, Palestine, Iraq, Egypt, and the Gulf states rather than parachute commentary.",
+      "baseline_admiralty_reliability": "B",
+      "strengths": [
+        "Nuanced multi-capital diplomatic, parliamentary, and security reporting across MENA without monolithic state alignment"
+      ],
+      "known_limitations_and_biases": [
+        "Individual country columns reflect distinct correspondent networks; diplomatic leaks from unnamed regional officials should be cross-checked"
+      ],
+      "corroboration_pairing_rule": "Always triangulate contested MENA security events across AFP/Reuters, BBC Arabic/World Service, and geo-verified open-source imagery."
+    },
+    {
+      "id": "daily_maverick",
+      "name": "Daily Maverick",
+      "url": "https://www.dailymaverick.co.za",
+      "tier": "tier_2_regional_record",
+      "domains": [
+        "law_governance_human_rights",
+        "economics_markets_trade",
+        "climate_energy_environment",
+        "society_demographics_labor"
+      ],
+      "regions": ["sub_saharan_africa"],
+      "languages": ["en"],
+      "access_model": "open_access",
+      "ownership_and_funding": "Independent South African publication funded by voluntary reader membership (Maverick Insiders), philanthropic journalism grants, and advertising.",
+      "editorial_standards": "Home to Scorpio investigative unit (landmark 'State Capture' document investigations) and Press Council of South Africa Ombudsman accountability.",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "Forensic anti-corruption, energy-grid/mining, public-health (Bhekisisa partnership), and Southern African governance journalism"
+      ],
+      "known_limitations_and_biases": [
+        "Strongest footprint in South Africa and SADC states; pair with Francophone/East/West African sources (AFP, BBC Africa, The Continent) for pan-continental queries"
+      ],
+      "corroboration_pairing_rule": "Cross-check investigative claims with linked South African court affidavits, parliamentary records, and Reuters Africa."
+    },
+    {
+      "id": "globe_and_mail",
+      "name": "The Globe and Mail",
+      "url": "https://www.theglobeandmail.com",
+      "tier": "tier_2_regional_record",
+      "domains": [
+        "geopolitics_diplomacy",
+        "economics_markets_trade",
+        "law_governance_human_rights",
+        "climate_energy_environment",
+        "society_demographics_labor"
+      ],
+      "regions": ["north_america"],
+      "languages": ["en"],
+      "access_model": "subscription_paywall",
+      "ownership_and_funding": "Privately owned by Woodbridge Company Ltd. (Thomson family).",
+      "editorial_standards": "Canada's national newspaper of record; strict Public Editor / Access-to-Information (ATIP) investigative standards.",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "Canadian federal governance, Arctic sovereignty, critical-minerals mining, Bank of Canada, and foreign-interference investigations"
+      ],
+      "known_limitations_and_biases": [
+        "Subscription paywall; institutional centrist/business-oriented editorial board"
+      ],
+      "corroboration_pairing_rule": "Pair with Statistics Canada / federal commission records and Reuters or AP."
+    },
+    {
+      "id": "folha_de_spaulo",
+      "name": "Folha de S.Paulo (Folha Internacional)",
+      "url": "https://www1.folha.uol.com.br/internacional/en",
+      "tier": "tier_2_regional_record",
+      "domains": [
+        "geopolitics_diplomacy",
+        "economics_markets_trade",
+        "climate_energy_environment",
+        "law_governance_human_rights",
+        "society_demographics_labor"
+      ],
+      "regions": ["latin_america_caribbean"],
+      "languages": ["pt", "en", "es"],
+      "access_model": "freemium_metered",
+      "ownership_and_funding": "Published by Grupo Folha (Brazil); pioneered internal newspaper Ombudsman office in Latin America (since 1989).",
+      "editorial_standards": "Pluralistic non-partisan charter requiring publication of divergent viewpoints, internal error-rate tracking, and Datafolha survey transparency.",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "Brazilian Supreme Federal Court (STF), Amazon deforestation/INPE policy, Mercosur trade, and agricultural commodity reporting"
+      ],
+      "known_limitations_and_biases": [
+        "English-translated subset is smaller than the full Portuguese edition"
+      ],
+      "corroboration_pairing_rule": "Cross-check Amazon/macro claims with primary INPE satellite / IBGE / Banco Central do Brasil statistics and Reuters/AP."
+    },
+    {
+      "id": "kyiv_independent",
+      "name": "The Kyiv Independent",
+      "url": "https://kyivindependent.com",
+      "tier": "tier_2_regional_record",
+      "domains": [
+        "conflict_defense_security",
+        "geopolitics_diplomacy",
+        "law_governance_human_rights"
+      ],
+      "regions": ["europe"],
+      "languages": ["en", "uk"],
+      "access_model": "open_access",
+      "ownership_and_funding": "Majority owned by its journalists alongside reader memberships and transparent international media-endowment grants.",
+      "editorial_standards": "Founded specifically to defend editorial independence; conducts critical anti-corruption and military-command accountability reporting inside wartime Ukraine alongside war-crimes investigations.",
+      "baseline_admiralty_reliability": "B",
+      "strengths": [
+        "Direct front-line, domestic Ukrainian legislative, defense-procurement, and war-crimes documentary reporting"
+      ],
+      "known_limitations_and_biases": [
+        "Operates under wartime martial-law operational security constraints in Ukraine; battlefield casualty and territorial claims from any belligerent side MUST be cross-verified against independent OSINT geolocation"
+      ],
+      "corroboration_pairing_rule": "Always corroborate kinetic battlefield claims with Bellingcat/CIR geo-verified imagery and international wires (Reuters, AP)."
+    }
+  ]
+}

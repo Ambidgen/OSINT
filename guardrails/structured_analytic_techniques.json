@@ -1,0 +1,114 @@
+{
+  "catalog_type": "structured_analytic_techniques",
+  "version": "1.0.0",
+  "description": "Intelligence-community and academic Structured Analytic Techniques (SATs) operationalized for Agentic AI to stress-test hypotheses before presenting conclusions.",
+  "entries": [
+    {
+      "id": "analysis_of_competing_hypotheses",
+      "name": "Analysis of Competing Hypotheses (ACH)",
+      "category": "hypothesis_testing",
+      "definition": "A matrix method (developed by Richards Heuer) requiring explicit enumeration of all plausible competing hypotheses and systematic evaluation of how strongly each piece of evidence disconfirms rather than confirms each hypothesis.",
+      "osint_manifestation": "Prevents an AI agent from cherry-picking evidence for its favorite narrative during ambiguous incidents (pipeline sabotage, cyber attribution, sudden diplomatic pivots, outbreak origins).",
+      "detection_signals": [
+        "High causal ambiguity or intentional deception incentives among actors",
+        "Same factual evidence cited by rival commentators to support opposite stories (low diagnosticity)"
+      ],
+      "remediation_protocol": "Construct >= 2–4 competing hypotheses (including a mundane/accidental or bureaucratic-friction null hypothesis); discard non-diagnostic evidence consistent with all hypotheses; rank hypotheses by fewest disconfirming anomalies.",
+      "high_prevalence_domains": [
+        "conflict_defense_security",
+        "geopolitics_diplomacy",
+        "technology_cyber_ai",
+        "science_medicine_public_health"
+      ]
+    },
+    {
+      "id": "key_assumptions_check",
+      "name": "Key Assumptions Check (KAC)",
+      "category": "assumption_auditing",
+      "definition": "Explicitly listing the unstated background premises upon which an analytical judgment rests, and asking what evidence would reveal that each premise no longer holds.",
+      "osint_manifestation": "Uncovers hidden assumptions such as 'shipping insurers will continue underwriting Red Sea transits', 'export-control enforcement covers third-country cloud rental', or 'ruling coalition unity holds'.",
+      "detection_signals": [
+        "Forecasts or impact assessments relying on ceteris paribus ('all else equal') reasoning",
+        "Conclusions sensitive to a single institutional, legal, or physical bottleneck"
+      ],
+      "remediation_protocol": "Record at least 2–3 explicit `key_assumptions` in the dossier and identify observable tripwires that would invalidate each assumption.",
+      "high_prevalence_domains": [
+        "economics_markets_trade",
+        "geopolitics_diplomacy",
+        "climate_energy_environment",
+        "law_governance_human_rights"
+      ]
+    },
+    {
+      "id": "devils_advocacy_steelmanning",
+      "name": "Devil's Advocacy & Steel-Manning",
+      "category": "adversarial_critique",
+      "definition": "Deliberately constructing the strongest, best-evidenced, most internally coherent case for the opposing conclusion using primary sources before finalizing a judgment.",
+      "osint_manifestation": "Prevents groupthink when mainstream commentary converges prematurely around a consensus explanation or legal interpretation.",
+      "detection_signals": [
+        "Unanimous rhetorical tone across initial search results on a complex policy or strategic question",
+        "Counter-arguments dismissed in a single clause without primary citations"
+      ],
+      "remediation_protocol": "Write out the strongest empirical argument against the leading hypothesis using primary dissents, rival empirical studies, or regional perspectives, then explain specifically why the leading hypothesis still prevails (or downgrade confidence).",
+      "high_prevalence_domains": [
+        "law_governance_human_rights",
+        "economics_markets_trade",
+        "geopolitics_diplomacy",
+        "society_demographics_labor"
+      ]
+    },
+    {
+      "id": "pre_mortem_analysis",
+      "name": "Prospective Hindsight (Pre-Mortem Analysis)",
+      "category": "introspection_gate",
+      "definition": "Assuming hypothetically that 6–12 months in the future the AI's research synthesis has turned out to be fundamentally wrong, and working backward to identify the most plausible reason why.",
+      "osint_manifestation": "Forces calibration of overconfident predictions and surfaces blind spots such as hidden off-balance-sheet debt, covert bilateral backchannels, or unmeasured rural voters.",
+      "detection_signals": [
+        "High-confidence judgments (`almost_certain` or `highly_likely`) on dynamic multi-actor events",
+        "Sparse open-source visibility into closed decision-making bodies"
+      ],
+      "remediation_protocol": "Populate `pre_mortem_failure_mode` in the dossier before presentation and translate identified vulnerabilities directly into `open_uncertainties_and_watchpoints`.",
+      "high_prevalence_domains": [
+        "geopolitics_diplomacy",
+        "conflict_defense_security",
+        "economics_markets_trade",
+        "technology_cyber_ai"
+      ]
+    },
+    {
+      "id": "diagnostic_source_triangulation",
+      "name": "Provenance-Traced Lateral Triangulation (SIFT)",
+      "category": "source_verification",
+      "definition": "Verifying claims horizontally across independent evidentiary modalities (wire journalism + primary legal/statistical registry + physical/forensic telemetry) while tracing every secondary citation to its root origin.",
+      "osint_manifestation": "Detects 'citogenesis' loops where dozens of articles cite one erroneous translation, fabricated social screenshot, or anonymous leak.",
+      "detection_signals": [
+        "Secondary reports lacking direct links to primary documents, datasets, or named eyewitnesses",
+        "Viral statistics or quotes whose original source document cannot be located"
+      ],
+      "remediation_protocol": "Stop -> Investigate the source -> Find better coverage -> Trace claims to the original context; populate `upstream_provenance` on every evidence-ledger citation.",
+      "high_prevalence_domains": [
+        "conflict_defense_security",
+        "science_medicine_public_health",
+        "law_governance_human_rights",
+        "society_demographics_labor"
+      ]
+    },
+    {
+      "id": "red_team_adversarial_deception_check",
+      "name": "Deception & Information-Operations Red-Team Check",
+      "category": "adversarial_critique",
+      "definition": "Evaluating whether leaked documents, viral open-source footage, or sudden official disclosures could be strategically timed or fabricated to manipulate markets, alliances, or public perception.",
+      "osint_manifestation": "Counters 'hack-and-leak' tainting (mixing 95% authentic documents with 5% forged inserts), AI-generated/recycled conflict imagery, and strategic diplomatic trial balloons.",
+      "detection_signals": [
+        "Anonymous document dumps appearing immediately prior to elections, summits, or market events",
+        "Footage with stripped EXIF metadata, mismatched weather/shadows, or coordinated amplification networks"
+      ],
+      "remediation_protocol": "Ask cui bono ('who benefits from this information surfacing right now?'), verify document authenticity independently of the leaker's framing, and check forensic verification desks (Bellingcat, AFP Fact Check, BBC Verify).",
+      "high_prevalence_domains": [
+        "conflict_defense_security",
+        "geopolitics_diplomacy",
+        "technology_cyber_ai"
+      ]
+    }
+  ]
+}

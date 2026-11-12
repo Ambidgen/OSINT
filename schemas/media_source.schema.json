@@ -1,0 +1,158 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Ambidgen/OSINT/schemas/media_source.schema.json",
+  "title": "OSINT Media & Primary Source Catalog",
+  "description": "Schema for curated journalistic media outlets, investigative collectives, and primary OSINT registries used by Agentic AI.",
+  "type": "object",
+  "required": ["catalog_id", "title", "description", "version", "sources"],
+  "additionalProperties": false,
+  "properties": {
+    "catalog_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 5
+    },
+    "description": {
+      "type": "string",
+      "minLength": 20
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "url",
+          "tier",
+          "domains",
+          "regions",
+          "languages",
+          "access_model",
+          "ownership_and_funding",
+          "editorial_standards",
+          "baseline_admiralty_reliability",
+          "strengths",
+          "known_limitations_and_biases",
+          "corroboration_pairing_rule"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]+$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 2
+          },
+          "url": {
+            "type": "string",
+            "pattern": "^https://"
+          },
+          "tier": {
+            "type": "string",
+            "enum": [
+              "tier_1_global_wire_and_record",
+              "tier_2_investigative_and_verification",
+              "tier_2_specialist_beat",
+              "tier_2_regional_record",
+              "primary_official_and_sensor"
+            ]
+          },
+          "domains": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "enum": [
+                "geopolitics_diplomacy",
+                "conflict_defense_security",
+                "economics_markets_trade",
+                "technology_cyber_ai",
+                "science_medicine_public_health",
+                "climate_energy_environment",
+                "law_governance_human_rights",
+                "society_demographics_labor"
+              ]
+            }
+          },
+          "regions": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "enum": [
+                "global",
+                "north_america",
+                "europe",
+                "east_asia_pacific",
+                "south_central_asia",
+                "middle_east_north_africa",
+                "sub_saharan_africa",
+                "latin_america_caribbean"
+              ]
+            }
+          },
+          "languages": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 2
+            }
+          },
+          "access_model": {
+            "type": "string",
+            "enum": [
+              "open_access",
+              "freemium_metered",
+              "subscription_paywall",
+              "open_api_available"
+            ]
+          },
+          "ownership_and_funding": {
+            "type": "string",
+            "minLength": 15
+          },
+          "editorial_standards": {
+            "type": "string",
+            "minLength": 15
+          },
+          "baseline_admiralty_reliability": {
+            "type": "string",
+            "enum": ["A", "B", "C"]
+          },
+          "strengths": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 10
+            }
+          },
+          "known_limitations_and_biases": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 10
+            }
+          },
+          "corroboration_pairing_rule": {
+            "type": "string",
+            "minLength": 15
+          }
+        }
+      }
+    }
+  }
+}

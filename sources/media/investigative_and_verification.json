@@ -1,0 +1,172 @@
+{
+  "catalog_id": "investigative_and_verification",
+  "title": "Investigative Newsrooms & Open-Source Forensic Verification Collectives",
+  "description": "Organizations specializing in reproducible OSINT forensics (satellite/video geolocation, chronolocation, weapons identification) and document-driven investigative journalism.",
+  "version": "1.0.0",
+  "sources": [
+    {
+      "id": "bellingcat",
+      "name": "Bellingcat",
+      "url": "https://www.bellingcat.com",
+      "tier": "tier_2_investigative_and_verification",
+      "domains": [
+        "conflict_defense_security",
+        "law_governance_human_rights",
+        "geopolitics_diplomacy",
+        "technology_cyber_ai"
+      ],
+      "regions": ["global", "europe", "middle_east_north_africa", "sub_saharan_africa"],
+      "languages": ["en", "es", "fr", "ru"],
+      "access_model": "open_access",
+      "ownership_and_funding": "Independent Dutch foundation (Stichting Bellingcat) funded by philanthropic foundations, citizen workshops, and public grants; publishes full donor disclosures.",
+      "editorial_standards": "Reproducible open-source forensic methodology: every geographic coordinate, shadow-angle chronolocation, satellite pass, and public registry step is shown so readers/courts can replicate findings.",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "Gold-standard geolocation, chronolocation, munitions identification, and war-crimes evidentiary archiving (admissible under Berkeley Protocol standards)",
+        "Transparent step-by-step methodology allowing independent verification rather than 'trust-me' anonymous sourcing"
+      ],
+      "known_limitations_and_biases": [
+        "Receives grants from Western philanthropic and democratic-governance endowments, which adversaries frequently attack—agents should evaluate the reproducible coordinate/imagery proofs directly rather than relying on institutional appeal",
+        "Investigations take days to months, so not a breaking-minute ticker"
+      ],
+      "corroboration_pairing_rule": "Verify cited coordinates, timestamps, and satellite imagery independently where possible, and pair with UN/ICC findings or wire reporting."
+    },
+    {
+      "id": "propublica",
+      "name": "ProPublica",
+      "url": "https://www.propublica.org",
+      "tier": "tier_2_investigative_and_verification",
+      "domains": [
+        "law_governance_human_rights",
+        "society_demographics_labor",
+        "science_medicine_public_health",
+        "economics_markets_trade",
+        "climate_energy_environment"
+      ],
+      "regions": ["north_america"],
+      "languages": ["en", "es"],
+      "access_model": "open_access",
+      "ownership_and_funding": "501(c)(3) non-profit investigative newsroom funded by philanthropic foundations and individual donors with board-enforced donor firewall.",
+      "editorial_standards": "Bulletproof line-by-line fact-checking, publication of underlying public-records datasets (FOIA, tax, court, EPA data), and detailed 'no-surprises' comment letters to subjects.",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "Deep U.S. regulatory, judicial ethics, healthcare, environmental toxicity, and tax-record investigations",
+        "Frequently releases raw cleaned public datasets and methodological white papers alongside articles"
+      ],
+      "known_limitations_and_biases": [
+        "Primarily U.S. domestic jurisdiction focus",
+        "Adversarial accountability journalism emphasizes institutional failures rather than routine baseline performance—check broader statistical baselines alongside investigative case studies"
+      ],
+      "corroboration_pairing_rule": "Inspect linked primary FOIA documents, court dockets, and ProPublica Data Store methodology alongside subject responses."
+    },
+    {
+      "id": "icij",
+      "name": "International Consortium of Investigative Journalists (ICIJ)",
+      "url": "https://www.icij.org",
+      "tier": "tier_2_investigative_and_verification",
+      "domains": [
+        "economics_markets_trade",
+        "law_governance_human_rights",
+        "geopolitics_diplomacy"
+      ],
+      "regions": ["global"],
+      "languages": ["en", "es", "fr"],
+      "access_model": "open_access",
+      "ownership_and_funding": "Independent U.S.-registered non-profit network uniting 290+ investigative journalists across 100+ countries; donor-transparent.",
+      "editorial_standards": "Cross-border collaborative verification across multiple independent partner newsrooms before simultaneous publication; maintains searchable Offshore Leaks Database.",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "Cross-border illicit finance, shell-company ownership, sanctions evasion, medical device safety, and transnational regulatory arbitrage",
+        "Structured entity-relationship databases (Panama, Paradise, Pandora Papers)"
+      ],
+      "known_limitations_and_biases": [
+        "Leak datasets reflect the specific corporate registries or law firms that were leaked (selection bias: absence from Offshore Leaks does not prove absence of offshore holdings, and presence of an offshore entity is not automatically illegal)"
+      ],
+      "corroboration_pairing_rule": "Always distinguish legal offshore corporate registration from proven tax evasion or money laundering; verify against official corporate registries and court indictments."
+    },
+    {
+      "id": "occrp",
+      "name": "Organized Crime and Corruption Reporting Project (OCCRP)",
+      "url": "https://www.occrp.org",
+      "tier": "tier_2_investigative_and_verification",
+      "domains": [
+        "law_governance_human_rights",
+        "economics_markets_trade",
+        "geopolitics_diplomacy",
+        "conflict_defense_security"
+      ],
+      "regions": [
+        "europe",
+        "middle_east_north_africa",
+        "sub_saharan_africa",
+        "latin_america_caribbean",
+        "south_central_asia"
+      ],
+      "languages": ["en", "ru"],
+      "access_model": "open_access",
+      "ownership_and_funding": "Non-profit investigative network funded by philanthropic foundations and public international development/media-freedom grants (disclosed annually).",
+      "editorial_standards": "Document-mandatory fact-checking: every factual assertion in an OCCRP manuscript must link to an archived primary corporate filing, land deed, customs record, or court transcript (OCCRP Aleph).",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "Kleptocracy, sanctions-busting trade routes, illicit resource extraction, and transnational organized crime",
+        "Maintains OCCRP Aleph public-interest data archive indexing hundreds of millions of corporate and procurement records"
+      ],
+      "known_limitations_and_biases": [
+        "Partial funding from Western public media-development agencies requires extra diligence by AI agents to anchor citations in OCCRP's linked primary registry documents rather than narrative characterization alone"
+      ],
+      "corroboration_pairing_rule": "Cite the underlying corporate/customs/court record surfaced via OCCRP Aleph and cross-reference with OFAC/EU filings or independent wire reporting."
+    },
+    {
+      "id": "cir_info_resilience",
+      "name": "Centre for Information Resilience (CIR)",
+      "url": "https://www.info-resilience.org",
+      "tier": "tier_2_investigative_and_verification",
+      "domains": [
+        "conflict_defense_security",
+        "law_governance_human_rights",
+        "geopolitics_diplomacy"
+      ],
+      "regions": ["europe", "sub_saharan_africa", "east_asia_pacific", "middle_east_north_africa"],
+      "languages": ["en"],
+      "access_model": "open_access",
+      "ownership_and_funding": "Independent non-profit social enterprise (UK) funded by philanthropic foundations and government human-rights documentation grants.",
+      "editorial_standards": "Geo-verified incident mapping (Myanmar Witness, Sudan Witness, Eyes on Russia) adhering to international legal preservation standards.",
+      "baseline_admiralty_reliability": "B",
+      "strengths": [
+        "Systematic conflict incident mapping and civilian-infrastructure strike verification in under-covered conflicts (Sudan, Myanmar, Ukraine)",
+        "Disinformation network and coordinated inauthentic behavior analysis"
+      ],
+      "known_limitations_and_biases": [
+        "Open-source social/satellite visibility bias: incidents in internet-blackout or cloud-covered zones are systematically undercounted relative to connected urban areas"
+      ],
+      "corroboration_pairing_rule": "Treat verified incident counts as a confirmed floor (lower bound), not total conflict casualties; pair with UN OCHA/ReliefWeb and regional reporting."
+    },
+    {
+      "id": "pbs_frontline",
+      "name": "PBS FRONTLINE",
+      "url": "https://www.pbs.org/wgbh/frontline",
+      "tier": "tier_2_investigative_and_verification",
+      "domains": [
+        "geopolitics_diplomacy",
+        "conflict_defense_security",
+        "law_governance_human_rights",
+        "society_demographics_labor",
+        "technology_cyber_ai"
+      ],
+      "regions": ["north_america", "global"],
+      "languages": ["en"],
+      "access_model": "open_access",
+      "ownership_and_funding": "Produced at GBH Boston for the U.S. Public Broadcasting Service; funded by Corporation for Public Broadcasting, foundations, and viewer contributions.",
+      "editorial_standards": "PBS Editorial Standards & Journalistic Guidelines; publishes full primary interview transcripts and documentary source packages online.",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "Long-form reconstruction of complex geopolitical crises, wars, institutional breakdowns, and corporate misconduct",
+        "Published verbatim full-length on-the-record transcripts with primary decision-makers"
+      ],
+      "known_limitations_and_biases": [
+        "Long production lead times mean findings synthesize recent history rather than daily developments"
+      ],
+      "corroboration_pairing_rule": "Use FRONTLINE full transcripts as primary-attributed testimony and pair with current wire updates for post-broadcast developments."
+    }
+  ]
+}

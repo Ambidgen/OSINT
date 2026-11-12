@@ -1,0 +1,84 @@
+{
+  "version": "1.0.0",
+  "title": "Admiralty / NATO 6x6 Source & Information Evaluation Rubric for Agentic AI",
+  "description": "Decouples evaluation of the SOURCE (A-F historical track record & editorial governance) from evaluation of the SPECIFIC CLAIM (1-6 independent corroboration & physical consistency).",
+  "core_principle": "Never collapse source prestige into claim truth: an 'A' outlet reporting a single unverified anonymous rumor is rated 'A3' or 'A6', never 'A1'. Conversely, an unfamiliar witness ('F') whose footage is geo- and chrono-verified by Sentinel-2 imagery and independent wires becomes 'F1'.",
+  "source_reliability_scale": {
+    "A": {
+      "label": "Completely Reliable",
+      "criteria": "Primary audited official registry, calibrated physical sensor network, or Tier-1 wire/investigative institution with verified documentary track record, transparent corrections, and strict editorial independence.",
+      "agent_handling": "Eligible as primary anchor when paired with independent corroboration."
+    },
+    "B": {
+      "label": "Usually Reliable",
+      "criteria": "Established specialist beat press, credible regional record newspaper, or vetted OSINT collective with strong track record but occasional framing or access-sourcing constraints.",
+      "agent_handling": "High utility; cross-check anonymous-source or politically sensitive claims against independent 'A' or 'B' sources."
+    },
+    "C": {
+      "label": "Fairly Reliable",
+      "criteria": "Partisan or advocacy-aligned publication, single-vendor commercial threat report, or unrefereed working paper by credentialed authors that has been accurate in past factual particulars.",
+      "agent_handling": "Never rely on as sole source for `confirmed_fact`; extract verifiable leads and confirm via primary documents."
+    },
+    "D": {
+      "label": "Not Usually Reliable",
+      "criteria": "State-controlled propaganda organ, sensationalist tabloid, or outlet with a documented history of fabricated quotes, retracted claims, or undisclosed influence operations.",
+      "agent_handling": "Cite ONLY to document what a state or faction officially claims ('State Media X asserted...'), never as factual ground truth."
+    },
+    "E": {
+      "label": "Unreliable",
+      "criteria": "Known disinformation mill, synthetic content farm, imposter domain, or demonstrably forged document.",
+      "agent_handling": "Disqualify as evidence; mention only if specifically debunking a viral falsehood."
+    },
+    "F": {
+      "label": "Reliability Cannot Be Judged",
+      "criteria": "New, anonymous, or first-time social-media eyewitness account with no established track record.",
+      "agent_handling": "Evaluate purely via forensic verification of the artifact itself (geolocation, shadow analysis, metadata, multi-sensor confirmation)."
+    }
+  },
+  "information_credibility_scale": {
+    "1": {
+      "label": "Confirmed by Independent Sources",
+      "criteria": "Independently corroborated by >= 2 genuinely distinct upstream sources (no shared anonymous source or syndicated wire root) AND consistent with primary documentary or physical evidence.",
+      "permitted_claim_status": ["confirmed_fact"]
+    },
+    "2": {
+      "label": "Probably True",
+      "criteria": "Logical, consistent with established domain mechanics and partial documentary evidence, reported by a reliable firsthand source, though full independent replication is still pending.",
+      "permitted_claim_status": ["confirmed_fact", "attributed_reporting"]
+    },
+    "3": {
+      "label": "Possibly True",
+      "criteria": "Plausible and reasonably consistent with known context, but rests on a single uncorroborated anonymous source, party statement, or unrefereed preprint.",
+      "permitted_claim_status": ["attributed_reporting", "contested_claim"]
+    },
+    "4": {
+      "label": "Doubtful",
+      "criteria": "Possible but not logical, contradicted by baseline physical/economic constraints, or advancing obvious self-serving actor incentives without proof.",
+      "permitted_claim_status": ["contested_claim", "unverified_signal"]
+    },
+    "5": {
+      "label": "Improbable",
+      "criteria": "Directly contradicted by verified physical telemetry, primary dockets, or multiple independent sources.",
+      "permitted_claim_status": ["contested_claim"]
+    },
+    "6": {
+      "label": "Truth Cannot Be Judged",
+      "criteria": "No independent basis yet exists in open sources to confirm or refute (e.g., active telecom blackout, classified meeting contents, hour-zero fog of war).",
+      "permitted_claim_status": ["unverified_signal", "attributed_reporting"]
+    }
+  },
+  "mandatory_corroboration_rules": [
+    {
+      "rule_id": "confirmed_fact_minimum_threshold",
+      "description": "Any claim marked `confirmed_fact` must have either >= 2 citations with distinct `upstream_provenance` values at reliability A/B and credibility 1/2, OR a direct verifiable primary registry/docket citation rated A1."
+    },
+    {
+      "rule_id": "anti_citogenesis_rule",
+      "description": "Multiple citations sharing the exact same `upstream_provenance` (e.g., three outlets summarizing one anonymous leak or syndicated AP dispatch) count as ONE source, never independent corroboration."
+    },
+    {
+      "rule_id": "state_media_quarantine",
+      "description": "Sources flagged `state_affiliated_media: true` or rated D/E may never anchor a `confirmed_fact` without independent non-state corroboration."
+    }
+  ]
+}

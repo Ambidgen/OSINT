@@ -1,0 +1,235 @@
+{
+  "catalog_id": "specialist_and_sector_press",
+  "title": "High-Credibility Specialist & Beat Publications",
+  "description": "Domain-dedicated newsrooms and analytical publications whose reporters and editors possess deep technical, scientific, legal, or defense literacy.",
+  "version": "1.0.0",
+  "sources": [
+    {
+      "id": "stat_news",
+      "name": "STAT News",
+      "url": "https://www.statnews.com",
+      "tier": "tier_2_specialist_beat",
+      "domains": ["science_medicine_public_health", "economics_markets_trade"],
+      "regions": ["north_america", "global"],
+      "languages": ["en"],
+      "access_model": "freemium_metered",
+      "ownership_and_funding": "Privately owned by Boston Globe Media Partners (John W. Henry); editorially independent biomedical newsroom.",
+      "editorial_standards": "Specialized medical/clinical trial scrutiny; reporters examine primary FDA briefing documents, trial endpoints, p-hacking, and statistical power rather than press releases.",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "Premier scrutiny of clinical trial results, vaccine/outbreak epidemiology, FDA advisory panels, and biopharma claims",
+        "Rapidly identifies methodological flaws in hyped medical press releases"
+      ],
+      "known_limitations_and_biases": [
+        "U.S. FDA/NIH regulatory ecosystem emphasis compared to EMA or Asian regulators"
+      ],
+      "corroboration_pairing_rule": "Pair STAT reporting with the underlying ClinicalTrials.gov registry, PubMed peer-reviewed study, or WHO/CDC surveillance data."
+    },
+    {
+      "id": "nature_news",
+      "name": "Nature News (Journalism Division)",
+      "url": "https://www.nature.com/news",
+      "tier": "tier_2_specialist_beat",
+      "domains": [
+        "science_medicine_public_health",
+        "climate_energy_environment",
+        "technology_cyber_ai"
+      ],
+      "regions": ["global"],
+      "languages": ["en"],
+      "access_model": "freemium_metered",
+      "ownership_and_funding": "Published by Springer Nature; the News & Comment team is editorially independent of Nature's journal peer-review editors.",
+      "editorial_standards": "Solicits independent outside domain-scientist commentary on every reported study or preprint, explicitly flagging sample size, replication risks, and unrefereed status.",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "Translates frontier discoveries in physics, biology, climate, AI, and spaceflight without sensationalizing preprints",
+        "Investigative coverage of research misconduct, paper mills, and global science funding policy"
+      ],
+      "known_limitations_and_biases": [
+        "Focuses on academic research developments rather than operational field logistics"
+      ],
+      "corroboration_pairing_rule": "Always trace the DOI cited in Nature News back to the primary paper and check independent replication commentary."
+    },
+    {
+      "id": "ars_technica",
+      "name": "Ars Technica",
+      "url": "https://arstechnica.com",
+      "tier": "tier_2_specialist_beat",
+      "domains": [
+        "technology_cyber_ai",
+        "science_medicine_public_health",
+        "law_governance_human_rights"
+      ],
+      "regions": ["north_america", "global"],
+      "languages": ["en"],
+      "access_model": "open_access",
+      "ownership_and_funding": "Owned by Condé Nast (Advance Publications).",
+      "editorial_standards": "Subject-matter beat writers (aerospace, semiconductor architecture, patent/antitrust dockets, security engineering) linking directly to primary filings and specs.",
+      "baseline_admiralty_reliability": "B",
+      "strengths": [
+        "Technically accurate explanations of CPU/GPU architectures, spaceflight telemetry, tech antitrust court filings, and AI benchmarks",
+        "Consistent linking to primary dockets, RFCs, and technical white papers"
+      ],
+      "known_limitations_and_biases": [
+        "Occasional conversational editorial tone; distinguish deep-dive technical reporting from quick-turn aggregated posts"
+      ],
+      "corroboration_pairing_rule": "Verify technical specifications against NIST/IETF/vendor datasheets or court filings cited in the article."
+    },
+    {
+      "id": "krebs_on_security",
+      "name": "KrebsOnSecurity",
+      "url": "https://krebsonsecurity.com",
+      "tier": "tier_2_specialist_beat",
+      "domains": ["technology_cyber_ai", "law_governance_human_rights", "economics_markets_trade"],
+      "regions": ["global", "north_america"],
+      "languages": ["en"],
+      "access_model": "open_access",
+      "ownership_and_funding": "Independent investigative cybersecurity publication by former Washington Post reporter Brian Krebs; ad-supported with transparent disclosures.",
+      "editorial_standards": "Primary forensic OSINT on DNS records, dark-web forums, blockchain flows, and corporate breach artifacts prior to publication.",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "Deep investigative attribution of cybercrime syndicates, data breaches, identity-broker ecosystems, and banking fraud",
+        "Publishes technical indicators and documentary evidence"
+      ],
+      "known_limitations_and_biases": [
+        "Single-investigator newsroom bandwidth means selective high-impact investigations rather than comprehensive daily CVE tracking"
+      ],
+      "corroboration_pairing_rule": "Pair breach reporting with CISA/NVD advisories, SEC 8-K Item 1.05 cybersecurity disclosures, and The Record."
+    },
+    {
+      "id": "the_record_recorded_future",
+      "name": "The Record (by Recorded Future News)",
+      "url": "https://therecord.media",
+      "tier": "tier_2_specialist_beat",
+      "domains": ["technology_cyber_ai", "conflict_defense_security", "geopolitics_diplomacy"],
+      "regions": ["global"],
+      "languages": ["en"],
+      "access_model": "open_access",
+      "ownership_and_funding": "Published by Recorded Future (threat intelligence firm, acquired by Mastercard) with an explicit editorial independence charter for its journalism staff.",
+      "editorial_standards": "Dedicated beat reporters covering nation-state APTs, ransomware attacks on critical infrastructure/municipalities, and global cyber norms.",
+      "baseline_admiralty_reliability": "B",
+      "strengths": [
+        "Daily global reporting on ransomware, critical-infrastructure intrusions, telecom espionage, and cyber diplomacy",
+        "Direct on-the-record interviews with national cyber directors and CERT leaders"
+      ],
+      "known_limitations_and_biases": [
+        "Parent-company proximity to the commercial threat-intelligence industry—always distinguish attributed CERT/government advisories from single-vendor threat marketing"
+      ],
+      "corroboration_pairing_rule": "Cross-check APT attribution claims across multiple independent threat-intel vendors and national CERT/CISA advisories."
+    },
+    {
+      "id": "lawfare",
+      "name": "Lawfare",
+      "url": "https://www.lawfaremedia.org",
+      "tier": "tier_2_specialist_beat",
+      "domains": [
+        "law_governance_human_rights",
+        "conflict_defense_security",
+        "geopolitics_diplomacy",
+        "technology_cyber_ai"
+      ],
+      "regions": ["north_america", "global"],
+      "languages": ["en"],
+      "access_model": "open_access",
+      "ownership_and_funding": "Published by The Lawfare Institute (501(c)(3) non-profit) in cooperation with Brookings; transparent donor list.",
+      "editorial_standards": "Edited legal analysis and primary courtroom/docket reporting written by legal scholars, former national security counsel, and credentialed court reporters.",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "Granular statutory, constitutional, international humanitarian law (LOAC/IHL), sanctions law, and AI-governance analysis",
+        "Curates primary indictments, judicial orders, and executive orders"
+      ],
+      "known_limitations_and_biases": [
+        "Reflects mainstream U.S. institutional national-security-law establishment perspectives; normative legal interpretations can be contested among scholars"
+      ],
+      "corroboration_pairing_rule": "Separate Lawfare's primary docket summaries from interpretive legal arguments; pair contested legal questions with SCOTUSblog, ICJ filings, and comparative legal scholarship."
+    },
+    {
+      "id": "scotusblog",
+      "name": "SCOTUSblog",
+      "url": "https://www.scotusblog.com",
+      "tier": "tier_2_specialist_beat",
+      "domains": ["law_governance_human_rights"],
+      "regions": ["north_america"],
+      "languages": ["en"],
+      "access_model": "open_access",
+      "ownership_and_funding": "Independent appellate law news and docket archive; sponsor-disclosed.",
+      "editorial_standards": "Hosts complete case files (petitions, merits briefs, amici, oral argument transcripts, slip opinions) alongside neutral procedural explainers.",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "Definitive procedural tracking and plain-English doctrinal breakdown of U.S. Supreme Court litigation",
+        "Direct links to every party and amicus brief"
+      ],
+      "known_limitations_and_biases": [
+        "Strictly U.S. Supreme Court scope"
+      ],
+      "corroboration_pairing_rule": "Read the linked slip opinion, dissent, and statutory text directly to verify exact holding boundaries."
+    },
+    {
+      "id": "carbon_brief",
+      "name": "Carbon Brief",
+      "url": "https://www.carbonbrief.org",
+      "tier": "tier_2_specialist_beat",
+      "domains": [
+        "climate_energy_environment",
+        "economics_markets_trade",
+        "science_medicine_public_health"
+      ],
+      "regions": ["global", "europe", "east_asia_pacific"],
+      "languages": ["en", "zh", "es", "fr"],
+      "access_model": "open_access",
+      "ownership_and_funding": "UK-based non-profit publication funded by philanthropic climate/science foundations (European Climate Foundation, etc.) with editorial independence.",
+      "editorial_standards": "Science-first data journalism: every factual claim links to peer-reviewed literature, IPCC chapters, or national grid/customs datasets.",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "Unmatched quantitative breakdowns of national emissions trajectories (especially China, EU, US, India), COP negotiations, grid economics, and extreme-weather attribution",
+        "Clear methodological appendices explaining climate models and uncertainty ranges"
+      ],
+      "known_limitations_and_biases": [
+        "Philanthropic climate-foundation funding means strong focus on decarbonization pathways—verify industrial/grid cost assumptions against IEA, EIA, and peer-reviewed energy economics"
+      ],
+      "corroboration_pairing_rule": "Cross-check emissions and energy-mix data with IPCC, NOAA/Copernicus, and primary national energy statistics."
+    },
+    {
+      "id": "war_on_the_rocks",
+      "name": "War on the Rocks",
+      "url": "https://warontherocks.com",
+      "tier": "tier_2_specialist_beat",
+      "domains": ["conflict_defense_security", "geopolitics_diplomacy"],
+      "regions": ["global"],
+      "languages": ["en"],
+      "access_model": "freemium_metered",
+      "ownership_and_funding": "Published by Metamorphic Media LLC; subscription and sponsorship funded.",
+      "editorial_standards": "Peer-edited operational and strategic defense analysis authored by military practitioners, defense economists, and conflict scholars.",
+      "baseline_admiralty_reliability": "B",
+      "strengths": [
+        "Explains military logistics, force generation, air-defense attrition, naval warfare, and deterrence mechanics far more accurately than generalist cable news",
+        "Counters sensationalist 'wunderwaffe' or instant-collapse tropes in active wars"
+      ],
+      "known_limitations_and_biases": [
+        "Primarily analytical commentary rather than primary battlefield wire reporting; individual authors hold distinct strategic schools of thought (restraint vs. primacy)"
+      ],
+      "corroboration_pairing_rule": "Use for operational/doctrinal mechanics and pair with Bellingcat/CIR geo-verified ground data and SIPRI/IISS force baselines."
+    },
+    {
+      "id": "foreign_affairs",
+      "name": "Foreign Affairs",
+      "url": "https://www.foreignaffairs.com",
+      "tier": "tier_2_specialist_beat",
+      "domains": ["geopolitics_diplomacy", "conflict_defense_security", "economics_markets_trade"],
+      "regions": ["global"],
+      "languages": ["en"],
+      "access_model": "subscription_paywall",
+      "ownership_and_funding": "Published by the Council on Foreign Relations (non-partisan U.S. membership and research organization).",
+      "editorial_standards": "Rigorous editorial fact-checking of essays by leading international-relations scholars, historians, and sitting/former heads of state and diplomats.",
+      "baseline_admiralty_reliability": "B",
+      "strengths": [
+        "Bridges current diplomatic crises with grand-strategy scholarship, economic statecraft theory, and historical analogies",
+        "Publishes competing strategic arguments side-by-side"
+      ],
+      "known_limitations_and_biases": [
+        "Essays argue strategic theses (treat as expert analytical argument, not raw wire fact); sitting officials writing in Foreign Affairs are advancing state messaging"
+      ],
+      "corroboration_pairing_rule": "Distinguish scholar-authored empirical essays from official-authored diplomatic signaling; pair with non-U.S. regional commentary."
+    }
+  ]
+}

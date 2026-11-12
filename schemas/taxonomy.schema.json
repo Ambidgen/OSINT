@@ -1,0 +1,232 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Ambidgen/OSINT/schemas/taxonomy.schema.json",
+  "title": "OSINT Heuristic Categorical Refinement & Routing Taxonomy",
+  "description": "Schema defining domain categories, geographic scopes, temporal horizons, framing-bias markers, and source-routing heuristics.",
+  "type": "object",
+  "required": [
+    "version",
+    "description",
+    "framing_neutralization_markers",
+    "temporal_horizons",
+    "geographic_regions",
+    "domains"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 20
+    },
+    "framing_neutralization_markers": {
+      "type": "array",
+      "minItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["pattern_id", "category", "trigger_terms", "remediation_guidance"],
+        "additionalProperties": false,
+        "properties": {
+          "pattern_id": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]+$"
+          },
+          "category": {
+            "type": "string",
+            "minLength": 3
+          },
+          "trigger_terms": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "string",
+              "minLength": 2
+            }
+          },
+          "remediation_guidance": {
+            "type": "string",
+            "minLength": 15
+          }
+        }
+      }
+    },
+    "temporal_horizons": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "signal_keywords",
+          "journalist_routing_rule",
+          "academic_routing_rule",
+          "primary_risk"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "enum": [
+              "breaking_sub_24h",
+              "developing_days_weeks",
+              "ongoing_structural_months",
+              "historical_settled"
+            ]
+          },
+          "label": {
+            "type": "string",
+            "minLength": 3
+          },
+          "signal_keywords": {
+            "type": "array",
+            "minItems": 2,
+            "items": { "type": "string" }
+          },
+          "journalist_routing_rule": {
+            "type": "string",
+            "minLength": 15
+          },
+          "academic_routing_rule": {
+            "type": "string",
+            "minLength": 15
+          },
+          "primary_risk": {
+            "type": "string",
+            "minLength": 10
+          }
+        }
+      }
+    },
+    "geographic_regions": {
+      "type": "array",
+      "minItems": 8,
+      "items": {
+        "type": "object",
+        "required": ["id", "label", "signal_keywords", "routing_guidance"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "enum": [
+              "global",
+              "north_america",
+              "europe",
+              "east_asia_pacific",
+              "south_central_asia",
+              "middle_east_north_africa",
+              "sub_saharan_africa",
+              "latin_america_caribbean"
+            ]
+          },
+          "label": {
+            "type": "string",
+            "minLength": 3
+          },
+          "signal_keywords": {
+            "type": "array",
+            "minItems": 2,
+            "items": { "type": "string" }
+          },
+          "routing_guidance": {
+            "type": "string",
+            "minLength": 15
+          }
+        }
+      }
+    },
+    "domains": {
+      "type": "array",
+      "minItems": 8,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "description",
+          "subcategories",
+          "signal_keywords",
+          "refinement_questions_journalist",
+          "refinement_questions_academic",
+          "priority_media_sources",
+          "priority_primary_sources",
+          "priority_academic_sources",
+          "high_risk_fallacies",
+          "high_risk_biases"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "enum": [
+              "geopolitics_diplomacy",
+              "conflict_defense_security",
+              "economics_markets_trade",
+              "technology_cyber_ai",
+              "science_medicine_public_health",
+              "climate_energy_environment",
+              "law_governance_human_rights",
+              "society_demographics_labor"
+            ]
+          },
+          "label": {
+            "type": "string",
+            "minLength": 5
+          },
+          "description": {
+            "type": "string",
+            "minLength": 20
+          },
+          "subcategories": {
+            "type": "array",
+            "minItems": 3,
+            "items": { "type": "string" }
+          },
+          "signal_keywords": {
+            "type": "array",
+            "minItems": 8,
+            "items": { "type": "string" }
+          },
+          "refinement_questions_journalist": {
+            "type": "array",
+            "minItems": 3,
+            "items": { "type": "string" }
+          },
+          "refinement_questions_academic": {
+            "type": "array",
+            "minItems": 3,
+            "items": { "type": "string" }
+          },
+          "priority_media_sources": {
+            "type": "array",
+            "minItems": 3,
+            "items": { "type": "string", "pattern": "^[a-z0-9_]+$" }
+          },
+          "priority_primary_sources": {
+            "type": "array",
+            "minItems": 2,
+            "items": { "type": "string", "pattern": "^[a-z0-9_]+$" }
+          },
+          "priority_academic_sources": {
+            "type": "array",
+            "minItems": 3,
+            "items": { "type": "string", "pattern": "^[a-z0-9_]+$" }
+          },
+          "high_risk_fallacies": {
+            "type": "array",
+            "minItems": 2,
+            "items": { "type": "string", "pattern": "^[a-z0-9_]+$" }
+          },
+          "high_risk_biases": {
+            "type": "array",
+            "minItems": 2,
+            "items": { "type": "string", "pattern": "^[a-z0-9_]+$" }
+          }
+        }
+      }
+    }
+  }
+}
