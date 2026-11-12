@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Ambidgen/OSINT/schemas/concept_taxonomy.schema.json",
+  "title": "OSINT Concept Understanding & Academic Mapping Taxonomy",
+  "description": "Maps esoteric or technical current-event phenomena to academic disciplines, foundational mechanisms, scholarly databases, and common lay misconceptions.",
+  "type": "object",
+  "required": ["version", "description", "evidence_hierarchy", "concept_clusters"],
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 20
+    },
+    "evidence_hierarchy": {
+      "type": "array",
+      "minItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["rank", "tier_id", "label", "epistemic_weight", "agent_usage_rule"],
+        "additionalProperties": false,
+        "properties": {
+          "rank": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10
+          },
+          "tier_id": {
+            "type": "string",
+            "enum": [
+              "meta_analysis_and_systematic_review",
+              "peer_reviewed_primary_literature",
+              "technical_standard_and_reference",
+              "working_paper_and_policy_analysis",
+              "unrefereed_preprint"
+            ]
+          },
+          "label": {
+            "type": "string",
+            "minLength": 5
+          },
+          "epistemic_weight": {
+            "type": "string",
+            "minLength": 10
+          },
+          "agent_usage_rule": {
+            "type": "string",
+            "minLength": 15
+          }
+        }
+      }
+    },
+    "concept_clusters": {
+      "type": "array",
+      "minItems": 8,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "domain",
+          "title",
+          "trigger_terms",
+          "academic_disciplines",
+          "foundational_mechanisms",
+          "common_media_misconceptions",
+          "recommended_academic_sources",
+          "pedagogical_bridge_prompt"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]+$"
+          },
+          "domain": {
+            "type": "string",
+            "enum": [
+              "geopolitics_diplomacy",
+              "conflict_defense_security",
+              "economics_markets_trade",
+              "technology_cyber_ai",
+              "science_medicine_public_health",
+              "climate_energy_environment",
+              "law_governance_human_rights",
+              "society_demographics_labor"
+            ]
+          },
+          "title": {
+            "type": "string",
+            "minLength": 5
+          },
+          "trigger_terms": {
+            "type": "array",
+            "minItems": 5,
+            "items": { "type": "string", "minLength": 2 }
+          },
+          "academic_disciplines": {
+            "type": "array",
+            "minItems": 2,
+            "items": { "type": "string", "minLength": 4 }
+          },
+          "foundational_mechanisms": {
+            "type": "array",
+            "minItems": 3,
+            "items": { "type": "string", "minLength": 10 }
+          },
+          "common_media_misconceptions": {
+            "type": "array",
+            "minItems": 2,
+            "items": { "type": "string", "minLength": 15 }
+          },
+          "recommended_academic_sources": {
+            "type": "array",
+            "minItems": 2,
+            "items": { "type": "string", "pattern": "^[a-z0-9_]+$" }
+          },
+          "pedagogical_bridge_prompt": {
+            "type": "string",
+            "minLength": 20
+          }
+        }
+      }
+    }
+  }
+}

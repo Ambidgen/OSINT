@@ -1,0 +1,189 @@
+{
+  "catalog_id": "discipline_repositories_and_preprints",
+  "title": "Discipline Working-Paper Archives, Preprint Servers & Legal Repositories",
+  "description": "Domain-specific scholarly repositories providing rapid access to working papers, mathematical/computational proofs, and primary jurisprudence—accompanied by strict peer-review hygiene rules.",
+  "version": "1.0.0",
+  "sources": [
+    {
+      "id": "arxiv",
+      "name": "arXiv",
+      "url": "https://arxiv.org",
+      "api_endpoint": "https://export.arxiv.org/api/query",
+      "category": "preprint_and_working_paper",
+      "peer_review_status": "preprint_unrefereed",
+      "evidence_tier": "unrefereed_preprint",
+      "domains": [
+        "technology_cyber_ai",
+        "science_medicine_public_health",
+        "climate_energy_environment",
+        "economics_markets_trade"
+      ],
+      "disciplines": [
+        "Computer Science & Machine Learning",
+        "Physics & Quantum Computing",
+        "Mathematics & Statistics",
+        "Quantitative Finance & Economics"
+      ],
+      "access_model": "open_api_available",
+      "governance_and_funding": "Operated by Cornell Tech (Cornell University) with support from the Simons Foundation and member research libraries.",
+      "concept_use_cases": [
+        "Explaining frontier AI/ML architectures, cryptographic attacks, quantum error correction, superconductivity claims, and computational methods",
+        "Tracing whether an arXiv preprint was subsequently accepted at a peer-reviewed conference (NeurIPS, ICML, IEEE S&P, Physical Review Letters)"
+      ],
+      "known_limitations_and_biases": [
+        "Moderated for scope and plausibility, NOT peer-reviewed prior to posting—viral preprints (e.g., room-temperature superconductor claims or sensational AI benchmarks) can fail independent replication within weeks"
+      ],
+      "citation_and_hygiene_rules": "ALWAYS label arXiv manuscripts explicitly as 'non-peer-reviewed preprint' unless a linked journal/conference DOI confirms peer-reviewed publication; check Semantic Scholar for replication attempts."
+    },
+    {
+      "id": "nber",
+      "name": "National Bureau of Economic Research (NBER)",
+      "url": "https://www.nber.org",
+      "category": "preprint_and_working_paper",
+      "peer_review_status": "preprint_unrefereed",
+      "evidence_tier": "working_paper_and_policy_analysis",
+      "domains": [
+        "economics_markets_trade",
+        "society_demographics_labor",
+        "climate_energy_environment",
+        "science_medicine_public_health"
+      ],
+      "disciplines": [
+        "Macroeconomics & Monetary Policy",
+        "International Trade & Tariffs",
+        "Labor & Public Economics",
+        "Health & Environmental Economics"
+      ],
+      "access_model": "freemium_metered",
+      "governance_and_funding": "Private, non-partisan 501(c)(3) research organization; only elected Research Associates and Faculty Research Fellows may circulate NBER Working Papers, and NBER bans policy recommendations inside working papers.",
+      "concept_use_cases": [
+        "Empirical identification strategies (difference-in-differences, instrumental variables, RDD) estimating causal impacts of tariffs, minimum wages, sanctions, interest rates, and industrial subsidies",
+        "Official U.S. Business Cycle Dating Committee recession chronology definitions"
+      ],
+      "known_limitations_and_biases": [
+        "NBER Working Papers are pre-publication drafts distributed for scholarly critique prior to formal journal peer review",
+        "Predominantly U.S.-affiliated economics departments"
+      ],
+      "citation_and_hygiene_rules": "Label as 'NBER Working Paper (pre-journal peer review)', check whether a revised peer-reviewed journal version exists (parameters often change during refereeing!), and pair with RePEc/CEPR for European and global macro perspectives."
+    },
+    {
+      "id": "repec_ideas",
+      "name": "RePEc / IDEAS",
+      "url": "https://ideas.repec.org",
+      "category": "preprint_and_working_paper",
+      "peer_review_status": "mixed_indexed",
+      "evidence_tier": "working_paper_and_policy_analysis",
+      "domains": ["economics_markets_trade", "society_demographics_labor", "climate_energy_environment"],
+      "disciplines": ["Global Macroeconomics", "Central Banking", "Development Economics", "Econometrics"],
+      "access_model": "open_access",
+      "governance_and_funding": "Decentralized volunteer-driven open bibliographic archive hosted on IDEAS by the Research Division of the Federal Reserve Bank of St. Louis.",
+      "concept_use_cases": [
+        "Accessing working papers from 100+ central banks (ECB, Bundesbank, Bank of England, Reserve Bank of India, Banco de México), CEPR, IMF, and global university departments"
+      ],
+      "known_limitations_and_biases": [
+        "Combines peer-reviewed journal articles with unrefereed departmental working papers—distinguish venue type explicitly"
+      ],
+      "citation_and_hygiene_rules": "Verify whether the RePEc record is a Working Paper Series entry or final Journal Article, and inspect econometric identification assumptions."
+    },
+    {
+      "id": "ssrn",
+      "name": "SSRN (Social Science Research Network)",
+      "url": "https://www.ssrn.com",
+      "category": "preprint_and_working_paper",
+      "peer_review_status": "preprint_unrefereed",
+      "evidence_tier": "unrefereed_preprint",
+      "domains": [
+        "law_governance_human_rights",
+        "economics_markets_trade",
+        "geopolitics_diplomacy",
+        "society_demographics_labor"
+      ],
+      "disciplines": [
+        "Constitutional, Corporate & International Law",
+        "Financial Economics & Accounting",
+        "Political Science & Corporate Governance"
+      ],
+      "access_model": "open_access",
+      "governance_and_funding": "Owned and operated by Elsevier since 2016.",
+      "concept_use_cases": [
+        "Retrieving full-text law review drafts, corporate-governance analyses, regulatory comment scholarship, and financial-market microstructure studies"
+      ],
+      "known_limitations_and_biases": [
+        "Low barrier to posting unrefereed manuscripts—advocacy white papers and unvetted empirical claims sit alongside drafts by leading scholars; US law reviews are largely student-edited rather than blind peer-reviewed"
+      ],
+      "citation_and_hygiene_rules": "Verify author institutional credentials, check if subsequently published in a peer-reviewed journal, and never cite an unrefereed SSRN upload as settled empirical consensus."
+    },
+    {
+      "id": "biorxiv_medrxiv",
+      "name": "bioRxiv & medRxiv",
+      "url": "https://www.medrxiv.org",
+      "api_endpoint": "https://api.biorxiv.org",
+      "category": "preprint_and_working_paper",
+      "peer_review_status": "preprint_unrefereed",
+      "evidence_tier": "unrefereed_preprint",
+      "domains": ["science_medicine_public_health"],
+      "disciplines": ["Epidemiology", "Virology & Immunology", "Genomics", "Clinical Trials (Pre-review)"],
+      "access_model": "open_api_available",
+      "governance_and_funding": "Operated by openRxiv / Cold Spring Harbor Laboratory (with Yale and BMJ co-founding medRxiv).",
+      "concept_use_cases": [
+        "Early genomic characterization or transmission parameter estimation during fast-moving infectious disease outbreaks, strictly paired with peer-reviewed baselines"
+      ],
+      "known_limitations_and_biases": [
+        "HIGH EPISTEMIC RISK IN PUBLIC HEALTH: Unrefereed clinical preprints have repeatedly driven global misinformation when cherry-picked by media before statistical errors or fraud were caught"
+      ],
+      "citation_and_hygiene_rules": "MANDATORY GUARDRAIL: Never use a medRxiv/bioRxiv preprint to guide clinical decisions or state settled medical fact; explicitly state 'unrefereed preprint', check whether a peer-reviewed journal version superseded it, and pair with Cochrane/PubMed/WHO context."
+    },
+    {
+      "id": "philpapers",
+      "name": "PhilPapers",
+      "url": "https://philpapers.org",
+      "category": "peer_reviewed_archive",
+      "peer_review_status": "mixed_indexed",
+      "evidence_tier": "peer_reviewed_primary_literature",
+      "domains": [
+        "law_governance_human_rights",
+        "technology_cyber_ai",
+        "society_demographics_labor",
+        "conflict_defense_security"
+      ],
+      "disciplines": [
+        "Epistemology & Philosophy of Science",
+        "Just War Theory & Ethics of Armed Conflict",
+        "AI Ethics, Alignment & Governance",
+        "Political Philosophy & Jurisprudence"
+      ],
+      "access_model": "open_access",
+      "governance_and_funding": "Maintained by the Center for Digital Philosophy at Western University (Canada), supported by academic library subscriptions and grants.",
+      "concept_use_cases": [
+        "Clarifying normative, legal-philosophical, and epistemological concepts underlying current debates (e.g., proportionality vs. distinction in Just War Theory, algorithmic fairness impossibility theorems, free-speech doctrine)"
+      ],
+      "known_limitations_and_biases": [
+        "Analytic Anglophone philosophy predominance relative to continental and non-Western philosophical traditions"
+      ],
+      "citation_and_hygiene_rules": "Present competing normative frameworks fairly (steel-manning major positions) rather than treating contested ethical philosophy as an empirical fact."
+    },
+    {
+      "id": "worldlii_heinonline",
+      "name": "WorldLII & Free Access to Law Movement Institutes",
+      "url": "https://www.worldlii.org",
+      "category": "peer_reviewed_archive",
+      "peer_review_status": "institutional_editorial_review",
+      "evidence_tier": "technical_standard_and_reference",
+      "domains": ["law_governance_human_rights", "geopolitics_diplomacy", "economics_markets_trade"],
+      "disciplines": [
+        "Comparative Constitutional Law",
+        "Public International Law & Treaties",
+        "Appellate Case Law & Statutory Interpretation"
+      ],
+      "access_model": "open_access",
+      "governance_and_funding": "Collaborative non-profit Legal Information Institutes (AustLII, BAILII, CanLII, Cornell LII, SAFLII, AsianLII, AfricanLII).",
+      "concept_use_cases": [
+        "Verifying exact statutory text, constitutional articles, bilateral investment treaties, and appellate court precedents across 120+ jurisdictions"
+      ],
+      "known_limitations_and_biases": [
+        "Consolidated statutory updates can lag official parliamentary gazettes by weeks in some jurisdictions—verify recent amendments"
+      ],
+      "citation_and_hygiene_rules": "Check statute effective dates, jurisdictional applicability, and whether an appellate decision was subsequently overruled or stayed."
+    }
+  ]
+}

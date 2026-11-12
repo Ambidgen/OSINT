@@ -1,0 +1,223 @@
+{
+  "catalog_id": "primary_and_institutional_osint",
+  "title": "Primary Official Registries, Statistical Agencies & Open Telemetry",
+  "description": "Primary-source documentary repositories, court dockets, audited regulatory disclosures, statistical bureaus, and physical telemetry sensors used to anchor journalistic reporting in hard ground truth.",
+  "version": "1.0.0",
+  "sources": [
+    {
+      "id": "un_reliefweb_ocha",
+      "name": "UN OCHA ReliefWeb",
+      "url": "https://reliefweb.int",
+      "tier": "primary_official_and_sensor",
+      "domains": [
+        "conflict_defense_security",
+        "society_demographics_labor",
+        "climate_energy_environment",
+        "science_medicine_public_health",
+        "law_governance_human_rights"
+      ],
+      "regions": ["global"],
+      "languages": ["en", "fr", "es", "ar"],
+      "access_model": "open_api_available",
+      "ownership_and_funding": "Humanitarian information service operated by the United Nations Office for the Coordination of Humanitarian Affairs (OCHA).",
+      "editorial_standards": "Aggregates official UN agency situation reports (UNHCR, WFP, UNICEF), IPC famine classifications, and vetted humanitarian NGO field assessments with exact publication timestamps.",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "Primary humanitarian situation reports, displacement counts, food-insecurity phases (IPC), and disaster impact maps",
+        "Open REST API for structured retrieval by date, country, and disaster type"
+      ],
+      "known_limitations_and_biases": [
+        "UN agencies frequently rely on host-government ministries for baseline access or raw figures—always inspect footnote provenance inside UN sitreps"
+      ],
+      "corroboration_pairing_rule": "Check whether the sitrep's underlying figure comes from independent UN field verification or unverified host-ministry reporting; pair with satellite/OSINT collectives."
+    },
+    {
+      "id": "icj_icc_filings",
+      "name": "ICJ & ICC Official Court Dockets",
+      "url": "https://www.icj-cij.org",
+      "tier": "primary_official_and_sensor",
+      "domains": [
+        "law_governance_human_rights",
+        "geopolitics_diplomacy",
+        "conflict_defense_security"
+      ],
+      "regions": ["global"],
+      "languages": ["en", "fr"],
+      "access_model": "open_access",
+      "ownership_and_funding": "Principal judicial organ of the United Nations (ICJ) and treaty-based International Criminal Court (ICC, https://www.icc-cpi.int).",
+      "editorial_standards": "Verbatim primary judicial orders, provisional measures, dissenting judicial opinions, state memorials, and arrest-warrant applications.",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "Eliminates widespread media misreporting of international court rulings (e.g., confusing 'plausibility' at a provisional-measures stage with a final merits judgment)"
+      ],
+      "known_limitations_and_biases": [
+        "Party submissions/memorials reflect adversarial legal advocacy by claimant/respondent states—only Orders and Judgments of the Court represent judicial findings"
+      ],
+      "corroboration_pairing_rule": "Read the exact operative paragraphs ('dispositif') of the Court's Order alongside specialist doctrinal analysis (e.g., Lawfare, EJIL:Talk!)."
+    },
+    {
+      "id": "sec_edgar",
+      "name": "U.S. SEC EDGAR & Audited Securities Filings",
+      "url": "https://www.sec.gov/edgar",
+      "tier": "primary_official_and_sensor",
+      "domains": [
+        "economics_markets_trade",
+        "technology_cyber_ai",
+        "law_governance_human_rights",
+        "climate_energy_environment"
+      ],
+      "regions": ["north_america", "global"],
+      "languages": ["en"],
+      "access_model": "open_api_available",
+      "ownership_and_funding": "U.S. Securities and Exchange Commission federal public disclosure system.",
+      "editorial_standards": "Statutory securities-fraud liability (Forms 10-K, 10-Q, 8-K, 20-F for foreign private issuers, S-1) audited by PCAOB-registered accounting firms.",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "Ground-truth revenue exposure, supply-chain concentration risks, material cybersecurity breach disclosures (8-K Item 1.05), litigation contingencies, and executive compensation",
+        "Free JSON REST API without authentication keys (requires descriptive User-Agent header)"
+      ],
+      "known_limitations_and_biases": [
+        "Covers publicly listed issuers; Risk Factor sections use broad defensive legal boilerplate alongside genuine disclosures"
+      ],
+      "corroboration_pairing_rule": "Compare footnote accounting policies and Non-GAAP reconciliations against FT/WSJ financial reporting."
+    },
+    {
+      "id": "imf_world_bank_fred",
+      "name": "IMF Data, World Bank Open Data & Federal Reserve FRED",
+      "url": "https://fred.stlouisfed.org",
+      "tier": "primary_official_and_sensor",
+      "domains": [
+        "economics_markets_trade",
+        "society_demographics_labor",
+        "climate_energy_environment"
+      ],
+      "regions": ["global", "north_america"],
+      "languages": ["en"],
+      "access_model": "open_api_available",
+      "ownership_and_funding": "Federal Reserve Bank of St. Louis (FRED), International Monetary Fund (https://data.imf.org), and World Bank Group (https://data.worldbank.org).",
+      "editorial_standards": "Standardized SNA/BPM6 macroeconomic statistical series with explicit seasonal-adjustment, revision-history (ALFRED), and national-statistical-office metadata.",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "Canonical time series for CPI/PCE inflation, sovereign debt-to-GDP, balance of payments, yield curves, labor force participation, and poverty baselines"
+      ],
+      "known_limitations_and_biases": [
+        "International series depend on member-state statistical submissions, which vary in quality or face political manipulation in authoritarian/capacity-constrained states; initial GDP/payroll prints undergo scheduled revisions"
+      ],
+      "corroboration_pairing_rule": "Always check real vs. nominal units, seasonal adjustment, per-capita scaling, and data-revision vintage before citing macro figures."
+    },
+    {
+      "id": "who_cdc_ecdc",
+      "name": "WHO Disease Outbreak News, CDC MMWR & ECDC",
+      "url": "https://www.who.int/emergencies/disease-outbreak-news",
+      "tier": "primary_official_and_sensor",
+      "domains": ["science_medicine_public_health", "society_demographics_labor"],
+      "regions": ["global", "north_america", "europe"],
+      "languages": ["en", "fr", "es", "ar", "ru", "zh"],
+      "access_model": "open_access",
+      "ownership_and_funding": "World Health Organization, U.S. Centers for Disease Control and Prevention (https://www.cdc.gov/mmwr), and European Centre for Disease Prevention and Control.",
+      "editorial_standards": "International Health Regulations (IHR) case definitions, laboratory-confirmed vs. suspected case stratification, and genomic clade surveillance.",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "Primary case counts, case-fatality denominators, genomic sequencing summaries, and public-health emergency notifications"
+      ],
+      "known_limitations_and_biases": [
+        "Early outbreak reports suffer from severe testing/ascertainment lag and member-state reporting delays, which artificially inflate naive early Case Fatality Ratios (CFR) relative to true Infection Fatality Ratios (IFR)"
+      ],
+      "corroboration_pairing_rule": "Pair official surveillance bulletins with STAT News / Nature News reporting and peer-reviewed epidemiological seroprevalence models."
+    },
+    {
+      "id": "cisa_nvd",
+      "name": "CISA Known Exploited Vulnerabilities (KEV) & NIST NVD",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "tier": "primary_official_and_sensor",
+      "domains": ["technology_cyber_ai", "conflict_defense_security"],
+      "regions": ["global", "north_america"],
+      "languages": ["en"],
+      "access_model": "open_api_available",
+      "ownership_and_funding": "U.S. Cybersecurity and Infrastructure Security Agency (CISA) and National Institute of Standards and Technology (https://nvd.nist.gov).",
+      "editorial_standards": "Standardized CVE identifiers, CVSS severity scoring, MITRE ATT&CK technique mappings, and verified active in-the-wild exploitation flags.",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "Ground-truth technical confirmation of whether a software vulnerability is actively exploited in the wild versus merely theoretical",
+        "Joint international cybersecurity advisories (Five Eyes, ENISA, JPCERT)"
+      ],
+      "known_limitations_and_biases": [
+        "NVD enrichment backlogs can delay CVSS vector updates on newly minted CVEs; nation-state attribution in joint advisories summarizes classified telemetry not fully visible in public packets"
+      ],
+      "corroboration_pairing_rule": "Cross-reference CVE advisories with independent security researcher write-ups, vendor patches, and KrebsOnSecurity / The Record."
+    },
+    {
+      "id": "usgs_copernicus_noaa",
+      "name": "USGS, Copernicus EMS & NOAA Environmental Telemetry",
+      "url": "https://emergency.copernicus.eu",
+      "tier": "primary_official_and_sensor",
+      "domains": [
+        "climate_energy_environment",
+        "science_medicine_public_health",
+        "conflict_defense_security"
+      ],
+      "regions": ["global"],
+      "languages": ["en"],
+      "access_model": "open_api_available",
+      "ownership_and_funding": "European Union Copernicus Programme, U.S. Geological Survey (https://www.usgs.gov), and U.S. National Oceanic and Atmospheric Administration (https://www.noaa.gov).",
+      "editorial_standards": "Calibrated physical sensor networks: seismographs, Sentinel-1/2 SAR and optical satellite imagery, ocean buoys, and atmospheric CO2/methane observatories.",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "Objective physical telemetry for earthquakes, floods, wildfires, gas flaring, ship wakes, flood extent, and global temperature anomalies"
+      ],
+      "known_limitations_and_biases": [
+        "Automated preliminary sensor alerts (e.g., initial earthquake magnitudes or thermal hotspot detections) undergo human geophysical review; SAR/optical interpretation requires domain care (cloud cover, resolution limits)"
+      ],
+      "corroboration_pairing_rule": "Distinguish automated preliminary sensor detections from reviewed geophysical products, and pair single-event weather telemetry with peer-reviewed attribution science."
+    },
+    {
+      "id": "ofac_eu_un_sanctions",
+      "name": "OFAC SDN, EU Sanctions Map & UN Consolidated Sanctions",
+      "url": "https://www.sanctionsmap.eu",
+      "tier": "primary_official_and_sensor",
+      "domains": [
+        "geopolitics_diplomacy",
+        "economics_markets_trade",
+        "law_governance_human_rights",
+        "conflict_defense_security"
+      ],
+      "regions": ["global"],
+      "languages": ["en", "fr", "es"],
+      "access_model": "open_api_available",
+      "ownership_and_funding": "European External Action Service, U.S. Treasury Office of Foreign Assets Control (https://ofac.treasury.gov), and UN Security Council Sanctions Committees.",
+      "editorial_standards": "Legally binding entity, vessel (IMO number), aircraft tail, and crypto-wallet designations with statutory citations and general licenses.",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "Definitive verification of whether an entity, bank, semiconductor tool, or shadow-fleet oil tanker is legally sanctioned, and under which jurisdiction (multilateral UN vs. unilateral US/EU)"
+      ],
+      "known_limitations_and_biases": [
+        "Treasury designation press releases state executive-branch evidentiary allegations that are rarely tested in full adversarial criminal trials"
+      ],
+      "corroboration_pairing_rule": "Treat legal designation status as confirmed fact (A1), while treating underlying intelligence allegations in press releases as official state attribution requiring independent OSINT corroboration."
+    },
+    {
+      "id": "adsb_ais_open_telemetry",
+      "name": "Open Aviation & Maritime Telemetry (ADS-B / AIS Registries)",
+      "url": "https://globe.adsbexchange.com",
+      "tier": "primary_official_and_sensor",
+      "domains": [
+        "conflict_defense_security",
+        "economics_markets_trade",
+        "geopolitics_diplomacy"
+      ],
+      "regions": ["global"],
+      "languages": ["en"],
+      "access_model": "open_access",
+      "ownership_and_funding": "Crowdsourced VHF/transponder receiver networks (ADS-B Exchange, OpenSky Network https://opensky-network.org, MarineTraffic / IMO GISIS).",
+      "editorial_standards": "Raw unedited radio transponder broadcasts (ICAO hex codes, MMSI/IMO vessel identifiers, altitude/speed/heading tracks).",
+      "baseline_admiralty_reliability": "B",
+      "strengths": [
+        "Real-time verification of military/diplomatic flights, chokepoint maritime traffic (Red Sea, Hormuz, Panama, Taiwan Strait), and vessel diversion patterns"
+      ],
+      "known_limitations_and_biases": [
+        "Susceptible to GPS/GNSS spoofing, AIS 'going dark' (transponder shutoff), MMSI identity laundering, and terrestrial receiver coverage gaps over open oceans"
+      ],
+      "corroboration_pairing_rule": "Never treat AIS/ADS-B absence as proof a vessel/aircraft left an area, and verify anomalous coordinates against GNSS-spoofing zones and synthetic-aperture radar (SAR) satellite imagery."
+    }
+  ]
+}

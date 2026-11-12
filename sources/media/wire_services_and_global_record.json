@@ -1,0 +1,301 @@
+{
+  "catalog_id": "wire_services_and_global_record",
+  "title": "Tier-1 Global Wire Services & Newspapers/Broadcasters of Record",
+  "description": "Foundational news agencies and global outlets with strict editorial independence charters, transparent corrections policies, and extensive on-the-ground bureau networks.",
+  "version": "1.0.0",
+  "sources": [
+    {
+      "id": "reuters",
+      "name": "Reuters",
+      "url": "https://www.reuters.com",
+      "tier": "tier_1_global_wire_and_record",
+      "domains": [
+        "geopolitics_diplomacy",
+        "conflict_defense_security",
+        "economics_markets_trade",
+        "technology_cyber_ai",
+        "climate_energy_environment",
+        "law_governance_human_rights"
+      ],
+      "regions": ["global"],
+      "languages": ["en", "fr", "es", "de", "ar", "ja", "zh"],
+      "access_model": "freemium_metered",
+      "ownership_and_funding": "Subsidiary of Thomson Reuters Corporation (publicly traded); governed by the Thomson Reuters Trust Principles mandating independence from any single interest group.",
+      "editorial_standards": "Strict multi-desk wire verification, named-source preference, mandatory multi-source rule for anonymous officials, and public corrections log.",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "Rapid, neutral baseline factual reporting across ~200 locations worldwide",
+        "Market-moving macroeconomic, central bank, commodities, and sovereign debt coverage",
+        "Dedicated Reuters Fact Check and visual verification desk"
+      ],
+      "known_limitations_and_biases": [
+        "Wire brevity can compress deep historical or technical context on initial breaking dispatches",
+        "Heavy reliance on official diplomatic and market institutional sources during early hours of state crises"
+      ],
+      "corroboration_pairing_rule": "Pair initial wire dispatches with at least one independent wire (AP or AFP), a regional outlet on the ground, and primary official filings."
+    },
+    {
+      "id": "associated_press",
+      "name": "Associated Press (AP News)",
+      "url": "https://apnews.com",
+      "tier": "tier_1_global_wire_and_record",
+      "domains": [
+        "geopolitics_diplomacy",
+        "conflict_defense_security",
+        "law_governance_human_rights",
+        "society_demographics_labor",
+        "science_medicine_public_health",
+        "climate_energy_environment"
+      ],
+      "regions": ["global", "north_america"],
+      "languages": ["en", "es", "ar"],
+      "access_model": "open_access",
+      "ownership_and_funding": "Not-for-profit unincorporated cooperative owned by member U.S. newspapers and broadcasters, funded through content licensing and philanthropy for specific beats.",
+      "editorial_standards": "AP Stylebook verification standards, strict prohibition on single-source anonymous claims without senior editor sign-off, and gold-standard election call methodology (AP VoteCast).",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "Openly accessible global wire reporting without hard subscription barriers",
+        "Benchmark U.S. election tabulation, statehouse, judicial, and federal agency reporting",
+        "Strong visual forensics and casualty/humanitarian cross-checking in conflict zones"
+      ],
+      "known_limitations_and_biases": [
+        "Many secondary outlets republish AP copy verbatim—agents must trace upstream provenance so syndicated AP reprints are not miscounted as independent corroboration",
+        "Less granular financial-derivatives and corporate M&A depth than Financial Times or Bloomberg"
+      ],
+      "corroboration_pairing_rule": "Verify syndicated articles are not AP reprints before counting as second-source confirmation; pair with Reuters/AFP and primary documents."
+    },
+    {
+      "id": "afp",
+      "name": "Agence France-Presse (AFP)",
+      "url": "https://www.afp.com",
+      "tier": "tier_1_global_wire_and_record",
+      "domains": [
+        "geopolitics_diplomacy",
+        "conflict_defense_security",
+        "society_demographics_labor",
+        "climate_energy_environment",
+        "law_governance_human_rights"
+      ],
+      "regions": [
+        "global",
+        "europe",
+        "sub_saharan_africa",
+        "middle_east_north_africa",
+        "latin_america_caribbean"
+      ],
+      "languages": ["fr", "en", "es", "ar", "pt", "de"],
+      "access_model": "freemium_metered",
+      "ownership_and_funding": "Sui generis autonomous public-interest statute under 1957 French law; board comprises press representatives, public broadcasters, and staff, legally barred from state editorial control.",
+      "editorial_standards": "Global AFP Charter editorial rules, extensive AFP Fact Check network in 25+ languages, and pioneer of reverse-image/video verification tools (InVID/WeVerify).",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "Unmatched bureau density in Francophone Africa, the Levant, Europe, and Latin America",
+        "Industry-leading digital verification (AFP Factuel) debunking manipulated conflict and election media",
+        "Provides a non-Anglophone global wire perspective to triangulate against US/UK wires"
+      ],
+      "known_limitations_and_biases": [
+        "Direct full-wire terminal access is commercial, so public access often routes via AFP Fact Check, France 24 syndication, or partner outlets",
+        "Should be cross-checked on French domestic or Sahel diplomatic disputes against independent regional African press"
+      ],
+      "corroboration_pairing_rule": "Use alongside Reuters or AP to eliminate Anglophone-only wire blind spots, plus regional newspapers in the affected country."
+    },
+    {
+      "id": "financial_times",
+      "name": "Financial Times",
+      "url": "https://www.ft.com",
+      "tier": "tier_1_global_wire_and_record",
+      "domains": [
+        "economics_markets_trade",
+        "geopolitics_diplomacy",
+        "technology_cyber_ai",
+        "climate_energy_environment"
+      ],
+      "regions": ["global", "europe", "east_asia_pacific", "north_america"],
+      "languages": ["en"],
+      "access_model": "subscription_paywall",
+      "ownership_and_funding": "Wholly owned by Nikkei Inc. (Japan) since 2015 with formal editorial independence guarantees.",
+      "editorial_standards": "Rigorous financial forensic standards, right-of-reply enforcement, clear separation between news reporting and institutional liberal-market editorial columns.",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "Premier coverage of sovereign bond markets, central banking, industrial policy, sanctions evasion, and semiconductor/energy supply chains",
+        "Deep investigative accounting and corporate governance scoops (e.g., Wirecard)",
+        "Balanced trans-Atlantic and Asian diplomatic sourcing"
+      ],
+      "known_limitations_and_biases": [
+        "Hard subscription paywall limits direct full-text retrieval without licensed access",
+        "Editorial board holds an explicit pro-open-trade, institutional market perspective (keep news reporting distinct from Opinion/Lex)"
+      ],
+      "corroboration_pairing_rule": "Pair FT scoops with primary regulatory/corporate filings (SEC EDGAR, central bank releases) and Reuters or WSJ reporting."
+    },
+    {
+      "id": "bbc_news",
+      "name": "BBC News & BBC World Service",
+      "url": "https://www.bbc.com/news",
+      "tier": "tier_1_global_wire_and_record",
+      "domains": [
+        "geopolitics_diplomacy",
+        "conflict_defense_security",
+        "society_demographics_labor",
+        "science_medicine_public_health",
+        "climate_energy_environment"
+      ],
+      "regions": ["global", "europe", "sub_saharan_africa", "south_central_asia", "middle_east_north_africa"],
+      "languages": ["en", "ar", "es", "fr", "hi", "ru", "zh", "sw", "fa"],
+      "access_model": "open_access",
+      "ownership_and_funding": "UK Royal Charter public corporation funded primarily by the UK television licence fee; regulated externally by Ofcom for due impartiality.",
+      "editorial_standards": "Mandatory statutory 'due accuracy and impartiality' guidelines, BBC Verify open-source intelligence unit, and public editorial complaints adjudication.",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "40+ language services providing direct local reporting across South Asia, Africa, and the Middle East",
+        "BBC Verify publishes transparent methodology on satellite imagery, flight tracking, and statistical claims",
+        "Openly accessible synthesis of complex developing international stories"
+      ],
+      "known_limitations_and_biases": [
+        "Statutory 'due impartiality' occasionally produces false-equivalence framing on domestic UK political debates",
+        "On UK foreign policy or Commonwealth disputes, always triangulate with non-UK international outlets"
+      ],
+      "corroboration_pairing_rule": "Cross-check with non-British wires (AFP, AP) and local independent press in the region covered."
+    },
+    {
+      "id": "new_york_times",
+      "name": "The New York Times",
+      "url": "https://www.nytimes.com",
+      "tier": "tier_1_global_wire_and_record",
+      "domains": [
+        "geopolitics_diplomacy",
+        "conflict_defense_security",
+        "law_governance_human_rights",
+        "technology_cyber_ai",
+        "science_medicine_public_health",
+        "society_demographics_labor"
+      ],
+      "regions": ["north_america", "global"],
+      "languages": ["en", "es", "zh"],
+      "access_model": "subscription_paywall",
+      "ownership_and_funding": "Publicly traded (The New York Times Company) with dual-class shares controlled by the Ochs-Sulzberger family trust to insulate newsroom independence.",
+      "editorial_standards": "Dedicated Standards Editor, Visual Investigations forensic team (satellite/munitions/video synchronization), and strict separation of Newsroom vs. Opinion.",
+      "baseline_admiralty_reliability": "B",
+      "strengths": [
+        "Pulitzer-winning Visual Investigations unit combining OSINT forensics with field reporting",
+        "Deep U.S. executive branch, national security, legal, and investigative document reporting",
+        "Extensive science and public health explanatory journalism"
+      ],
+      "known_limitations_and_biases": [
+        "Heavy reliance on anonymous U.S. national security/administration officials in Washington palace-intrigue or intelligence stories—treat uncorroborated anonymous official claims as 'attributed_reporting', not 'confirmed_fact'",
+        "U.S.-centric cultural and policy framing on global events"
+      ],
+      "corroboration_pairing_rule": "Distinguish Visual Investigations/document-backed reporting from anonymous-official leaks; triangulate Washington policy claims with non-U.S. outlets (FT, Reuters, regional press)."
+    },
+    {
+      "id": "wall_street_journal",
+      "name": "The Wall Street Journal (News Division)",
+      "url": "https://www.wsj.com",
+      "tier": "tier_1_global_wire_and_record",
+      "domains": [
+        "economics_markets_trade",
+        "technology_cyber_ai",
+        "geopolitics_diplomacy",
+        "conflict_defense_security",
+        "law_governance_human_rights"
+      ],
+      "regions": ["north_america", "global", "east_asia_pacific"],
+      "languages": ["en", "ja", "zh"],
+      "access_model": "subscription_paywall",
+      "ownership_and_funding": "Owned by Dow Jones & Company, a division of News Corp (publicly traded, Murdoch family voting interest).",
+      "editorial_standards": "Strict institutional firewall between the straight-news/investigative reporting desks and the strongly conservative Editorial Page; rigorous legal/corporate fact-checking.",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "Benchmark Federal Reserve, corporate governance, M&A, energy, and sanctions enforcement reporting",
+        "Deep investigative reporting on technology platforms, supply chains, and Chinese elite politics",
+        "Strong U.S. Department of Justice and regulatory enforcement beat coverage"
+      ],
+      "known_limitations_and_biases": [
+        "Agents MUST strictly separate WSJ News articles from WSJ Opinion/Editorial pieces, which operate under ideological advocacy rather than newsroom evidentiary standards",
+        "Subscription paywall restricts full-text scraping"
+      ],
+      "corroboration_pairing_rule": "Verify article section is News (never cite Opinion as factual reporting); corroborate corporate/macro scoops with SEC/FRED filings and FT or Bloomberg."
+    },
+    {
+      "id": "the_economist",
+      "name": "The Economist",
+      "url": "https://www.economist.com",
+      "tier": "tier_1_global_wire_and_record",
+      "domains": [
+        "economics_markets_trade",
+        "geopolitics_diplomacy",
+        "science_medicine_public_health",
+        "technology_cyber_ai",
+        "society_demographics_labor"
+      ],
+      "regions": ["global", "europe", "east_asia_pacific", "latin_america_caribbean", "sub_saharan_africa"],
+      "languages": ["en"],
+      "access_model": "subscription_paywall",
+      "ownership_and_funding": "The Economist Group (private shareholders including Exor and Schroder/Cadbury/Rothschild families); editor appointed by independent trustees.",
+      "editorial_standards": "Collective unsigned authorship with dedicated fact-checking and quantitative data journalism teams (excess-mortality models, election trackers).",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "High-density analytical synthesis connecting local current events to comparative macroeconomic and historical trends",
+        "Openly published quantitative GitHub models (e.g., global excess deaths, war-intensity satellite trackers, polling aggregators)",
+        "Consistent coverage of under-reported regions (Latin America, Sub-Saharan Africa, Central Asia)"
+      ],
+      "known_limitations_and_biases": [
+        "Explicit classical-liberal / free-trade editorial worldview blended directly into prose due to unsigned house style",
+        "Weekly cadence favors synthesis over minute-by-minute breaking news"
+      ],
+      "corroboration_pairing_rule": "Extract empirical data and structural framing, but separate normative policy prescriptions from underlying primary statistics."
+    },
+    {
+      "id": "bloomberg",
+      "name": "Bloomberg News",
+      "url": "https://www.bloomberg.com",
+      "tier": "tier_1_global_wire_and_record",
+      "domains": [
+        "economics_markets_trade",
+        "climate_energy_environment",
+        "technology_cyber_ai",
+        "geopolitics_diplomacy"
+      ],
+      "regions": ["global"],
+      "languages": ["en", "ja"],
+      "access_model": "subscription_paywall",
+      "ownership_and_funding": "Privately owned by Bloomberg L.P. (majority owner Michael Bloomberg), cross-subsidized by institutional Bloomberg Terminal revenues.",
+      "editorial_standards": "The Bloomberg Way manual: quantitative precision, market-impact verification, and documented corporate conflict policies.",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "Real-time tracking of sovereign debt, FX, shipping/tanker flows, commodities, energy grids (BloombergNEF), and semiconductor supply chains",
+        "High-precision data journalism backed by terminal datasets"
+      ],
+      "known_limitations_and_biases": [
+        "Historically refrained from deep investigative coverage of its founder's personal political campaigns",
+        "Market-investor lens may prioritize asset-price implications over humanitarian or labor dimensions"
+      ],
+      "corroboration_pairing_rule": "Pair market/shipping reporting with primary trade/AIS/central-bank data and labor/regional reporting from non-financial outlets."
+    },
+    {
+      "id": "nikkei_asia",
+      "name": "Nikkei Asia",
+      "url": "https://asia.nikkei.com",
+      "tier": "tier_1_global_wire_and_record",
+      "domains": [
+        "economics_markets_trade",
+        "technology_cyber_ai",
+        "geopolitics_diplomacy",
+        "conflict_defense_security"
+      ],
+      "regions": ["east_asia_pacific", "south_central_asia"],
+      "languages": ["en", "ja"],
+      "access_model": "subscription_paywall",
+      "ownership_and_funding": "Employee-majority-owned Nikkei Inc. (Nihon Keizai Shimbun), Japan's flagship financial newspaper group.",
+      "editorial_standards": "Rigorous Japanese corporate and supply-chain verification standards with bureaux across Taipei, Seoul, Tokyo, Singapore, Jakarta, New Delhi, and Beijing.",
+      "baseline_admiralty_reliability": "A",
+      "strengths": [
+        "Authoritative ground-level reporting on East Asian semiconductor fabrication, EV/battery supply chains, ASEAN trade, and Indo-Pacific security",
+        "Direct sourcing inside Japanese, Taiwanese, Korean, and Southeast Asian industrial conglomerates"
+      ],
+      "known_limitations_and_biases": [
+        "Business-institutional perspective aligned with Asian industrial and trade stability concerns"
+      ],
+      "corroboration_pairing_rule": "Pair supply-chain scoops with corporate disclosures, Taiwan/Korea/Japan exchange filings, and Reuters or FT."
+    }
+  ]
+}

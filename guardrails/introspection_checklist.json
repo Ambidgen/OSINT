@@ -1,0 +1,78 @@
+{
+  "version": "1.0.0",
+  "title": "Mandatory Pre-Presentation Introspection Gate & Confidence Calibration",
+  "description": "Structured 7-gate self-interrogation protocol executed by Agentic AI before presenting any research synthesis to a human reader.",
+  "gates": [
+    {
+      "gate_id": "source_independence_verified",
+      "question": "Have I traced every corroborated claim back to genuinely independent upstream sources, confirming I have not fallen into circular reporting (citogenesis) or single-wire echo chambers?",
+      "failure_remediation": "Inspect `upstream_provenance` across citations; downgrade echo-corroborated claims from `confirmed_fact` to `attributed_reporting` and run lateral search across rival/regional wires."
+    },
+    {
+      "gate_id": "counter_hypothesis_steel_manned",
+      "question": "Have I explicitly formulated at least two competing hypotheses (ACH), sought disconfirming evidence against my favored theory, and articulated the strongest primary-source version of the rival explanation?",
+      "failure_remediation": "Add a rival or null hypothesis to `competing_hypotheses`, execute a targeted falsification search, and record disconfirming evidence IDs."
+    },
+    {
+      "gate_id": "fact_vs_inference_separated",
+      "question": "Does my prose clearly separate verified facts on the ground, attributed single-source claims, analytical judgments, and unresolved gaps—without smuggling speculation in as established fact?",
+      "failure_remediation": "Audit verbs and qualifiers; strip absolutist language and attach explicit attribution ('According to...', 'Satellite telemetry confirms...', 'We assess with moderate confidence...')."
+    },
+    {
+      "gate_id": "concept_pedagogy_verified",
+      "question": "Have I identified the esoteric, technical, legal, or scientific mechanisms underlying this event and buttressed them with peer-reviewed or canonical academic literature so a non-specialist reader genuinely understands HOW and WHY it works?",
+      "failure_remediation": "Populate `academic_track.concepts_explained` using OpenAlex, Semantic Scholar, SEP, Cochrane, IPCC, NIST, or BIS sources with plain-language definitions and mechanisms."
+    },
+    {
+      "gate_id": "preprint_and_retraction_hygiene",
+      "question": "Have I checked whether any cited academic works are unrefereed preprints, working papers, or retracted studies, and labeled their evidentiary status transparently?",
+      "failure_remediation": "Verify DOIs via Crossref/OpenAlex, flag `peer_reviewed: false` works explicitly in prose, and pair preprints with peer-reviewed systematic baselines."
+    },
+    {
+      "gate_id": "framing_neutrality_checked",
+      "question": "Did I neutralize any loaded presuppositions in the user's original prompt, and did I check my own draft for sycophancy, geopolitical home-capital bias, or asymmetric moral adjectives?",
+      "failure_remediation": "Compare `raw_question` vs. `neutralized_question` and balance single-bloc media sources with credible regional and international primary sources."
+    },
+    {
+      "gate_id": "uncertainty_explicitly_bounded",
+      "question": "Have I performed a Pre-Mortem ('How could this synthesis prove wrong in 6 months?') and surfaced concrete watchpoints and collection blind spots to the reader?",
+      "failure_remediation": "Complete `pre_mortem_failure_mode` and list observable indicators under `open_uncertainties_and_watchpoints`."
+    }
+  ],
+  "calibrated_confidence_lexicon": {
+    "almost_certain": {
+      "probability_band": "95% - 99%",
+      "minimum_evidence_requirement": "Multiple independent A1/B1 primary registries, physical telemetry, and global wires with zero credible disconfirming anomalies."
+    },
+    "highly_likely": {
+      "probability_band": "80% - 90%",
+      "minimum_evidence_requirement": "Strong multi-source A/B corroboration and mechanistic academic consistency, with rival hypotheses largely disconfirmed."
+    },
+    "likely": {
+      "probability_band": "55% - 75%",
+      "minimum_evidence_requirement": "Credible preponderance of A/B evidence, though collection gaps or one plausible alternative hypothesis remain open."
+    },
+    "roughly_even_chance": {
+      "probability_band": "45% - 55%",
+      "minimum_evidence_requirement": "Credible evidence is split or diagnosticity between top two competing hypotheses is genuinely balanced."
+    },
+    "unlikely": {
+      "probability_band": "20% - 40%",
+      "minimum_evidence_requirement": "Contradicted by baseline domain mechanics or preponderance of independent reporting, though not physically impossible."
+    },
+    "insufficient_evidence": {
+      "probability_band": "Unquantifiable (Fog of War / Blackout)",
+      "minimum_evidence_requirement": "Open-source collection is blocked or claims rest solely on unverified rumors (Admiralty 6); refuse to guess."
+    }
+  },
+  "overconfidence_red_flag_phrases": [
+    "undeniably proves",
+    "beyond a shadow of a doubt",
+    "100% certain",
+    "everyone knows",
+    "obviously proves",
+    "indisputable fact that",
+    "impossible to deny",
+    "proves once and for all"
+  ]
+}

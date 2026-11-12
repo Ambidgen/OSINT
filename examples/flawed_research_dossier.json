@@ -1,0 +1,105 @@
+{
+  "dossier_id": "dossier_flawed_negative_example",
+  "created_at": "2026-11-12T10:30:00Z",
+  "query_intake": {
+    "raw_question": "Prove that the new viral strain is 100% unstoppable!",
+    "neutralized_question": "Prove that the new viral strain is 100% unstoppable!",
+    "primary_domain": "science_medicine_public_health",
+    "secondary_domains": [],
+    "geographic_scope": "global",
+    "temporal_horizon": "breaking_sub_24h",
+    "journalist_subquestions": [
+      "How fast is the new viral strain spreading right now?",
+      "Which hospitals reported cases today?"
+    ],
+    "academic_subquestions": [
+      "What does the latest preprint say about receptor binding?"
+    ]
+  },
+  "journalist_track": {
+    "evidence_ledger": [
+      {
+        "claim_id": "claim_echo_01",
+        "statement": "The new strain has achieved a 45% population fatality rate across three provinces.",
+        "claim_status": "confirmed_fact",
+        "citations": [
+          {
+            "source_id": "blog_aggregator_a",
+            "title_or_reference": "Aggregator rewrite of anonymous social post",
+            "url": "https://example.com/post-a",
+            "admiralty_reliability": "D",
+            "admiralty_credibility": "4",
+            "upstream_provenance": "Single unverified anonymous social thread"
+          },
+          {
+            "source_id": "tabloid_rewrite_b",
+            "title_or_reference": "Tabloid summary of the same anonymous social post",
+            "url": "https://example.com/post-b",
+            "admiralty_reliability": "D",
+            "admiralty_credibility": "4",
+            "upstream_provenance": "Single unverified anonymous social thread"
+          }
+        ]
+      }
+    ]
+  },
+  "academic_track": {
+    "concepts_explained": [
+      {
+        "concept_name": "Viral Receptor Binding Affinity",
+        "plain_language_definition": "Receptor binding measures how tightly a surface protein attaches to host cells in laboratory assays.",
+        "underlying_mechanism": "In-vitro pseudovirus assays measure binding kinetics against recombinant cell receptors in culture dishes.",
+        "relevance_to_current_event": "Used to claim unstoppable human transmission.",
+        "scholarly_consensus_status": "settled_consensus",
+        "academic_citations": [
+          {
+            "source_id": "biorxiv_medrxiv",
+            "work_title": "Preliminary unrefereed in-vitro pseudovirus binding upload",
+            "url": "https://www.medrxiv.org",
+            "evidence_tier": "unrefereed_preprint",
+            "peer_reviewed": false
+          }
+        ]
+      }
+    ]
+  },
+  "guardrail_evaluation": {
+    "competing_hypotheses": [
+      {
+        "hypothesis_id": "H1_only_theory",
+        "statement": "The strain is completely unstoppable and carries a 45% population fatality rate.",
+        "supporting_evidence_ids": ["claim_echo_01"],
+        "disconfirming_evidence_ids": [],
+        "diagnostic_assessment": "Matches the initial viral social media thread.",
+        "status": "leading"
+      }
+    ],
+    "key_assumptions": [
+      "Initial social media posts accurately measure population denominators."
+    ],
+    "fallacies_checked": [],
+    "biases_checked": []
+  },
+  "introspection_audit": {
+    "gates": {
+      "source_independence_verified": false,
+      "counter_hypothesis_steel_manned": false,
+      "fact_vs_inference_separated": true,
+      "concept_pedagogy_verified": true,
+      "preprint_and_retraction_hygiene": false,
+      "framing_neutrality_checked": false,
+      "uncertainty_explicitly_bounded": true
+    },
+    "pre_mortem_failure_mode": "Early numbers might change slightly later.",
+    "overall_confidence": "almost_certain",
+    "confidence_rationale": "Two different blogs reported the exact same 45% number today."
+  },
+  "final_synthesis": {
+    "executive_summary": "Available reporting undeniably proves that the new viral strain is 100% certain to cause a 45% fatality rate worldwide, as everyone knows from today's viral reports.",
+    "facts_on_the_ground_narrative": "Two separate websites reported the 45% figure within hours of each other, confirming the outbreak's severity.",
+    "conceptual_background_narrative": "A medRxiv upload settles the science once and for all by showing receptor binding in a dish.",
+    "open_uncertainties_and_watchpoints": [
+      "Wait for additional case counts tomorrow."
+    ]
+  }
+}

@@ -1,0 +1,391 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Ambidgen/OSINT/schemas/research_dossier.schema.json",
+  "title": "OSINT Agentic Research Dossier",
+  "description": "Auditable structured research artifact uniting the Journalist Track (facts on the ground), Academic Track (concept understanding), and Epistemic Guardrails/Introspection.",
+  "type": "object",
+  "required": [
+    "dossier_id",
+    "created_at",
+    "query_intake",
+    "journalist_track",
+    "academic_track",
+    "guardrail_evaluation",
+    "introspection_audit",
+    "final_synthesis"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "dossier_id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9_-]+$"
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 10
+    },
+    "query_intake": {
+      "type": "object",
+      "required": [
+        "raw_question",
+        "neutralized_question",
+        "primary_domain",
+        "secondary_domains",
+        "geographic_scope",
+        "temporal_horizon",
+        "journalist_subquestions",
+        "academic_subquestions"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "raw_question": { "type": "string", "minLength": 5 },
+        "neutralized_question": { "type": "string", "minLength": 10 },
+        "primary_domain": {
+          "type": "string",
+          "enum": [
+            "geopolitics_diplomacy",
+            "conflict_defense_security",
+            "economics_markets_trade",
+            "technology_cyber_ai",
+            "science_medicine_public_health",
+            "climate_energy_environment",
+            "law_governance_human_rights",
+            "society_demographics_labor"
+          ]
+        },
+        "secondary_domains": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "geopolitics_diplomacy",
+              "conflict_defense_security",
+              "economics_markets_trade",
+              "technology_cyber_ai",
+              "science_medicine_public_health",
+              "climate_energy_environment",
+              "law_governance_human_rights",
+              "society_demographics_labor"
+            ]
+          }
+        },
+        "geographic_scope": {
+          "type": "string",
+          "enum": [
+            "global",
+            "north_america",
+            "europe",
+            "east_asia_pacific",
+            "south_central_asia",
+            "middle_east_north_africa",
+            "sub_saharan_africa",
+            "latin_america_caribbean"
+          ]
+        },
+        "temporal_horizon": {
+          "type": "string",
+          "enum": [
+            "breaking_sub_24h",
+            "developing_days_weeks",
+            "ongoing_structural_months",
+            "historical_settled"
+          ]
+        },
+        "journalist_subquestions": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "type": "string", "minLength": 10 }
+        },
+        "academic_subquestions": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 10 }
+        }
+      }
+    },
+    "journalist_track": {
+      "type": "object",
+      "required": ["evidence_ledger"],
+      "additionalProperties": false,
+      "properties": {
+        "evidence_ledger": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["claim_id", "statement", "claim_status", "citations"],
+            "additionalProperties": false,
+            "properties": {
+              "claim_id": { "type": "string", "pattern": "^[a-zA-Z0-9_-]+$" },
+              "statement": { "type": "string", "minLength": 15 },
+              "claim_status": {
+                "type": "string",
+                "enum": [
+                  "confirmed_fact",
+                  "attributed_reporting",
+                  "contested_claim",
+                  "unverified_signal"
+                ]
+              },
+              "citations": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "source_id",
+                    "title_or_reference",
+                    "url",
+                    "admiralty_reliability",
+                    "admiralty_credibility",
+                    "upstream_provenance"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "source_id": { "type": "string", "minLength": 2 },
+                    "title_or_reference": { "type": "string", "minLength": 5 },
+                    "url": { "type": "string", "pattern": "^https://" },
+                    "admiralty_reliability": {
+                      "type": "string",
+                      "enum": ["A", "B", "C", "D", "E", "F"]
+                    },
+                    "admiralty_credibility": {
+                      "type": "string",
+                      "enum": ["1", "2", "3", "4", "5", "6"]
+                    },
+                    "upstream_provenance": {
+                      "type": "string",
+                      "minLength": 5
+                    },
+                    "state_affiliated_media": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "academic_track": {
+      "type": "object",
+      "required": ["concepts_explained"],
+      "additionalProperties": false,
+      "properties": {
+        "concepts_explained": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "concept_name",
+              "plain_language_definition",
+              "underlying_mechanism",
+              "relevance_to_current_event",
+              "scholarly_consensus_status",
+              "academic_citations"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "concept_name": { "type": "string", "minLength": 3 },
+              "plain_language_definition": { "type": "string", "minLength": 20 },
+              "underlying_mechanism": { "type": "string", "minLength": 20 },
+              "relevance_to_current_event": { "type": "string", "minLength": 20 },
+              "scholarly_consensus_status": {
+                "type": "string",
+                "enum": [
+                  "settled_consensus",
+                  "active_scholarly_debate",
+                  "emerging_frontier"
+                ]
+              },
+              "academic_citations": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "source_id",
+                    "work_title",
+                    "evidence_tier",
+                    "peer_reviewed"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "source_id": { "type": "string", "minLength": 2 },
+                    "work_title": { "type": "string", "minLength": 5 },
+                    "url": { "type": "string", "pattern": "^https://" },
+                    "evidence_tier": {
+                      "type": "string",
+                      "enum": [
+                        "meta_analysis_and_systematic_review",
+                        "peer_reviewed_primary_literature",
+                        "technical_standard_and_reference",
+                        "working_paper_and_policy_analysis",
+                        "unrefereed_preprint"
+                      ]
+                    },
+                    "peer_reviewed": { "type": "boolean" },
+                    "caveats": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "guardrail_evaluation": {
+      "type": "object",
+      "required": [
+        "competing_hypotheses",
+        "key_assumptions",
+        "fallacies_checked",
+        "biases_checked"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "competing_hypotheses": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "hypothesis_id",
+              "statement",
+              "supporting_evidence_ids",
+              "disconfirming_evidence_ids",
+              "diagnostic_assessment",
+              "status"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "hypothesis_id": { "type": "string", "pattern": "^[a-zA-Z0-9_-]+$" },
+              "statement": { "type": "string", "minLength": 10 },
+              "supporting_evidence_ids": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "disconfirming_evidence_ids": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "diagnostic_assessment": { "type": "string", "minLength": 15 },
+              "status": {
+                "type": "string",
+                "enum": ["leading", "plausible_alternative", "refuted"]
+              }
+            }
+          }
+        },
+        "key_assumptions": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 10 }
+        },
+        "fallacies_checked": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["fallacy_id", "risk_noted", "mitigation_applied"],
+            "additionalProperties": false,
+            "properties": {
+              "fallacy_id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+              "risk_noted": { "type": "string", "minLength": 10 },
+              "mitigation_applied": { "type": "string", "minLength": 10 }
+            }
+          }
+        },
+        "biases_checked": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["bias_id", "layer", "mitigation_applied"],
+            "additionalProperties": false,
+            "properties": {
+              "bias_id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+              "layer": {
+                "type": "string",
+                "enum": ["analyst_ai", "media_source", "data_sampling"]
+              },
+              "mitigation_applied": { "type": "string", "minLength": 10 }
+            }
+          }
+        }
+      }
+    },
+    "introspection_audit": {
+      "type": "object",
+      "required": [
+        "gates",
+        "pre_mortem_failure_mode",
+        "overall_confidence",
+        "confidence_rationale"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "gates": {
+          "type": "object",
+          "required": [
+            "source_independence_verified",
+            "counter_hypothesis_steel_manned",
+            "fact_vs_inference_separated",
+            "concept_pedagogy_verified",
+            "preprint_and_retraction_hygiene",
+            "framing_neutrality_checked",
+            "uncertainty_explicitly_bounded"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "source_independence_verified": { "type": "boolean" },
+            "counter_hypothesis_steel_manned": { "type": "boolean" },
+            "fact_vs_inference_separated": { "type": "boolean" },
+            "concept_pedagogy_verified": { "type": "boolean" },
+            "preprint_and_retraction_hygiene": { "type": "boolean" },
+            "framing_neutrality_checked": { "type": "boolean" },
+            "uncertainty_explicitly_bounded": { "type": "boolean" }
+          }
+        },
+        "pre_mortem_failure_mode": {
+          "type": "string",
+          "minLength": 15
+        },
+        "overall_confidence": {
+          "type": "string",
+          "enum": [
+            "almost_certain",
+            "highly_likely",
+            "likely",
+            "roughly_even_chance",
+            "unlikely",
+            "insufficient_evidence"
+          ]
+        },
+        "confidence_rationale": {
+          "type": "string",
+          "minLength": 15
+        }
+      }
+    },
+    "final_synthesis": {
+      "type": "object",
+      "required": [
+        "executive_summary",
+        "facts_on_the_ground_narrative",
+        "conceptual_background_narrative",
+        "open_uncertainties_and_watchpoints"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "executive_summary": { "type": "string", "minLength": 30 },
+        "facts_on_the_ground_narrative": { "type": "string", "minLength": 30 },
+        "conceptual_background_narrative": { "type": "string", "minLength": 30 },
+        "open_uncertainties_and_watchpoints": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 10 }
+        }
+      }
+    }
+  }
+}

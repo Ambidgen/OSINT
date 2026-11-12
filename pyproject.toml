@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "osint-agent-directory"
+version = "0.1.0"
+description = "Agentic AI Open Source Intelligence (OSINT) Source Directory, Heuristic Router, Epistemic Guardrails, and Academic Concept Synthesis Framework"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+keywords = ["osint", "agentic-ai", "epistemology", "journalism", "academic-research", "guardrails", "heuristics"]
+
+[project.scripts]
+osint-agent = "osint_agent.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["osint_agent*"]

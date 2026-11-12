@@ -1,0 +1,157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Ambidgen/OSINT/schemas/academic_source.schema.json",
+  "title": "OSINT Academic & Concept Research Source Catalog",
+  "description": "Schema for scholarly indexes, peer-reviewed archives, preprint repositories, technical standards bodies, and policy research institutes used for Concept Understanding.",
+  "type": "object",
+  "required": ["catalog_id", "title", "description", "version", "sources"],
+  "additionalProperties": false,
+  "properties": {
+    "catalog_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 5
+    },
+    "description": {
+      "type": "string",
+      "minLength": 20
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "url",
+          "category",
+          "peer_review_status",
+          "evidence_tier",
+          "domains",
+          "disciplines",
+          "access_model",
+          "governance_and_funding",
+          "concept_use_cases",
+          "known_limitations_and_biases",
+          "citation_and_hygiene_rules"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]+$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 2
+          },
+          "url": {
+            "type": "string",
+            "pattern": "^https://"
+          },
+          "api_endpoint": {
+            "type": "string",
+            "pattern": "^https://"
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "scholarly_index_and_api",
+              "peer_reviewed_archive",
+              "preprint_and_working_paper",
+              "encyclopedic_and_synthesis",
+              "technical_standard_and_regulatory",
+              "policy_institute_and_think_tank"
+            ]
+          },
+          "peer_review_status": {
+            "type": "string",
+            "enum": [
+              "peer_reviewed",
+              "mixed_indexed",
+              "preprint_unrefereed",
+              "institutional_editorial_review",
+              "consensus_standard"
+            ]
+          },
+          "evidence_tier": {
+            "type": "string",
+            "enum": [
+              "meta_analysis_and_systematic_review",
+              "peer_reviewed_primary_literature",
+              "technical_standard_and_reference",
+              "working_paper_and_policy_analysis",
+              "unrefereed_preprint"
+            ]
+          },
+          "domains": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "enum": [
+                "geopolitics_diplomacy",
+                "conflict_defense_security",
+                "economics_markets_trade",
+                "technology_cyber_ai",
+                "science_medicine_public_health",
+                "climate_energy_environment",
+                "law_governance_human_rights",
+                "society_demographics_labor"
+              ]
+            }
+          },
+          "disciplines": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 3
+            }
+          },
+          "access_model": {
+            "type": "string",
+            "enum": [
+              "open_access",
+              "freemium_metered",
+              "subscription_paywall",
+              "open_api_available"
+            ]
+          },
+          "governance_and_funding": {
+            "type": "string",
+            "minLength": 15
+          },
+          "concept_use_cases": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 10
+            }
+          },
+          "known_limitations_and_biases": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 10
+            }
+          },
+          "citation_and_hygiene_rules": {
+            "type": "string",
+            "minLength": 15
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,750 @@
+{
+  "version": "1.0.0",
+  "description": "Categorical question-refinement and source-routing taxonomy directing Agentic AI across domains, regions, temporal horizons, and dual Journalist/Academic tracks.",
+  "framing_neutralization_markers": [
+    {
+      "pattern_id": "presupposed_failure_or_success",
+      "category": "loaded_presupposition",
+      "trigger_terms": [
+        "why did",
+        "completely fail",
+        "total failure",
+        "backfire",
+        "miracle cure",
+        "unstoppable",
+        "inevitable collapse"
+      ],
+      "remediation_guidance": "Strip presupposed success/failure adjectives and ask empirically: 'What are the measured outcomes, intended effects, and documented trade-offs of X?'"
+    },
+    {
+      "pattern_id": "pejorative_or_moralized_attribution",
+      "category": "emotional_intensifier",
+      "trigger_terms": [
+        "corrupt",
+        "regime",
+        "cronies",
+        "evil",
+        "insane",
+        "reckless",
+        "disastrous",
+        "catastrophic"
+      ],
+      "remediation_guidance": "Replace evaluative labels with neutral institutional descriptors and specify concrete legal, fiscal, or humanitarian metrics to evaluate."
+    },
+    {
+      "pattern_id": "conspiratorial_intentionality",
+      "category": "intentionality_bias",
+      "trigger_terms": [
+        "secret plot",
+        "cover-up",
+        "cover up",
+        "hoax",
+        "deliberately crashing",
+        "rigged",
+        "false flag"
+      ],
+      "remediation_guidance": "Reformulate into competing hypotheses (including institutional friction, measurement error, and documented actor incentives) and require primary forensic evidence."
+    },
+    {
+      "pattern_id": "absolutist_certainty_seeking",
+      "category": "binary_framing",
+      "trigger_terms": [
+        "prove that",
+        "undeniable",
+        "once and for all",
+        "always",
+        "never works",
+        "useless"
+      ],
+      "remediation_guidance": "Reframe binary pass/fail prompts into probabilistic effect-size and boundary-condition inquiries."
+    },
+    {
+      "pattern_id": "selective_confirmation_query",
+      "category": "confirmation_trap",
+      "trigger_terms": [
+        "reasons why",
+        "evidence that",
+        "how much worse",
+        "list the failures"
+      ],
+      "remediation_guidance": "Execute symmetric search queries covering both supporting and disconfirming empirical evidence before synthesizing."
+    }
+  ],
+  "temporal_horizons": [
+    {
+      "id": "breaking_sub_24h",
+      "label": "Breaking Event (< 24 Hours)",
+      "signal_keywords": [
+        "today",
+        "just now",
+        "breaking",
+        "hours ago",
+        "tonight",
+        "this morning",
+        "live",
+        "explosion",
+        "alert"
+      ],
+      "journalist_routing_rule": "Require >= 2 independent Tier-1 wires (reuters, associated_press, afp) plus primary sensor/agency notices; quarantine single-source social claims as unverified_signal.",
+      "academic_routing_rule": "Retrieve established baseline reference mechanics (e.g., seismic physics, maritime treaty law, grid protection engineering) rather than speculating on unverified incident causes.",
+      "primary_risk": "Fog-of-war misattribution, recycled old footage, and inflated early casualty/damage figures."
+    },
+    {
+      "id": "developing_days_weeks",
+      "label": "Developing Story (Days to Weeks)",
+      "signal_keywords": [
+        "this week",
+        "recent",
+        "latest",
+        "developing",
+        "ongoing talks",
+        "aftermath",
+        "announcement",
+        "ruling"
+      ],
+      "journalist_routing_rule": "Combine Tier-1 global wires with specialist beat press (lawfare, stat_news, krebs_on_security, carbon_brief), regional record outlets, and geo-verified OSINT collectives.",
+      "academic_routing_rule": "Pair developing facts with working papers, technical standards, and peer-reviewed syntheses explaining statutory, economic, or scientific mechanisms.",
+      "primary_risk": "Anonymous-official spin, circular reporting across aggregators, and premature causal attribution."
+    },
+    {
+      "id": "ongoing_structural_months",
+      "label": "Structural Trend or Protracted Crisis (Months to Years)",
+      "signal_keywords": [
+        "trend",
+        "impact of",
+        "since",
+        "trajectory",
+        "supply chain",
+        "inflation",
+        "attrition",
+        "demographic"
+      ],
+      "journalist_routing_rule": "Prioritize deep investigative reporting (propublica, icij, occrp, financial_times, the_economist) and multi-quarter official statistical releases.",
+      "academic_routing_rule": "Anchor in NBER/RePEc/BIS working papers, OpenAlex/Semantic Scholar empirical studies, and Our World in Data multi-year baselines.",
+      "primary_risk": "Cherry-picked time-series start dates, survivorship bias, and confounded cross-country correlations."
+    },
+    {
+      "id": "historical_settled",
+      "label": "Historical Precedent or Settled Mechanism",
+      "signal_keywords": [
+        "history of",
+        "origin of",
+        "precedent",
+        "how did",
+        "treaty of",
+        "lessons from",
+        "compared to"
+      ],
+      "journalist_routing_rule": "Use archival documentary reconstructions (pbs_frontline, newspapers of record) and declassified/primary court archives.",
+      "academic_routing_rule": "Prioritize meta-analyses, peer-reviewed monographs/reviews via OpenAlex, Stanford Encyclopedia of Philosophy, and IPCC/Cochrane syntheses.",
+      "primary_risk": "False historical analogies and presentist hindsight bias."
+    }
+  ],
+  "geographic_regions": [
+    {
+      "id": "global",
+      "label": "Global / Trans-Regional",
+      "signal_keywords": ["global", "worldwide", "international", "un", "g7", "g20", "brics", "wto", "multilateral"],
+      "routing_guidance": "Balance Anglophone global wires (reuters, financial_times) with non-Anglophone/multilateral perspectives (afp, le_monde, nikkei_asia, the_hindu) and UN/IMF primary datasets."
+    },
+    {
+      "id": "north_america",
+      "label": "North America (US & Canada)",
+      "signal_keywords": ["united states", "u.s.", "washington", "congress", "supreme court", "federal reserve", "canada", "ottawa", "pentagon", "sec"],
+      "routing_guidance": "Pair AP, Reuters, WSJ News, NYT, ProPublica, and Globe and Mail with primary dockets (SCOTUSblog, Lawfare, SEC EDGAR, FRED)."
+    },
+    {
+      "id": "europe",
+      "label": "Europe & Eurasia",
+      "signal_keywords": ["european union", "eu", "brussels", "ecb", "nato", "uk", "britain", "france", "germany", "ukraine", "russia", "kyiv"],
+      "routing_guidance": "Combine BBC, Financial Times, Le Monde, Der Spiegel, AFP, and Kyiv Independent with Bellingcat verification and EU/ECB/Copernicus registries."
+    },
+    {
+      "id": "east_asia_pacific",
+      "label": "East Asia, Southeast Asia & Pacific",
+      "signal_keywords": ["china", "beijing", "taiwan", "japan", "tokyo", "korea", "seoul", "pyongyang", "asean", "singapore", "south china sea", "indo-pacific"],
+      "routing_guidance": "Route to Nikkei Asia, Kyodo News, Yonhap, Straits Times, and Reuters alongside domestic corporate/exchange disclosures and maritime AIS telemetry."
+    },
+    {
+      "id": "south_central_asia",
+      "label": "South & Central Asia",
+      "signal_keywords": ["india", "new delhi", "pakistan", "bangladesh", "sri lanka", "afghanistan", "kazakhstan", "central asia", "rbi"],
+      "routing_guidance": "Pair The Hindu, BBC World Service, Reuters, and Nikkei Asia with domestic constitutional/RBI primary notifications."
+    },
+    {
+      "id": "middle_east_north_africa",
+      "label": "Middle East & North Africa (MENA)",
+      "signal_keywords": ["middle east", "israel", "gaza", "palestine", "lebanon", "iran", "hormuz", "red sea", "saudi", "gulf", "syria", "egypt", "turkey"],
+      "routing_guidance": "Triangulate strictly across Al-Monitor, Reuters, AFP, BBC World Service, UN OCHA ReliefWeb, and independent satellite/AIS verification (Bellingcat, CIR)."
+    },
+    {
+      "id": "sub_saharan_africa",
+      "label": "Sub-Saharan Africa",
+      "signal_keywords": ["africa", "african union", "south africa", "nigeria", "kenya", "ethiopia", "sudan", "sahel", "congo", "drc", "ecowas", "sadc"],
+      "routing_guidance": "Combine Daily Maverick, AFP, BBC Africa/World Service, Le Monde Afrique, CIR (Sudan Witness), and UN OCHA ReliefWeb."
+    },
+    {
+      "id": "latin_america_caribbean",
+      "label": "Latin America & Caribbean",
+      "signal_keywords": ["latin america", "brazil", "mexico", "argentina", "colombia", "chile", "venezuela", "caribbean", "mercosur", "amazon"],
+      "routing_guidance": "Pair El País, Folha de S.Paulo, AP, AFP, Reuters, and OCCRP/ICIJ with national central bank and environmental sensor agencies."
+    }
+  ],
+  "domains": [
+    {
+      "id": "geopolitics_diplomacy",
+      "label": "Geopolitics, Statecraft & International Diplomacy",
+      "description": "Bilateral and multilateral diplomacy, treaties, sanctions regimes, alliances, elections, sovereign statecraft, and international institutions.",
+      "subcategories": [
+        "Treaties, Summits & Multilateral Institutions",
+        "Economic Statecraft & Sanctions",
+        "Foreign Policy Doctrine & Alliance Commitments",
+        "National Elections & Coalition Formation"
+      ],
+      "signal_keywords": [
+        "diplomacy",
+        "sanctions",
+        "treaty",
+        "summit",
+        "ambassador",
+        "foreign policy",
+        "alliance",
+        "un security council",
+        "election",
+        "tariffs",
+        "sovereignty",
+        "bilateral",
+        "geopolitics",
+        "statecraft"
+      ],
+      "refinement_questions_journalist": [
+        "What formal communiqués, treaty clauses, sanctions designations, or legislative votes have actually been signed versus merely floated anonymously?",
+        "How is the event reported across at least two distinct geopolitical capitals or regional press ecosystems?",
+        "What domestic political or coalition constraints act on each negotiating government?"
+      ],
+      "refinement_questions_academic": [
+        "What international legal framework, treaty mechanism, or deterrence/bargaining model governs this dispute?",
+        "What does empirical political-science scholarship find regarding the historical effectiveness of comparable sanctions or diplomatic instruments?",
+        "How do bureaucratic-politics models disaggregate internal factions inside the state actors?"
+      ],
+      "priority_media_sources": [
+        "reuters",
+        "afp",
+        "financial_times",
+        "bbc_news",
+        "foreign_affairs",
+        "nikkei_asia",
+        "le_monde",
+        "al_monitor"
+      ],
+      "priority_primary_sources": [
+        "ofac_eu_un_sanctions",
+        "icj_icc_filings",
+        "un_reliefweb_ocha"
+      ],
+      "priority_academic_sources": [
+        "cfr_chatham_carnegie",
+        "openalex",
+        "stanford_encyclopedia",
+        "worldlii_heinonline"
+      ],
+      "high_risk_fallacies": [
+        "false_dilemma",
+        "fallacy_of_composition_division",
+        "circular_reporting_petitio_principii"
+      ],
+      "high_risk_biases": [
+        "mirror_imaging_bias",
+        "access_journalism_official_source_bias",
+        "geopolitical_home_capital_bias"
+      ]
+    },
+    {
+      "id": "conflict_defense_security",
+      "label": "Armed Conflict, Defense Posture & Open-Source Security Verification",
+      "description": "Active wars, military operations, naval/airspace chokepoints, arms transfers, nuclear deterrence, insurgency, and kinetic incident verification.",
+      "subcategories": [
+        "Battlefield Operations & Territorial Control",
+        "Maritime Chokepoints & Airspace Incidents",
+        "Defense Industrial Base, Munitions & Arms Transfers",
+        "Nuclear Deterrence & Non-Proliferation"
+      ],
+      "signal_keywords": [
+        "military",
+        "war",
+        "strike",
+        "missile",
+        "drone",
+        "artillery",
+        "naval",
+        "strait",
+        "ceasefire",
+        "casualties",
+        "troops",
+        "air defense",
+        "nuclear",
+        "insurgency",
+        "blockade"
+      ],
+      "refinement_questions_journalist": [
+        "Which kinetic or territorial claims are independently geo- and chrono-verified via satellite/visual OSINT versus asserted solely by belligerent defense ministries?",
+        "What do open aviation/maritime transponders (ADS-B/AIS) and SAR/optical satellite passes show?",
+        "Are collection blackouts (telecom shutdowns, cloud cover, press bans) skewing visible incident counts?"
+      ],
+      "refinement_questions_academic": [
+        "What operational military logistics, force-to-space ratios, or air-defense attrition mechanics constrain both sides?",
+        "How does International Humanitarian Law (distinction, proportionality, UNCLOS transit passage) apply to the specific action?",
+        "What are the baseline stockpile and production rates documented by SIPRI/IISS?"
+      ],
+      "priority_media_sources": [
+        "reuters",
+        "associated_press",
+        "afp",
+        "bellingcat",
+        "cir_info_resilience",
+        "war_on_the_rocks",
+        "bbc_news",
+        "kyiv_independent"
+      ],
+      "priority_primary_sources": [
+        "adsb_ais_open_telemetry",
+        "un_reliefweb_ocha",
+        "usgs_copernicus_noaa"
+      ],
+      "priority_academic_sources": [
+        "sipri_iiss",
+        "cfr_chatham_carnegie",
+        "stanford_encyclopedia",
+        "openalex"
+      ],
+      "high_risk_fallacies": [
+        "circular_reporting_petitio_principii",
+        "argument_from_ignorance",
+        "base_rate_neglect",
+        "nirvana_perfect_solution"
+      ],
+      "high_risk_biases": [
+        "breaking_news_speed_bias",
+        "survivorship_visibility_bias",
+        "mirror_imaging_bias"
+      ]
+    },
+    {
+      "id": "economics_markets_trade",
+      "label": "Macroeconomics, Financial Markets, Supply Chains & Trade",
+      "description": "Monetary policy, inflation, sovereign debt, banking liquidity, international trade/tariffs, corporate governance, commodities, and industrial policy.",
+      "subcategories": [
+        "Central Banking, Inflation & Yield Curves",
+        "International Trade, Tariffs & Supply Chains",
+        "Sovereign Debt, FX & Balance-of-Payments Crises",
+        "Corporate Filings, M&A & Financial Plumbing"
+      ],
+      "signal_keywords": [
+        "economy",
+        "inflation",
+        "interest rate",
+        "central bank",
+        "fed",
+        "gdp",
+        "bond",
+        "yield",
+        "currency",
+        "debt",
+        "trade",
+        "tariff",
+        "export",
+        "supply chain",
+        "market",
+        "bank",
+        "recession"
+      ],
+      "refinement_questions_journalist": [
+        "What do primary statistical releases (FRED, IMF, BLS, customs data) and audited corporate filings (SEC EDGAR) show in real, seasonally adjusted terms?",
+        "How are credit spreads, FX swaps, shipping rates, or inventory filings reacting compared to political rhetoric?",
+        "Have initial macroeconomic estimates undergone subsequent benchmark revisions?"
+      ],
+      "refinement_questions_academic": [
+        "What monetary transmission channel, trade-elasticity model, or balance-sheet liquidity mechanism governs this shock?",
+        "What causal effect sizes and time lags are estimated in NBER, RePEc, and BIS empirical literature?",
+        "Are observers committing the fallacy of composition by extrapolating single-firm tariff gains to general equilibrium?"
+      ],
+      "priority_media_sources": [
+        "financial_times",
+        "wall_street_journal",
+        "bloomberg",
+        "reuters",
+        "the_economist",
+        "nikkei_asia",
+        "icij"
+      ],
+      "priority_primary_sources": [
+        "imf_world_bank_fred",
+        "sec_edgar",
+        "ofac_eu_un_sanctions"
+      ],
+      "priority_academic_sources": [
+        "nber",
+        "bis_central_bank_research",
+        "repec_ideas",
+        "our_world_in_data",
+        "openalex"
+      ],
+      "high_risk_fallacies": [
+        "post_hoc_ergo_propter_hoc",
+        "fallacy_of_composition_division",
+        "cherry_picking_suppressed_evidence"
+      ],
+      "high_risk_biases": [
+        "confirmation_bias",
+        "anchoring_first_source_bias",
+        "ascertainment_and_goodhart_bias"
+      ]
+    },
+    {
+      "id": "technology_cyber_ai",
+      "label": "Technology, Cybersecurity, Semiconductors & Artificial Intelligence",
+      "description": "Zero-day vulnerabilities, cyber espionage/ransomware, semiconductor lithography & export controls, AI model capabilities/safety, and critical digital infrastructure.",
+      "subcategories": [
+        "Cybersecurity Breaches, CVEs & Threat Attribution",
+        "Semiconductor Fabrication & Hardware Supply Chains",
+        "Artificial Intelligence Capabilities, Benchmarks & Governance",
+        "Internet Routing, Subsea Cables & Cloud Infrastructure"
+      ],
+      "signal_keywords": [
+        "cyber",
+        "hack",
+        "ransomware",
+        "vulnerability",
+        "cve",
+        "zero-day",
+        "semiconductor",
+        "chip",
+        "euv",
+        "asml",
+        "tsmc",
+        "gpu",
+        "artificial intelligence",
+        "llm",
+        "encryption",
+        "outage",
+        "bgp"
+      ],
+      "refinement_questions_journalist": [
+        "Is active exploitation confirmed in CISA KEV / NIST NVD, SEC 8-K filings, or multi-vendor CERT telemetry, or is it a single-vendor marketing claim?",
+        "Which exact hardware nodes, compute thresholds, or protocol layers are affected?",
+        "Do independent forensic researchers corroborate attribution of the intrusion?"
+      ],
+      "refinement_questions_academic": [
+        "What physical or computer-science mechanism underlies the story (e.g., EUV lithography numerical aperture, BGP route hijacking, memory-safety flaws, transformer scaling laws)?",
+        "Are cited AI or quantum breakthroughs peer-reviewed and independently replicated, or unrefereed arXiv preprints / vendor blog benchmarks?",
+        "What NIST, IETF RFC, or IEEE standard defines the relevant protocol or cryptographic boundary?"
+      ],
+      "priority_media_sources": [
+        "krebs_on_security",
+        "the_record_recorded_future",
+        "ars_technica",
+        "financial_times",
+        "nikkei_asia",
+        "reuters",
+        "lawfare"
+      ],
+      "priority_primary_sources": [
+        "cisa_nvd",
+        "sec_edgar",
+        "ofac_eu_un_sanctions"
+      ],
+      "priority_academic_sources": [
+        "nist_ietf_ieee",
+        "arxiv",
+        "semantic_scholar",
+        "openalex"
+      ],
+      "high_risk_fallacies": [
+        "motte_and_bailey",
+        "appeal_to_outside_authority",
+        "texas_sharpshooter"
+      ],
+      "high_risk_biases": [
+        "recency_availability_bias",
+        "premature_cognitive_closure",
+        "training_cutoff_staleness_bias"
+      ]
+    },
+    {
+      "id": "science_medicine_public_health",
+      "label": "Science, Medicine, Epidemiology & Public Health",
+      "description": "Infectious disease outbreaks, clinical trials, biotechnology, pharmaceuticals, toxicology, spaceflight, physics discoveries, and research integrity.",
+      "subcategories": [
+        "Outbreak Epidemiology & Zoonotic Spillover",
+        "Clinical Trials, Regulatory Approvals & Drug Safety",
+        "Frontier Physics, Space & Materials Claims",
+        "Scientific Integrity, Replication & Meta-Science"
+      ],
+      "signal_keywords": [
+        "virus",
+        "outbreak",
+        "pandemic",
+        "vaccine",
+        "clinical trial",
+        "fda",
+        "who",
+        "h5n1",
+        "pathogen",
+        "study",
+        "disease",
+        "mortality",
+        "cancer",
+        "drug",
+        "gene",
+        "physics",
+        "superconductor"
+      ],
+      "refinement_questions_journalist": [
+        "What are the laboratory-confirmed case counts, testing denominators, and case definitions in WHO/CDC/ECDC surveillance bulletins?",
+        "What do independent domain scientists interviewed by STAT News or Nature News note regarding sample size, endpoints, and confounding?",
+        "Is the news story driven by a corporate press release, an unrefereed preprint, or a peer-reviewed trial?"
+      ],
+      "refinement_questions_academic": [
+        "Where does the cited study sit on the biomedical evidence hierarchy (Cochrane meta-analysis > RCT > observational cohort > animal/in-vitro study)?",
+        "Has the paper been screened against Crossref / Retraction Watch for retractions or expressions of concern?",
+        "What biological or statistical mechanism (e.g., CFR vs. IFR ascertainment lag, antigenic shift, statistical power, relative vs. absolute risk reduction) explains the numbers?"
+      ],
+      "priority_media_sources": [
+        "stat_news",
+        "nature_news",
+        "associated_press",
+        "reuters",
+        "bbc_news",
+        "propublica"
+      ],
+      "priority_primary_sources": [
+        "who_cdc_ecdc",
+        "usgs_copernicus_noaa"
+      ],
+      "priority_academic_sources": [
+        "cochrane_library",
+        "pubmed_pmc",
+        "retraction_watch",
+        "openalex",
+        "biorxiv_medrxiv"
+      ],
+      "high_risk_fallacies": [
+        "cum_hoc_spurious_correlation",
+        "base_rate_neglect",
+        "nirvana_perfect_solution",
+        "cherry_picking_suppressed_evidence"
+      ],
+      "high_risk_biases": [
+        "ascertainment_and_goodhart_bias",
+        "false_balance_bothsidesism",
+        "anchoring_first_source_bias"
+      ]
+    },
+    {
+      "id": "climate_energy_environment",
+      "label": "Climate Science, Energy Grids, Critical Minerals & Disasters",
+      "description": "Electricity grids, renewable/nuclear/hydrocarbon markets, extreme-weather attribution, greenhouse-gas emissions, critical minerals, and natural disasters.",
+      "subcategories": [
+        "Power Grid Operations, Storage & Energy Markets",
+        "Greenhouse Gas Accounting & Climate Policy",
+        "Extreme Weather Attribution & Geophysical Disasters",
+        "Critical Minerals, Water & Ecological Systems"
+      ],
+      "signal_keywords": [
+        "climate",
+        "emissions",
+        "carbon",
+        "energy",
+        "electricity",
+        "grid",
+        "blackout",
+        "solar",
+        "wind",
+        "nuclear power",
+        "oil",
+        "lng",
+        "lithium",
+        "hurricane",
+        "wildfire",
+        "earthquake",
+        "drought"
+      ],
+      "refinement_questions_journalist": [
+        "What physical telemetry is recorded by NOAA, Copernicus, USGS, or grid system operators regarding outage sequence, emissions, or hazard magnitude?",
+        "Are cost or generation comparisons using matched capacity factors, storage/transmission integration costs, and real currency units?",
+        "What permitting, supply-chain, or grid-interconnection bottlenecks exist on the ground?"
+      ],
+      "refinement_questions_academic": [
+        "What physical or engineering mechanism is involved (e.g., synchronous grid inertia, radiative forcing, extreme-event probabilistic attribution, LCOE vs. system LCOE)?",
+        "What confidence level and range do IPCC Working Group technical chapters assign to this phenomenon?",
+        "Are territorial vs. consumption-based emissions accounting distinctions properly handled?"
+      ],
+      "priority_media_sources": [
+        "carbon_brief",
+        "financial_times",
+        "bloomberg",
+        "reuters",
+        "nature_news",
+        "folha_de_spaulo",
+        "daily_maverick"
+      ],
+      "priority_primary_sources": [
+        "usgs_copernicus_noaa",
+        "imf_world_bank_fred",
+        "un_reliefweb_ocha"
+      ],
+      "priority_academic_sources": [
+        "ipcc_assessments",
+        "our_world_in_data",
+        "nist_ietf_ieee",
+        "openalex"
+      ],
+      "high_risk_fallacies": [
+        "cherry_picking_suppressed_evidence",
+        "false_dilemma",
+        "nirvana_perfect_solution"
+      ],
+      "high_risk_biases": [
+        "false_balance_bothsidesism",
+        "recency_availability_bias",
+        "anchoring_first_source_bias"
+      ]
+    },
+    {
+      "id": "law_governance_human_rights",
+      "label": "Constitutional/International Law, Courts, Governance & Human Rights",
+      "description": "Judicial rulings, indictments, regulatory enforcement, constitutional crises, international humanitarian/criminal law, anti-corruption, and civil liberties.",
+      "subcategories": [
+        "Constitutional & Appellate Litigation",
+        "Public International Law, ICJ & War-Crimes Tribunals",
+        "Regulatory Enforcement, Antitrust & Corporate Liability",
+        "Corruption, Kleptocracy & Human Rights Documentation"
+      ],
+      "signal_keywords": [
+        "court",
+        "supreme court",
+        "judge",
+        "ruling",
+        "indictment",
+        "unconstitutional",
+        "icj",
+        "icc",
+        "war crimes",
+        "genocide convention",
+        "human rights",
+        "antitrust",
+        "corruption",
+        "statute",
+        "injunction"
+      ],
+      "refinement_questions_journalist": [
+        "What is the exact procedural posture of the case (temporary restraining order, provisional measures, indictment allegation, or final merits judgment)?",
+        "What does the primary slip opinion, operative order ('dispositif'), or indictment docket actually state verbatim?",
+        "Which factual allegations are proven in court versus merely pleaded by one party?"
+      ],
+      "refinement_questions_academic": [
+        "What statutory standard of review, burden of proof, or treaty article governs this procedural stage?",
+        "What is the strongest doctrinal argument presented in the judicial dissent or competing legal scholarship?",
+        "How do comparative legal regimes (e.g., EU vs. US antitrust or privacy law) diverge conceptually?"
+      ],
+      "priority_media_sources": [
+        "lawfare",
+        "scotusblog",
+        "propublica",
+        "occrp",
+        "icij",
+        "reuters",
+        "associated_press",
+        "the_hindu"
+      ],
+      "priority_primary_sources": [
+        "icj_icc_filings",
+        "sec_edgar",
+        "ofac_eu_un_sanctions"
+      ],
+      "priority_academic_sources": [
+        "worldlii_heinonline",
+        "stanford_encyclopedia",
+        "ssrn",
+        "philpapers"
+      ],
+      "high_risk_fallacies": [
+        "motte_and_bailey",
+        "straw_man_weak_man",
+        "circular_reporting_petitio_principii"
+      ],
+      "high_risk_biases": [
+        "sycophancy_prompt_framing_bias",
+        "survivorship_visibility_bias",
+        "geopolitical_home_capital_bias"
+      ]
+    },
+    {
+      "id": "society_demographics_labor",
+      "label": "Demographics, Migration, Labor Markets & Social Research",
+      "description": "Census & fertility trends, migration/refugee flows, labor relations, inequality, education outcomes, polling methodology, and social movements.",
+      "subcategories": [
+        "Fertility, Aging & Census Demography",
+        "Migration Corridors, Asylum & Displacement",
+        "Labor Markets, Wages & Automation",
+        "Public Opinion Polling & Survey Methodology"
+      ],
+      "signal_keywords": [
+        "population",
+        "fertility",
+        "migration",
+        "refugees",
+        "asylum",
+        "labor",
+        "wages",
+        "unemployment",
+        "strike",
+        "union",
+        "inequality",
+        "poverty",
+        "poll",
+        "survey",
+        "census"
+      ],
+      "refinement_questions_journalist": [
+        "What are the official census, UNHCR/OCHA, or labor-bureau microdata figures, and what are the survey sample sizes and margins of design-adjusted error?",
+        "Are wages and household income figures adjusted for inflation, household size, and taxes/transfers?",
+        "How do conditions reported on the ground by regional outlets compare with administrative border or payroll counts?"
+      ],
+      "refinement_questions_academic": [
+        "What demographic momentum, labor-search model, or survey-weighting mechanism (non-response bias, ecological inference) explains the observed data?",
+        "How do current figures compare against multi-decade structural trends in Our World in Data and NBER/demography literature?",
+        "Are subgroup claims supported by individual-level microdata rather than ecological aggregate fallacies?"
+      ],
+      "priority_media_sources": [
+        "associated_press",
+        "the_economist",
+        "propublica",
+        "bbc_news",
+        "el_pais",
+        "le_monde",
+        "globe_and_mail"
+      ],
+      "priority_primary_sources": [
+        "imf_world_bank_fred",
+        "un_reliefweb_ocha"
+      ],
+      "priority_academic_sources": [
+        "our_world_in_data",
+        "nber",
+        "openalex",
+        "doaj_core"
+      ],
+      "high_risk_fallacies": [
+        "ecological_fallacy",
+        "cum_hoc_spurious_correlation",
+        "cherry_picking_suppressed_evidence"
+      ],
+      "high_risk_biases": [
+        "ascertainment_and_goodhart_bias",
+        "recency_availability_bias",
+        "sycophancy_prompt_framing_bias"
+      ]
+    }
+  ]
+}

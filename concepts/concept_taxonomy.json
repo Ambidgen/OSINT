@@ -1,0 +1,462 @@
+{
+  "version": "1.0.0",
+  "description": "Structured mapping from esoteric or technical current-event phenomena to academic disciplines, foundational mechanisms, scholarly databases, and common lay/media misconceptions.",
+  "evidence_hierarchy": [
+    {
+      "rank": 1,
+      "tier_id": "meta_analysis_and_systematic_review",
+      "label": "Systematic Reviews, Meta-Analyses & Consensus Assessments",
+      "epistemic_weight": "Highest empirical synthesis weight across multiple independent trials or observational cohorts.",
+      "agent_usage_rule": "Prioritize first whenever explaining empirical effect sizes, clinical outcomes, or physical climate projections; report confidence intervals and GRADE/IPCC certainty tiers."
+    },
+    {
+      "rank": 2,
+      "tier_id": "peer_reviewed_primary_literature",
+      "label": "Peer-Reviewed Journal Articles & Replicated Empirical Studies",
+      "epistemic_weight": "Refereed primary research; reliability scales with sample power, causal identification strategy, and independent replication.",
+      "agent_usage_rule": "Verify DOI via Crossref, confirm non-retracted status via Retraction Watch/OpenAlex, and inspect citation context in Semantic Scholar."
+    },
+    {
+      "rank": 3,
+      "tier_id": "technical_standard_and_reference",
+      "label": "Formal Engineering/Legal Standards & Peer-Reviewed Reference",
+      "epistemic_weight": "Definitive normative authority for protocol specifications, statutory definitions, and formal conceptual boundaries.",
+      "agent_usage_rule": "Use NIST, IETF RFCs, IEEE, WorldLII, SEP, and OWID to anchor exact technical definitions and historical baselines."
+    },
+    {
+      "rank": 4,
+      "tier_id": "working_paper_and_policy_analysis",
+      "label": "Institutional Working Papers & Empirical Policy Research",
+      "epistemic_weight": "Credentialed scholarly analysis circulated prior to final blind journal refereeing.",
+      "agent_usage_rule": "Label as working paper or policy brief (NBER, BIS, RePEc, SIPRI, Chatham House/Carnegie), check if a journal version exists, and note institutional perspective."
+    },
+    {
+      "rank": 5,
+      "tier_id": "unrefereed_preprint",
+      "label": "Non-Peer-Reviewed Preprints",
+      "epistemic_weight": "Unvetted frontier manuscript; useful for understanding breaking technical claims under debate, never for settled truth.",
+      "agent_usage_rule": "MANDATORY: Explicitly disclose 'unrefereed preprint' status (arXiv, bioRxiv/medRxiv, SSRN) and pair with peer-reviewed domain context."
+    }
+  ],
+  "concept_clusters": [
+    {
+      "id": "semiconductor_lithography_and_export_chokepoints",
+      "domain": "technology_cyber_ai",
+      "title": "Semiconductor Lithography Physics, Packaging & Export-Control Chokepoints",
+      "trigger_terms": [
+        "euv",
+        "duv",
+        "lithography",
+        "asml",
+        "tsmc",
+        "high-na",
+        "2nm",
+        "3nm",
+        "7nm",
+        "hbm",
+        "cowos",
+        "chip export",
+        "semiconductor"
+      ],
+      "academic_disciplines": [
+        "Optical Physics & Extreme Ultraviolet Photolithography",
+        "Semiconductor Device Engineering & Advanced Packaging",
+        "Economic Statecraft & Global Value Chain Economics"
+      ],
+      "foundational_mechanisms": [
+        "Rayleigh resolution criterion (CD = k1 * lambda / NA): why shifting wavelength from 193nm ArF immersion DUV to 13.5nm EUV plasma light—and raising numerical aperture (High-NA 0.55)—determines feature density and multi-patterning yield.",
+        "Multi-patterning DUV vs. single-exposure EUV economics: DUV immersion CAN physically pattern 7nm-class logic via quadruple patterning (SAQP), but suffers compounding mask steps, defect density, and cost penalties.",
+        "AI compute bottlenecks beyond transistor node size: High-Bandwidth Memory (HBM) stacks, CoWoS 2.5D interposer packaging, and chip-to-chip interconnect bandwidth often bind before raw FLOPS."
+      ],
+      "common_media_misconceptions": [
+        "Treating 'nm' marketing node names (e.g., '3nm', '5nm') as literal physical transistor gate lengths—commercial node labels decoupled from physical gate dimensions over a decade ago.",
+        "Assuming export bans on EUV scanners make sub-7nm fabrication physically impossible rather than yield- and cost-constrained via multi-patterning DUV."
+      ],
+      "recommended_academic_sources": [
+        "nist_ietf_ieee",
+        "semantic_scholar",
+        "openalex",
+        "cfr_chatham_carnegie"
+      ],
+      "pedagogical_bridge_prompt": "Explain Rayleigh's optical resolution equation in plain English so the reader sees why 13.5nm EUV light requires vacuum mirrors and tin-droplet laser plasmas—and why servicing/consumables matter as much as initial scanner sales."
+    },
+    {
+      "id": "monetary_plumbing_liquidity_and_yield_curves",
+      "domain": "economics_markets_trade",
+      "title": "Central Bank Monetary Transmission, Yield Curves & Shadow-Banking Liquidity",
+      "trigger_terms": [
+        "yield curve",
+        "repo",
+        "fx swap",
+        "quantitative tightening",
+        "duration",
+        "bond vigilantes",
+        "interest rate",
+        "central bank",
+        "basis trade",
+        "sovereign spread"
+      ],
+      "academic_disciplines": [
+        "Monetary Economics & Central Banking",
+        "Market Microstructure & Financial Intermediation",
+        "International Finance"
+      ],
+      "foundational_mechanisms": [
+        "Bond price-yield inverse convexity and duration mismatch: how rising policy rates erode mark-to-market value of held-to-maturity sovereign bond portfolios on bank balance sheets.",
+        "Repo and FX swap funding plumbing: how non-bank financial intermediaries roll overnight collateralized borrowing, and how margin spirals trigger forced deleveraging.",
+        "Long and variable monetary transmission lags across fixed- vs. floating-rate mortgage/corporate debt structures."
+      ],
+      "common_media_misconceptions": [
+        "Equating central bank reserve creation (QE) mechanically 1-for-1 with immediate consumer CPI inflation without examining bank credit creation, velocity, and fiscal deficits.",
+        "Assuming an inverted yield curve mechanically 'causes' recessions rather than reflecting bond-market expectations of future policy-rate cuts."
+      ],
+      "recommended_academic_sources": [
+        "bis_central_bank_research",
+        "nber",
+        "repec_ideas",
+        "openalex"
+      ],
+      "pedagogical_bridge_prompt": "Walk through a simplified bank or dealer balance sheet to show how overnight funding meets long-term bond duration, connecting abstract basis-point moves to real-economy borrowing costs."
+    },
+    {
+      "id": "tariffs_sanctions_and_trade_elasticities",
+      "domain": "economics_markets_trade",
+      "title": "Tariff Incidence, Sanctions Evasion & General-Equilibrium Trade Mechanics",
+      "trigger_terms": [
+        "tariff",
+        "trade war",
+        "sanctions",
+        "price cap",
+        "shadow fleet",
+        "transshipment",
+        "current account",
+        "dumping",
+        "industrial subsidy"
+      ],
+      "academic_disciplines": [
+        "International Trade Theory & Empirical Trade",
+        "Open-Economy Macroeconomics",
+        "Sanctions & Economic Coercion Studies"
+      ],
+      "foundational_mechanisms": [
+        "Statutory vs. economic tariff incidence: who actually bears a tariff depends on relative export supply and import demand elasticities plus currency exchange-rate offset.",
+        "Input-output upstream linkage penalties: tariffs on intermediate industrial inputs (steel, chemicals, PCBs) raise production costs for domestic downstream exporters.",
+        "Trade rerouting and 'lengthening supply chains': how bilateral trade restrictions reallocate flows through third-country assembly hubs with value-added rules-of-origin thresholds."
+      ],
+      "common_media_misconceptions": [
+        "Treating a bilateral trade deficit with a single country as a corporate profit/loss ledger rather than an outcome of comparative specialization and national savings-investment balances.",
+        "Declaring sanctions 'total failures' because third-country transshipment occurs, ignoring transaction-cost wedges and discounted export revenues."
+      ],
+      "recommended_academic_sources": [
+        "nber",
+        "repec_ideas",
+        "bis_central_bank_research",
+        "cfr_chatham_carnegie"
+      ],
+      "pedagogical_bridge_prompt": "Clarify statutory payer (importer of record at customs) versus economic incidence (pass-through to domestic prices vs. foreign exporter margin compression) using empirical NBER elasticity findings."
+    },
+    {
+      "id": "international_law_icj_ihl_and_maritime_treaties",
+      "domain": "law_governance_human_rights",
+      "title": "Public International Law, IHL/LOAC & Maritime Chokepoint Regimes",
+      "trigger_terms": [
+        "icj",
+        "icc",
+        "provisional measures",
+        "genocide convention",
+        "proportionality",
+        "war crimes",
+        "unclos",
+        "strait",
+        "exclusive economic zone",
+        "sovereign immunity"
+      ],
+      "academic_disciplines": [
+        "Public International Law & Treaty Interpretation",
+        "International Humanitarian Law (Law of Armed Conflict)",
+        "Law of the Sea (UNCLOS)"
+      ],
+      "foundational_mechanisms": [
+        "ICJ procedural stages: provisional measures under Article 41 require only 'prima facie' jurisdiction and 'plausibility of rights' to prevent irreparable prejudice—years before a final evidentiary judgment on the merits.",
+        "IHL Proportionality vs. Distinction: under Additional Protocol I, legal proportionality weighs anticipated concrete military advantage against expected incidental civilian harm ex ante—NOT a post-hoc comparison of symmetric casualty ratios.",
+        "UNCLOS Strait 'Transit Passage' vs. Territorial Sea 'Innocent Passage': why coastal states legally cannot suspend transit passage through international straits connecting high seas/EEZs (Hormuz, Bab el-Mandeb, Malacca)."
+      ],
+      "common_media_misconceptions": [
+        "Reporting an ICJ Provisional Measures order finding 'plausible rights' as if the Court had issued a final merits conviction—or, conversely, claiming the Court ruled no violation occurred.",
+        "Confusing the International Court of Justice (state-vs-state UN organ) with the International Criminal Court (individual criminal prosecution under the Rome Statute)."
+      ],
+      "recommended_academic_sources": [
+        "worldlii_heinonline",
+        "stanford_encyclopedia",
+        "philpapers",
+        "ssrn"
+      ],
+      "pedagogical_bridge_prompt": "Map the exact procedural stage and treaty article at issue, distinguishing preliminary injunctions/plausibility thresholds from final merits adjudication."
+    },
+    {
+      "id": "outbreak_epidemiology_and_clinical_biostatistics",
+      "domain": "science_medicine_public_health",
+      "title": "Outbreak Transmission Dynamics, Spillover & Clinical Trial Biostatistics",
+      "trigger_terms": [
+        "h5n1",
+        "outbreak",
+        "spillover",
+        "case fatality",
+        "r0",
+        "reassortment",
+        "vaccine efficacy",
+        "hazard ratio",
+        "p-value",
+        "clinical trial",
+        "zoonotic"
+      ],
+      "academic_disciplines": [
+        "Infectious Disease Epidemiology & Phylodynamics",
+        "Virology & Molecular Evolution",
+        "Clinical Biostatistics & Evidence-Based Medicine"
+      ],
+      "foundational_mechanisms": [
+        "Case Fatality Ratio (CFR) vs. Infection Fatality Ratio (IFR): early outbreak surveillance detects severe hospitalized cases first while missing mild/asymptomatic infections, systematically inflating naive early CFRs until seroprevalence surveys are run.",
+        "Antigenic drift (point mutations) vs. antigenic shift (segment reassortment in co-infected hosts) and receptor-binding tropism (e.g., avian alpha-2,3 vs. human upper-respiratory alpha-2,6 sialic acid receptors).",
+        "Relative Risk Reduction (RRR) vs. Absolute Risk Reduction (ARR) and Number Needed to Treat (NNT) in clinical trials."
+      ],
+      "common_media_misconceptions": [
+        "Extrapolating a historical hospitalized Case Fatality Ratio (e.g., ~50% in severe avian flu detections) directly as the population fatality rate if widespread mild transmission occurred.",
+        "Treating statistically underpowered subgroup post-hoc analyses or unrefereed medRxiv preprints as proven clinical effects."
+      ],
+      "recommended_academic_sources": [
+        "cochrane_library",
+        "pubmed_pmc",
+        "retraction_watch",
+        "openalex"
+      ],
+      "pedagogical_bridge_prompt": "Illustrate the numerator/denominator iceberg comparing hospital-detected CFR against serology-based IFR, and report both absolute and relative risk metrics."
+    },
+    {
+      "id": "power_grid_physics_and_climate_attribution",
+      "domain": "climate_energy_environment",
+      "title": "Power Grid Stability Physics, Energy System Economics & Weather Attribution",
+      "trigger_terms": [
+        "blackout",
+        "grid inertia",
+        "frequency",
+        "curtailment",
+        "lcoe",
+        "heatwave",
+        "attribution",
+        "radiative forcing",
+        "permafrost",
+        "amoc"
+      ],
+      "academic_disciplines": [
+        "Power Systems Electrical Engineering",
+        "Atmospheric Physics & Extreme Event Attribution",
+        "Energy Systems Economics"
+      ],
+      "foundational_mechanisms": [
+        "Synchronous rotational inertia vs. inverter-based resources (IBRs): AC grids must maintain tight frequency (50/60 Hz); heavy rotating steam/hydro turbines provide physical kinetic buffer against sudden generator trips, whereas solar/wind inverters require grid-forming control firmware and synthetic inertia.",
+        "Plant-level LCOE vs. System-Value/Firming Cost: marginal generation cost at midday differs from 24/7 dispatchable firm power once transmission, storage duration, and seasonal dunkelflaute backup are included.",
+        "Probabilistic Extreme Event Attribution (World Weather Attribution / IPCC): comparing hazard return periods in factual (+1.3C) vs. counterfactual pre-industrial climate ensembles rather than claiming climate change 'solely caused' a single storm."
+      ],
+      "common_media_misconceptions": [
+        "Blaming complex cascading grid blackouts instantaneously on 'renewables' or 'fossil plants' within hours before sequence-of-events fault logs (relay trips, voltage collapse, reactive power) are audited.",
+        "Binary claims that climate change either 'caused Storm X' or 'weather is natural' instead of reporting probabilistic likelihood/intensity multipliers."
+      ],
+      "recommended_academic_sources": [
+        "ipcc_assessments",
+        "nist_ietf_ieee",
+        "our_world_in_data",
+        "openalex"
+      ],
+      "pedagogical_bridge_prompt": "Explain AC grid frequency balance (generation matching load millisecond-by-millisecond) and how probabilistic attribution quantifies shifts in return-period odds."
+    },
+    {
+      "id": "cyber_intrusion_routing_and_cryptography",
+      "domain": "technology_cyber_ai",
+      "title": "Internet Routing Security, Zero-Day Exploitation & Cyber Attribution",
+      "trigger_terms": [
+        "zero-day",
+        "cve",
+        "bgp",
+        "dns",
+        "supply chain attack",
+        "ransomware",
+        "apt",
+        "false flag",
+        "post-quantum",
+        "certificate",
+        "kernel"
+      ],
+      "academic_disciplines": [
+        "Systems & Network Security",
+        "Applied Cryptography",
+        "Strategic Intelligence & Cyber Conflict Studies"
+      ],
+      "foundational_mechanisms": [
+        "Vulnerability lifecycle: vulnerability discovery -> exploit chain development (bypassing ASLR/sandboxes) -> C2 infrastructure -> post-exploitation lateral movement; why a high CVSS score alone does not equal active exploitation without CISA KEV telemetry.",
+        "Control-plane trust assumptions: BGP route hijacking (lack of universal RPKI route-origin validation) and software update-signing key compromises.",
+        "Diamond Model & multi-layer cyber attribution: why IP addresses and malware strings are easily spoofed ('false flags'), whereas victimology, operational hours, infrastructure procurement, and multi-year tradecraft are harder to fake."
+      ],
+      "common_media_misconceptions": [
+        "Equating low-cost DDoS website defacements with destructive operational-technology (OT/SCADA) intrusions.",
+        "Treating a language string inside malware code as proof of nation-state origin without tradecraft corroboration."
+      ],
+      "recommended_academic_sources": [
+        "nist_ietf_ieee",
+        "arxiv",
+        "semantic_scholar",
+        "cfr_chatham_carnegie"
+      ],
+      "pedagogical_bridge_prompt": "Distinguish noisy surface disruptions (DDoS) from deep authentication/signing-chain compromises, and explain how forensic attribution layers technical telemetry with strategic victimology."
+    },
+    {
+      "id": "military_logistics_attrition_and_deterrence",
+      "domain": "conflict_defense_security",
+      "title": "Military Logistics, Air-Defense Cost-Exchange & Deterrence Theory",
+      "trigger_terms": [
+        "air defense",
+        "interceptor",
+        "attrition",
+        "escalation",
+        "deterrence",
+        "hypersonic",
+        "magazine depth",
+        "electronic warfare",
+        "mobilization"
+      ],
+      "academic_disciplines": [
+        "Strategic Studies & Deterrence Theory",
+        "Operations Research & Military Logistics (Salvo Combat Models)",
+        "Defense Economics"
+      ],
+      "foundational_mechanisms": [
+        "Salvo combat equations (Hughes) and cost-exchange / magazine-depth asymmetry: saturation strikes pit cheap mass-produced one-way munitions against scarce, multi-million-dollar radar-guided interceptors constrained by annual industrial run-rates.",
+        "Culminating point of attack and Tooth-to-Tail logistics: mechanized advances decay exponentially with supply-line distance from railheads, fuel depots, and barrel-maintenance echelons.",
+        "Deterrence by denial (making attack physically unlikely to succeed) vs. deterrence by punishment (threatening retaliatory cost), and the stability-instability paradox."
+      ],
+      "common_media_misconceptions": [
+        "Focusing on single-platform 'game-changer' weapons specifications while ignoring crew training pipelines, spare-parts logistics, electronic-warfare adaptation, and interceptor stockpile replenishment.",
+        "Misunderstanding 'hypersonic': nearly all ballistic missiles travel above Mach 5 on reentry; the distinct technical challenge is endo-atmospheric sustained maneuverability (HGVs/HCMs)."
+      ],
+      "recommended_academic_sources": [
+        "sipri_iiss",
+        "cfr_chatham_carnegie",
+        "stanford_encyclopedia",
+        "openalex"
+      ],
+      "pedagogical_bridge_prompt": "Connect tactical headline intercepts to underlying salvo math, magazine depth, and annual industrial replenishment rates."
+    },
+    {
+      "id": "polling_demography_and_causal_social_inference",
+      "domain": "society_demographics_labor",
+      "title": "Survey Sampling Error, Demographic Momentum & Labor Econometrics",
+      "trigger_terms": [
+        "poll",
+        "margin of error",
+        "turnout",
+        "fertility rate",
+        "replacement level",
+        "real wages",
+        "gini",
+        "labor force participation",
+        "census"
+      ],
+      "academic_disciplines": [
+        "Survey Statistics & Political Methodology",
+        "Formal Demography",
+        "Labor Economics"
+      ],
+      "foundational_mechanisms": [
+        "Total Survey Error vs. textbook sampling margin of error: +/- 3% assumes pure random sampling, whereas modern polling error is dominated by differential non-response, likely-voter modeling, and correlated state-level weighting errors.",
+        "Period Total Fertility Rate (TFR) vs. Completed Cohort Fertility and demographic momentum: tempo shifts (women delaying childbirth to older ages) depress period TFR more sharply than lifetime cohort fertility, while age-pyramid structure locks in workforce size 20 years ahead.",
+        "Composition effects in aggregate wage statistics: during layoffs of low-wage service workers, median reported wages of remaining employed workers artificially jump!"
+      ],
+      "common_media_misconceptions": [
+        "Reporting a 1-point movement between two polls as 'Candidate A surges ahead' when it sits well inside design-effect margin of error and house-effect variance.",
+        "Inferring individual household income trajectories from shifting cross-sectional medians without checking workforce composition changes."
+      ],
+      "recommended_academic_sources": [
+        "our_world_in_data",
+        "nber",
+        "openalex",
+        "repec_ideas"
+      ],
+      "pedagogical_bridge_prompt": "Unpack Total Survey Error (beyond naive +/- random sampling error) or workforce composition effects so readers interpret headline numbers without statistical whiplash."
+    },
+    {
+      "id": "constitutional_review_and_regulatory_state",
+      "domain": "law_governance_human_rights",
+      "title": "Judicial Standards of Review, Administrative Law & Anti-Corruption Forensics",
+      "trigger_terms": [
+        "injunction",
+        "standing",
+        "judicial review",
+        "administrative law",
+        "antitrust",
+        "shell company",
+        "beneficial ownership",
+        "sovereign debt default",
+        "impeachment"
+      ],
+      "academic_disciplines": [
+        "Comparative Constitutional & Administrative Law",
+        "Law & Economics (Antitrust / Corporate Governance)",
+        "Transnational Financial Crime Studies"
+      ],
+      "foundational_mechanisms": [
+        "Procedural vs. substantive rulings: dismissal for lack of Article III standing, ripeness, or sovereign immunity leaves the underlying legality of the challenged conduct completely undecided.",
+        "Preliminary injunction four-factor balancing test (likelihood of success on merits, irreparable harm, balance of equities, public interest) on an expedited record vs. full trial fact-finding.",
+        "Beneficial ownership layering: how nominee directors, multi-jurisdictional trusts, and free-trade-zone intermediaries separate legal title from ultimate beneficial control."
+      ],
+      "common_media_misconceptions": [
+        "Reporting 'Supreme Court upholds/endorses Policy X' when the Court actually denied emergency shadow-docket relief or dismissed on narrow standing grounds.",
+        "Equating the filing of a civil complaint or grand-jury indictment (probable-cause threshold) with proven trial liability."
+      ],
+      "recommended_academic_sources": [
+        "worldlii_heinonline",
+        "ssrn",
+        "stanford_encyclopedia",
+        "openalex"
+      ],
+      "pedagogical_bridge_prompt": "Clarify the exact legal threshold met at the current docket stage (standing, probable cause, preliminary injunction, or final judgment) before discussing broader policy stakes."
+    },
+    {
+      "id": "diplomatic_bargaining_treaties_and_secondary_sanctions",
+      "domain": "geopolitics_diplomacy",
+      "title": "Crisis Bargaining Theory, Alliance Commitments & Secondary Sanctions Jurisdiction",
+      "trigger_terms": [
+        "secondary sanctions",
+        "swift",
+        "article 5",
+        "treaty",
+        "veto",
+        "security guarantee",
+        "diplomatic immunity",
+        "coalition",
+        "summit",
+        "extraterritorial"
+      ],
+      "academic_disciplines": [
+        "International Relations & Crisis Bargaining Theory",
+        "Diplomatic & Treaty Law (Vienna Conventions)",
+        "Comparative Political Institutions"
+      ],
+      "foundational_mechanisms": [
+        "Credible commitment problems & costly signaling (Fearon / Schelling): why verbal diplomatic assurances fail when power trajectories shift, and why binding treaties or forward troop deployments function as costly signals.",
+        "Primary vs. Secondary Sanctions & Correspondent-Banking Jurisdiction: primary sanctions bar domestic persons from trading with a target, whereas secondary sanctions threaten third-country banks with loss of U.S. dollar correspondent clearing accounts.",
+        "Alliance treaty text precision: even NATO Article 5 obligates each party to take 'such action as it deems necessary' rather than automatic mechanistic war declaration—making political cohesion as vital as legal text."
+      ],
+      "common_media_misconceptions": [
+        "Describing SWIFT as a bank that holds or freezes funds—SWIFT is a financial messaging cooperative; actual asset freezes occur on commercial/central bank balance sheets.",
+        "Treating non-binding summit joint statements or Memoranda of Understanding (MoUs) as legally ratified, senate/parliament-approved treaties."
+      ],
+      "recommended_academic_sources": [
+        "cfr_chatham_carnegie",
+        "stanford_encyclopedia",
+        "worldlii_heinonline",
+        "openalex"
+      ],
+      "pedagogical_bridge_prompt": "Distinguish legally binding ratified treaty obligations from political signaling, and explain correspondent-banking plumbing when covering sanctions."
+    }
+  ]
+}

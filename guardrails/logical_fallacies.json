@@ -1,0 +1,257 @@
+{
+  "catalog_type": "logical_fallacies",
+  "version": "1.0.0",
+  "description": "Formal and informal logical fallacies most prevalent in current-events reporting, geopolitical commentary, and LLM synthesis, with operational detection signals and corrective prompts.",
+  "entries": [
+    {
+      "id": "post_hoc_ergo_propter_hoc",
+      "name": "Post Hoc Ergo Propter Hoc (False Temporal Causation)",
+      "category": "causal_and_statistical",
+      "definition": "Inferring that Event A caused Event B solely because Event A preceded Event B in time, without establishing a causal mechanism or ruling out concurrent shocks.",
+      "osint_manifestation": "Attributing an immediate stock-market move, inflation shift, crime fluctuation, or battlefield outcome exclusively to a policy enacted days earlier when lagged structural variables or global shocks were already in motion.",
+      "detection_signals": [
+        "Narratives relying on 'shortly after X, Y occurred' without mechanistic or counterfactual evidence",
+        "Ignoring policy transmission lags (e.g., monetary policy or industrial subsidies taking 6–24 months to materialize)"
+      ],
+      "remediation_protocol": "Check pre-event trendlines, compare against control jurisdictions that did not enact Event A, and consult academic literature on expected transmission lag.",
+      "high_prevalence_domains": [
+        "economics_markets_trade",
+        "geopolitics_diplomacy",
+        "science_medicine_public_health",
+        "society_demographics_labor"
+      ]
+    },
+    {
+      "id": "cum_hoc_spurious_correlation",
+      "name": "Cum Hoc Ergo Propter Hoc (Confounded Correlation)",
+      "category": "causal_and_statistical",
+      "definition": "Treating two co-occurring variables as causally linked while ignoring unobserved confounders, reverse causality, or common upstream drivers.",
+      "osint_manifestation": "Media headlines turning observational epidemiology or cross-country correlations into causal claims ('X causes Y') when socioeconomic status, demographics, or state capacity confound both variables.",
+      "detection_signals": [
+        "Observational cross-sectional data described with causal verbs ('boosts', 'triggers', 'slashes', 'drives')",
+        "Absence of natural experiments, randomization, or confounder controls in cited studies"
+      ],
+      "remediation_protocol": "Inspect the underlying study's identification strategy; replace causal verbs with associative language unless quasi-experimental or RCT evidence supports causation.",
+      "high_prevalence_domains": [
+        "science_medicine_public_health",
+        "economics_markets_trade",
+        "society_demographics_labor",
+        "climate_energy_environment"
+      ]
+    },
+    {
+      "id": "cherry_picking_suppressed_evidence",
+      "name": "Cherry-Picking (Fallacy of Suppressed Evidence)",
+      "category": "evidentiary_selection",
+      "definition": "Selecting isolated data points, start/end dates, or outlier studies that support a favored thesis while omitting the broader distribution of contrary or qualifying evidence.",
+      "osint_manifestation": "Choosing an anomalous baseline year (e.g., 2020 pandemic trough) to exaggerate economic growth or emissions changes, or citing one outlier preprint against twenty peer-reviewed studies.",
+      "detection_signals": [
+        "Arbitrary time-series start dates coinciding with extreme peaks or troughs",
+        "Citing a single controversial study without mentioning systematic reviews or consensus baselines"
+      ],
+      "remediation_protocol": "Expand time horizons to full multi-year cycles (via FRED/OWID) and situate individual studies within meta-analyses or full scholarly distributions.",
+      "high_prevalence_domains": [
+        "economics_markets_trade",
+        "climate_energy_environment",
+        "science_medicine_public_health",
+        "society_demographics_labor"
+      ]
+    },
+    {
+      "id": "base_rate_neglect",
+      "name": "Base-Rate Neglect (Prior Probability Fallacy)",
+      "category": "causal_and_statistical",
+      "definition": "Evaluating the probability of a hypothesis using vivid specific indicators while ignoring the underlying prior frequency (base rate) of the phenomenon.",
+      "osint_manifestation": "Interpreting routine military exercises, diplomatic recalls, or minor industrial fires as imminent war or sabotage without comparing against the historical baseline frequency of identical events.",
+      "detection_signals": [
+        "Raw numerator counts reported without denominators or historical baselines",
+        "Treating an anomalous incident cluster as coordinated sabotage without checking annual industry accident rates"
+      ],
+      "remediation_protocol": "Always ask: 'What is the normal weekly/annual baseline rate of this event, and what is the false-positive rate of this indicator?'",
+      "high_prevalence_domains": [
+        "conflict_defense_security",
+        "science_medicine_public_health",
+        "technology_cyber_ai",
+        "society_demographics_labor"
+      ]
+    },
+    {
+      "id": "motte_and_bailey",
+      "name": "Motte-and-Bailey Equivocation",
+      "category": "rhetorical_equivocation",
+      "definition": "Conflating a bold, controversial, poorly evidenced claim (the 'bailey') with a modest, uncontroversial, easily defended truism (the 'motte') when challenged.",
+      "osint_manifestation": "Advancing sweeping claims ('AI has achieved general reasoning' or 'Sanctions have collapsed State X') and retreating when pressed to trivial definitions ('Models score higher on benchmarks' or 'Sanctions raised import costs').",
+      "detection_signals": [
+        "Key terms ('collapse', 'genocide', 'cyberwar', 'AGI', 'recession') shifting silently between strict technical/legal definitions and loose colloquial usage",
+        "Summaries claiming sweeping conclusions while body evidence only proves narrow technical sub-claims"
+      ],
+      "remediation_protocol": "Pin down exact technical, statutory, or operational definitions upfront in the Academic Track and hold claims strictly to that single definition.",
+      "high_prevalence_domains": [
+        "technology_cyber_ai",
+        "law_governance_human_rights",
+        "geopolitics_diplomacy",
+        "economics_markets_trade"
+      ]
+    },
+    {
+      "id": "false_dilemma",
+      "name": "False Dilemma (Artificial Bifurcation)",
+      "category": "structural_logic",
+      "definition": "Framing a complex multi-option strategic or empirical problem as a binary choice between two extreme alternatives while excluding realistic intermediate or hybrid pathways.",
+      "osint_manifestation": "Presenting foreign-policy choices as solely 'full military intervention vs. total capitulation', or energy policy as 'immediate grid shutdown vs. unabated fossil expansion'.",
+      "detection_signals": [
+        "Either/or framing ('Either X happens, or Y is inevitable')",
+        "Competing Hypotheses table containing only two mirror-image extremes"
+      ],
+      "remediation_protocol": "Require at least three distinct hypotheses in ACH, explicitly including hybrid, muddling-through, or status-quo-drift scenarios.",
+      "high_prevalence_domains": [
+        "geopolitics_diplomacy",
+        "conflict_defense_security",
+        "climate_energy_environment",
+        "economics_markets_trade"
+      ]
+    },
+    {
+      "id": "appeal_to_outside_authority",
+      "name": "Appeal to Non-Domain or Unverified Authority",
+      "category": "evidentiary_selection",
+      "definition": "Treating the pronouncement of a prestigious figure, institution, or Nobel laureate as authoritative on a technical subject outside their actual domain of empirical expertise.",
+      "osint_manifestation": "Citing tech executives on epidemiology, physicists on international trade law, or retired generals commenting without theater telemetry on technical cyber forensics.",
+      "detection_signals": [
+        "Reliance on credential prestige rather than reproducible evidence or domain-specific peer review",
+        "Single 'expert says' quote carrying the entire weight of a contested technical claim"
+      ],
+      "remediation_protocol": "Verify domain alignment between the cited expert's peer-reviewed track record and the specific claim, and prioritize primary evidence over authority.",
+      "high_prevalence_domains": [
+        "science_medicine_public_health",
+        "technology_cyber_ai",
+        "conflict_defense_security",
+        "climate_energy_environment"
+      ]
+    },
+    {
+      "id": "fallacy_of_composition_division",
+      "name": "Fallacies of Composition and Division",
+      "category": "structural_logic",
+      "definition": "Assuming that what is true of one part of a system must be true of the whole (composition), or that what holds for a macro aggregate applies uniformly to every constituent part (division).",
+      "osint_manifestation": "Assuming that if one firm benefits from tariff protection or currency depreciation, the macroeconomy as a whole gains (ignoring general-equilibrium retaliation/input costs), or treating a state government as a unitary monolith when rival ministries pursue conflicting agendas.",
+      "detection_signals": [
+        "Extrapolating anecdotes from one company, battalion, or province to an entire national economy or military",
+        "Treating 'China', 'the US', or 'the EU' as single-mind actors without bureaucratic politics analysis"
+      ],
+      "remediation_protocol": "Separate micro/firm-level anecdotes from general-equilibrium macro aggregates, and disaggregate state actors into specific ministries or factions.",
+      "high_prevalence_domains": [
+        "economics_markets_trade",
+        "geopolitics_diplomacy",
+        "conflict_defense_security",
+        "society_demographics_labor"
+      ]
+    },
+    {
+      "id": "circular_reporting_petitio_principii",
+      "name": "Circular Reporting & Citogenesis (Echo Corroboration)",
+      "category": "evidentiary_selection",
+      "definition": "Treating multiple secondary reports as independent confirmation when all of them ultimately trace back to the exact same unverified primary rumor, leak, or wire dispatch.",
+      "osint_manifestation": "An anonymous claim appears in Outlet A, is summarized by Outlets B and C, cited by a think tank, and then counted by an AI agent as 'corroborated by four sources'.",
+      "detection_signals": [
+        "Multiple articles using phrases like 'according to reports in...' or 'as first reported by...'",
+        "Identical quotes, numbers, or anonymous-official descriptions appearing across multiple outlets within hours"
+      ],
+      "remediation_protocol": "Trace every citation to its `upstream_provenance` root; count all downstream rewrites of a single report as ONE source (information credibility '3' or '6', never '1').",
+      "high_prevalence_domains": [
+        "conflict_defense_security",
+        "geopolitics_diplomacy",
+        "technology_cyber_ai",
+        "law_governance_human_rights"
+      ]
+    },
+    {
+      "id": "argument_from_ignorance",
+      "name": "Argument from Ignorance (Conflating Unproven with False/True)",
+      "category": "structural_logic",
+      "definition": "Asserting that a proposition is true because it has not yet been proven false, or asserting it is definitely false solely because open-source evidence has not yet surfaced.",
+      "osint_manifestation": "Declaring 'no civilian casualties occurred' during a communications blackout because no geo-verified videos have yet been uploaded, or claiming 'cyber attribution X is true because Actor X hasn't disproved it'.",
+      "detection_signals": [
+        "Leaping from 'no public evidence yet confirms X' to 'X did not happen'",
+        "Ignoring collection gaps (cloud cover, internet shutdowns, classification barriers)"
+      ],
+      "remediation_protocol": "Strictly distinguish 'confirmed negative evidence' from 'absence of open-source visibility'; assign Admiralty credibility '6' (truth cannot be judged) when collection is blocked.",
+      "high_prevalence_domains": [
+        "conflict_defense_security",
+        "technology_cyber_ai",
+        "science_medicine_public_health",
+        "law_governance_human_rights"
+      ]
+    },
+    {
+      "id": "ecological_fallacy",
+      "name": "Ecological Fallacy",
+      "category": "causal_and_statistical",
+      "definition": "Drawing inferences about the behavior or beliefs of specific individuals or demographic subgroups solely from aggregate geographic or national averages.",
+      "osint_manifestation": "Inferring how specific demographic groups voted or behaved based only on county- or province-level aggregate shifts without individual-level survey cross-tabs.",
+      "detection_signals": [
+        "Inferring subgroup voter behavior purely from precinct/district-level swings",
+        "Applying national GDP-per-capita averages to characterize household median welfare under high inequality"
+      ],
+      "remediation_protocol": "Check median vs. mean distributions and require validated subgroup panel data (e.g., AP VoteCast, census microdata) before making subgroup claims.",
+      "high_prevalence_domains": [
+        "society_demographics_labor",
+        "economics_markets_trade",
+        "science_medicine_public_health"
+      ]
+    },
+    {
+      "id": "texas_sharpshooter",
+      "name": "Texas Sharpshooter Fallacy (Post-Hoc Pattern Clustering)",
+      "category": "causal_and_statistical",
+      "definition": "Scanning vast quantities of noisy open-source telemetry, isolating a random cluster of coincidences, and drawing a target around them post hoc as proof of a conspiracy or grand design.",
+      "osint_manifestation": "Linking unrelated railway derailments, food-plant fires, or subsea cable faults across continents into a unified sabotage narrative without testing against global annual incident frequencies.",
+      "detection_signals": [
+        "Viral OSINT threads listing 5–10 dramatic incidents across months without denominator statistics",
+        "Post-hoc hypothesis constructed to fit an already-selected cluster of anomalies"
+      ],
+      "remediation_protocol": "Test the hypothesis out-of-sample against multi-year registry baselines (e.g., FRA rail statistics, TeleGeography cable fault averages of 100–200 faults/year globally).",
+      "high_prevalence_domains": [
+        "conflict_defense_security",
+        "technology_cyber_ai",
+        "climate_energy_environment"
+      ]
+    },
+    {
+      "id": "nirvana_perfect_solution",
+      "name": "Nirvana (Perfect-Solution) Fallacy",
+      "category": "structural_logic",
+      "definition": "Dismissing a real-world policy, defense system, or medical intervention as 'useless' because it is less than 100% effective, rather than comparing it against realistic alternatives.",
+      "osint_manifestation": "Claiming sanctions 'failed completely' because smuggling exists, vaccines 'don't work' because breakthrough infections occur, or air defense 'is ineffective' because some missiles penetrate.",
+      "detection_signals": [
+        "Binary pass/fail language applied to probabilistic risk-reduction measures",
+        "Comparing real empirical outcomes against an idealized zero-friction utopia rather than a counterfactual baseline"
+      ],
+      "remediation_protocol": "Evaluate interventions by marginal effect size, cost-exchange ratios, and comparison against realistic counterfactual alternatives.",
+      "high_prevalence_domains": [
+        "science_medicine_public_health",
+        "conflict_defense_security",
+        "economics_markets_trade",
+        "climate_energy_environment"
+      ]
+    },
+    {
+      "id": "straw_man_weak_man",
+      "name": "Straw-Man & Weak-Man Distortion",
+      "category": "rhetorical_equivocation",
+      "definition": "Replacing an opposing camp's strongest empirical argument with a caricature (straw man) or selecting only its least rigorous fringe spokesperson to refute (weak-manning).",
+      "osint_manifestation": "Summarizing legal, constitutional, or diplomatic counter-arguments using partisan social-media slogans rather than judicial dissents or top scholarly formulations.",
+      "detection_signals": [
+        "Opposing views summarized without citing their strongest primary legal brief, dissenting opinion, or peer-reviewed proponent",
+        "Dismissive adjectives ('bizarrely', 'absurdly') substituting for substantive refutation"
+      ],
+      "remediation_protocol": "Apply the Steel-Manning rule: articulate the strongest primary-source version of the competing argument (e.g., an appellate dissent or BIS/NBER counter-study) before evaluating its flaws.",
+      "high_prevalence_domains": [
+        "law_governance_human_rights",
+        "geopolitics_diplomacy",
+        "society_demographics_labor",
+        "economics_markets_trade"
+      ]
+    }
+  ]
+}

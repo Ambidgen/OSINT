@@ -1,0 +1,253 @@
+{
+  "catalog_type": "cognitive_and_media_biases",
+  "version": "1.0.0",
+  "description": "Multi-layer catalog of cognitive/algorithmic biases in Agentic AI analysts, structural incentives in news media, and measurement distortions in OSINT datasets.",
+  "entries": [
+    {
+      "id": "confirmation_bias",
+      "name": "Confirmation Bias & Selective Search Querying",
+      "category": "analyst_ai",
+      "definition": "Searching for, weighting, and recalling evidence that confirms an initial working theory while failing to execute search queries capable of falsifying it.",
+      "osint_manifestation": "An AI agent formulates search strings containing only one directional outcome (e.g., 'evidence tariffs raised inflation') and never queries disconfirming studies or offsetting exchange-rate pass-through data.",
+      "detection_signals": [
+        "All executed search queries presuppose the same directional answer",
+        "Evidence ledger contains zero items under `disconfirming_evidence_ids`"
+      ],
+      "remediation_protocol": "Mandate symmetric falsification searches: for every hypothesis H1, run at least one explicit search targeting counter-evidence or null results.",
+      "high_prevalence_domains": [
+        "geopolitics_diplomacy",
+        "economics_markets_trade",
+        "conflict_defense_security",
+        "science_medicine_public_health"
+      ]
+    },
+    {
+      "id": "sycophancy_prompt_framing_bias",
+      "name": "User-Prompt Framing & AI Sycophancy Bias",
+      "category": "analyst_ai",
+      "definition": "The tendency of Large Language Models to adopt the ideological premises, emotional presuppositions, or unverified factual assumptions embedded inside the user's prompt.",
+      "osint_manifestation": "If a user asks 'Why is Central Bank X deliberately crashing the currency?', a sycophantic agent validates the premise of deliberate sabotage rather than testing macro balance-of-payments fundamentals.",
+      "detection_signals": [
+        "User prompt contains loaded presuppositions ('why did X fail', 'corrupt', 'inevitable collapse', 'hoax')",
+        "Agent's research plan mirrors the user's loaded adjectives without neutralizing the query"
+      ],
+      "remediation_protocol": "Execute Phase 0 Prompt De-biasing prior to routing: strip loaded presuppositions and reformulate into neutral empirical questions.",
+      "high_prevalence_domains": [
+        "geopolitics_diplomacy",
+        "law_governance_human_rights",
+        "society_demographics_labor",
+        "economics_markets_trade"
+      ]
+    },
+    {
+      "id": "anchoring_first_source_bias",
+      "name": "First-Result & Early-Estimate Anchoring Bias",
+      "category": "analyst_ai",
+      "definition": "Over-relying on the first retrieved search snippet or the initial breaking-news casualty/damage figure, insufficiently adjusting when audited figures arrive later.",
+      "osint_manifestation": "Continuing to repeat hour-one casualty estimates, earthquake magnitudes, or preliminary GDP prints after official forensic revisions substantially changed the numbers.",
+      "detection_signals": [
+        "Heavy citation concentration on the first retrieved URL",
+        "Failure to check publication timestamps for later corrections or official post-incident audits"
+      ],
+      "remediation_protocol": "Sort evidence chronologically to identify the most recent audited revision, and explicitly note how estimates evolved from initial breaking reports.",
+      "high_prevalence_domains": [
+        "conflict_defense_security",
+        "climate_energy_environment",
+        "economics_markets_trade",
+        "science_medicine_public_health"
+      ]
+    },
+    {
+      "id": "mirror_imaging_bias",
+      "name": "Mirror-Imaging Bias",
+      "category": "analyst_ai",
+      "definition": "Assuming that foreign decision-makers, insurgent groups, or rival institutions share the analyst's own cultural incentives, domestic political constraints, and cost-benefit calculus.",
+      "osint_manifestation": "Concluding 'State X will never take Action Y because it would hurt its GDP growth', ignoring regime-survival, ideological, or succession priorities that outweigh GDP maximization.",
+      "detection_signals": [
+        "Arguments relying on 'no rational actor would...' without consulting primary doctrine or regional area-studies specialists",
+        "Absence of regional media or primary speeches from the actor being analyzed"
+      ],
+      "remediation_protocol": "Consult regional established media, primary doctrinal speeches, and area-studies scholarship to model the actor's own stated utility function.",
+      "high_prevalence_domains": [
+        "geopolitics_diplomacy",
+        "conflict_defense_security"
+      ]
+    },
+    {
+      "id": "recency_availability_bias",
+      "name": "Availability & Recency Heuristic",
+      "category": "analyst_ai",
+      "definition": "Overestimating the structural significance or probability of dramatic, vivid, recently covered events relative to quieter long-term structural drivers.",
+      "osint_manifestation": "Treating a single viral aviation incident or high-profile cyber breach as proof of an unprecedented systemic surge without checking 10-year incident rate trends.",
+      "detection_signals": [
+        "Superlative claims ('unprecedented', 'record wave') made without historical time-series comparison",
+        "Analysis restricted entirely to articles from the past 72 hours"
+      ],
+      "remediation_protocol": "Anchor current-event coverage against 5–20 year empirical baselines from Our World in Data, FRED, USGS, or SIPRI.",
+      "high_prevalence_domains": [
+        "society_demographics_labor",
+        "climate_energy_environment",
+        "conflict_defense_security",
+        "technology_cyber_ai"
+      ]
+    },
+    {
+      "id": "narrative_coherence_fallacy",
+      "name": "Narrative Coherence & Conjunction Fallacy",
+      "category": "analyst_ai",
+      "definition": "Preferring an elaborate, tightly woven multi-step causal story over messier explanations involving bureaucratic friction, coincidence, or independent local incentives.",
+      "osint_manifestation": "Constructing '4D chess' geopolitical master-plan explanations where every minor tactical mishap was intentionally orchestrated, violating probability multiplication across sequential steps.",
+      "detection_signals": [
+        "Hypothesis requires 4+ unverified covert steps all succeeding simultaneously",
+        "Zero allowance for organizational incompetence, miscalculation, or fog of war"
+      ],
+      "remediation_protocol": "Apply Hanlon's/Occam's diagnostic test inside ACH: compare complex coordinated conspiracy hypotheses against bureaucratic friction or local actor autonomy.",
+      "high_prevalence_domains": [
+        "geopolitics_diplomacy",
+        "conflict_defense_security",
+        "economics_markets_trade"
+      ]
+    },
+    {
+      "id": "premature_cognitive_closure",
+      "name": "Premature Cognitive Closure (Satisficing)",
+      "category": "analyst_ai",
+      "definition": "Terminating search and hypothesis generation as soon as the first plausible, internally consistent explanation is found.",
+      "osint_manifestation": "An AI agent reads two wire summaries, stops searching, and writes a confident answer without checking specialist beat press, regional voices, or academic mechanisms.",
+      "detection_signals": [
+        "Only one source tier consulted (e.g., generalist wires only, zero primary or specialist sources)",
+        "Only a single hypothesis formulated prior to drafting"
+      ],
+      "remediation_protocol": "Enforce multi-tier triangulation (Wire + Specialist/Regional + Primary + Academic) before unlocking Phase 4 synthesis.",
+      "high_prevalence_domains": [
+        "technology_cyber_ai",
+        "law_governance_human_rights",
+        "science_medicine_public_health",
+        "geopolitics_diplomacy"
+      ]
+    },
+    {
+      "id": "training_cutoff_staleness_bias",
+      "name": "Parametric Memory & Training-Cutoff Drift",
+      "category": "analyst_ai",
+      "definition": "Blending outdated parametric model weights (e.g., former officeholders, superseded statutes, old interest rates, pre-war borders) into current-events reporting.",
+      "osint_manifestation": "Referring to a former prime minister or central-bank governor as incumbent, or citing repealed export-control thresholds without live source verification.",
+      "detection_signals": [
+        "Current-state assertions ('is currently Prime Minister', 'interest rates stand at...') lacking a timestamped live citation",
+        "Conflict between parametric assumptions and retrieved current-year documents"
+      ],
+      "remediation_protocol": "Treat parametric memory as ZERO-authority for current facts (who holds office, current rates, active statutes); verify every time-sensitive state variable via timestamped OSINT sources.",
+      "high_prevalence_domains": [
+        "geopolitics_diplomacy",
+        "economics_markets_trade",
+        "law_governance_human_rights",
+        "technology_cyber_ai"
+      ]
+    },
+    {
+      "id": "access_journalism_official_source_bias",
+      "name": "Access Journalism & Anonymous-Official Asymmetry",
+      "category": "media_source",
+      "definition": "Newsrooms granting anonymity to senior government or corporate insiders in exchange for scoops, allowing self-serving policy framing or trial balloons to enter the record unchallenged.",
+      "osint_manifestation": "Stories built around 'senior administration officials speaking on condition of anonymity' framing diplomatic stalemates or intelligence assessments favorably to the leaking agency.",
+      "detection_signals": [
+        "Key causal claims rest entirely on unnamed 'senior officials' or 'people familiar with the matter'",
+        "Absence of documentary corroboration or named on-the-record accountability"
+      ],
+      "remediation_protocol": "Label anonymous-official claims strictly as `attributed_reporting` (Admiralty credibility '3' until independently confirmed), explicitly ask cui bono ('who benefits from this leak now?'), and cross-check with rival capitals' reporting.",
+      "high_prevalence_domains": [
+        "geopolitics_diplomacy",
+        "conflict_defense_security",
+        "economics_markets_trade"
+      ]
+    },
+    {
+      "id": "false_balance_bothsidesism",
+      "name": "False Balance (Empirical Bothsidesism) & Over-Consensus on Value Judgments",
+      "category": "media_source",
+      "definition": "Giving 50/50 rhetorical weight to an empirically refuted fringe claim against overwhelming scientific consensus—OR, conversely, presenting a contested normative policy trade-off as settled objective science.",
+      "osint_manifestation": "Pairing 99% peer-reviewed physical science consensus with one industry-funded contrarian as 'experts are divided', or framing normative fiscal/lockdown/regulatory value trade-offs as 'the science dictates only Policy X'.",
+      "detection_signals": [
+        "'Critics say / supporters say' symmetry applied to measurable physical or statistical quantities",
+        "Normative ethical trade-offs disguised behind technocratic 'settled consensus' rhetoric"
+      ],
+      "remediation_protocol": "Weight empirical claims by evidentiary distribution (IPCC/Cochrane consensus weight), while explicitly separating empirical predictions ('what will happen if we do X') from normative policy choices ('how society should weight competing harms').",
+      "high_prevalence_domains": [
+        "climate_energy_environment",
+        "science_medicine_public_health",
+        "economics_markets_trade",
+        "law_governance_human_rights"
+      ]
+    },
+    {
+      "id": "breaking_news_speed_bias",
+      "name": "Breaking-News Fog-of-War & Speed Bias",
+      "category": "media_source",
+      "definition": "Systematic elevation of dramatic, unverified early claims during the first 0–24 hours of a crisis due to competitive pressure to publish first.",
+      "osint_manifestation": "Initial attribution of explosions, hospital strikes, election glitches, or infrastructure outages turning out to be erroneous once satellite imagery, munitions fragments, or forensic logs emerge.",
+      "detection_signals": [
+        "Event occurred within the past 24 hours (`breaking_sub_24h`)",
+        "Conflicting eyewitness accounts, recycled old videos, or immediate mutual blame by belligerents"
+      ],
+      "remediation_protocol": "Apply the 24-Hour Fog-of-War Rule: report what is physically confirmed (time, location, official statements) while explicitly bracketing attribution as unconfirmed pending forensic/satellite verification.",
+      "high_prevalence_domains": [
+        "conflict_defense_security",
+        "technology_cyber_ai",
+        "climate_energy_environment"
+      ]
+    },
+    {
+      "id": "geopolitical_home_capital_bias",
+      "name": "Geopolitical Home-Capital Framing Bias",
+      "category": "media_source",
+      "definition": "Even editorially independent outlets subtly adopt the strategic vocabulary, threat hierarchy, and alliance lens of the capital or linguistic sphere in which their readership and editors reside.",
+      "osint_manifestation": "Western, Asian, Middle Eastern, and Global South outlets covering the exact same UN vote, trade dispute, or maritime incident with sharply different historical starting points and legal emphasis.",
+      "detection_signals": [
+        "All consulted media outlets are headquartered in the same country or alliance bloc",
+        "Asymmetric moral adjectives applied to comparable legal or military actions by different states"
+      ],
+      "remediation_protocol": "Enforce Geographic Diversity Pairing: combine at least two distinct regional/linguistic media spheres (e.g., Reuters/FT + Nikkei/The Hindu/Al-Monitor/Le Monde) plus primary international legal texts.",
+      "high_prevalence_domains": [
+        "geopolitics_diplomacy",
+        "conflict_defense_security",
+        "law_governance_human_rights",
+        "economics_markets_trade"
+      ]
+    },
+    {
+      "id": "survivorship_visibility_bias",
+      "name": "Digital Visibility & Conflict-Zone Survivorship Bias",
+      "category": "data_sampling",
+      "definition": "Over-representing events where smartphones, Starlink/4G connectivity, English-speaking witnesses, or cloud-free optical satellites are present, while under-counting offline rural crises.",
+      "osint_manifestation": "Heavy OSINT Strike-Map density in urban smartphone-connected areas compared to near-zero open-source video documentation of mass atrocities in telecom-blackout regions (e.g., Darfur, Tigray, rural Myanmar).",
+      "detection_signals": [
+        "Comparing raw geo-verified video counts across conflicts with vastly different internet penetration",
+        "Optical satellite imagery blocked by monsoon cloud cover"
+      ],
+      "remediation_protocol": "Explicitly state open-source collection denominators (telecom blackouts, press bans, SAR vs. optical satellite limits) and treat geo-verified counts as confirmed minimum bounds.",
+      "high_prevalence_domains": [
+        "conflict_defense_security",
+        "law_governance_human_rights",
+        "climate_energy_environment"
+      ]
+    },
+    {
+      "id": "ascertainment_and_goodhart_bias",
+      "name": "Ascertainment Bias & Goodhart's Law Metric Distortion",
+      "category": "data_sampling",
+      "definition": "Apparent surges caused by expanded testing/surveillance capacity (ascertainment), or official metrics losing informational value once governments/firms face penalties or targets tied to that metric (Goodhart's Law).",
+      "osint_manifestation": "Rising reported disease cases driven by 10x testing expansion rather than true incidence growth, or smoothed official GDP/unemployment series diverging from electricity consumption, customs imports, and night-lights.",
+      "detection_signals": [
+        "Sharp discontinuities in case/crime/vulnerability series coinciding with new reporting mandates or diagnostic rollouts",
+        "Politically sensitive headline targets hit with implausible low variance"
+      ],
+      "remediation_protocol": "Cross-check administrative headline metrics against physical/independent proxy indicators (test positivity & hospitalizations, trading-partner mirror customs data, satellite night-lights/SAR, excess mortality).",
+      "high_prevalence_domains": [
+        "science_medicine_public_health",
+        "economics_markets_trade",
+        "society_demographics_labor",
+        "technology_cyber_ai"
+      ]
+    }
+  ]
+}
